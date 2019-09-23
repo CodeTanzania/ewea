@@ -19,4 +19,10 @@ libcov
 coverage
 .nyc_output
 
+# Editors
+.nvimrc
+
+# Config
+.env
+
 # Docs

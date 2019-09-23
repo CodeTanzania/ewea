@@ -14,3 +14,4 @@ examples
 docs
 .travis.yml
 Gruntfile.js
+.nvimrc
