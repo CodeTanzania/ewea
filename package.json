@@ -7,7 +7,7 @@
     "clean": "rimraf lib dist es umd logs",
     "prebuild": "npm test && npm run clean",
     "build": "rollup -c",
-    "lint": "eslint --fix --ext .js src/ test/",
+    "lint": "eslint --fix --ext .js src/ test/ seeds/ scripts/",
     "pretest": "npm run lint",
     "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --exit --timeout=8000 --require @babel/register test/**/*.spec.js",
     "test:unit": "NODE_ENV=test npm run pretest && NODE_ENV=test mocha --exit --timeout=8000 --require @babel/register test/unit/**/*.spec.js",
@@ -21,7 +21,8 @@
     "dev": "npm run seed && npm run start:dev",
     "start:dev": "NODE_ENV=development node server.js",
     "start": "NODE_ENV=production node server.js",
-    "seed": "NODE_ENV=development node seed.js"
+    "seed": "NODE_ENV=development node seed.js",
+    "syncIndexes": "node scripts/syncIndexes.js"
   },
   "repository": {
     "type": "git",

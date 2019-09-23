@@ -1,5 +1,3 @@
-'use strict';
-
 const certainties = [
   {
     namespace: 'EventCertainty',

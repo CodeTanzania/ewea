@@ -1,13 +1,13 @@
-const { connect } = require('@lykmapipo/mongoose-common');
+const { connect, syncIndexes } = require('@lykmapipo/mongoose-common');
 const { Predefine } = require('@lykmapipo/predefine');
 const { Permission } = require('@lykmapipo/permission');
 const { Feature } = require('@codetanzania/emis-feature');
 const { Role } = require('@codetanzania/emis-role');
 const { Party } = require('@codetanzania/emis-stakeholder');
 
-/* export models */
 module.exports = {
   connect,
+  syncIndexes,
   Predefine,
   Permission,
   Feature,
