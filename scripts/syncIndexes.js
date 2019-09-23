@@ -18,7 +18,7 @@ waterfall(tasks, (error, results) => {
   if (error) {
     warn('Sync indexes failed', error);
   } else {
-    debug('Sync index finished', results);
+    debug('Sync indexes finished', results);
   }
   process.exit(0);
 });
