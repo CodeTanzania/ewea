@@ -21,7 +21,7 @@
     "dev": "npm run seed && npm run start:dev",
     "start:dev": "NODE_ENV=development node server.js",
     "start": "NODE_ENV=production node server.js",
-    "seed": "NODE_ENV=development node seed.js",
+    "seedData": "node scripts/seedData.js",
     "syncIndexes": "node scripts/syncIndexes.js"
   },
   "repository": {
