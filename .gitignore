@@ -1,0 +1,22 @@
+# Logs
+logs
+*.log
+
+# Runtime
+pids
+*.pid
+*.seed
+
+# Temporary
+.tmp
+.grunt
+
+# Dependencies
+node_modules
+
+# Coverage
+libcov
+coverage
+.nyc_output
+
+# Docs

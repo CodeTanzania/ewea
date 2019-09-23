@@ -1,0 +1,142 @@
+{
+  "name": "@codetanzania/ewea",
+  "version": "0.1.0",
+  "description": "Emergency Early Warning, Early Action Toolkit",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf lib dist es umd logs",
+    "prebuild": "npm test && npm run clean",
+    "build": "rollup -c",
+    "lint": "eslint --fix --ext .js src/ test/",
+    "pretest": "npm run lint",
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --exit --timeout=8000 --require @babel/register test/**/*.spec.js",
+    "test:unit": "NODE_ENV=test npm run pretest && NODE_ENV=test mocha --exit --timeout=8000 --require @babel/register test/unit/**/*.spec.js",
+    "test:integration": "NODE_ENV=test npm run pretest && NODE_ENV=test mocha --exit --timeout=8000 --require @babel/register test/integration/**/*.spec.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "docs": "doxdox 'lib/**/*.js' -p package.json -l markdown -o DOCUMENTATION.md",
+    "cmt": "git add -A && git-cz",
+    "changelog": "changelog",
+    "chore:deps": "ncu -u && npm install --save",
+    "lint:config": "eslint --print-config rollup.config.js",
+    "dev": "npm run seed && npm run start:dev",
+    "start:dev": "NODE_ENV=development node server.js",
+    "start": "NODE_ENV=production node server.js",
+    "seed": "NODE_ENV=development node seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeTanzania/ewea.git"
+  },
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "ewea",
+    "disaster",
+    "hazard",
+    "incident",
+    "emergency",
+    "alert",
+    "warning",
+    "event",
+    "risk"
+  ],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeTanzania/ewea/issues",
+    "email": "lallyelias87@gmail.com"
+  },
+  "homepage": "https://github.com/CodeTanzania/ewea",
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "@benmaruchu/faker": "4.3.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/travis-cli": "^8.2.0",
+    "@lykmapipo/express-test-helpers": "^0.8.7",
+    "@lykmapipo/mongoose-test-helpers": "0.7.19",
+    "chai": "^4.2.0",
+    "commitizen": "^4.0.3",
+    "coveralls": "^3.0.6",
+    "cz-conventional-changelog": "^3.0.2",
+    "doxdox": "^3.0.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsdoc": "^15.9.2",
+    "eslint-plugin-mocha": "^6.1.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "generate-changelog": "^1.8.0",
+    "handlebars": "^4.2.1",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.3.0",
+    "lodash.template": "^4.5.0",
+    "mocha": "^6.2.0",
+    "npm-check-updates": "^3.1.23",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.21.4",
+    "shelljs": "^0.8.3"
+  },
+  "dependencies": {
+    "@codetanzania/emis-feature": ">=1.4.3",
+    "@codetanzania/emis-role": ">=1.5.2",
+    "@codetanzania/emis-stakeholder": ">=1.9.0",
+    "@lykmapipo/common": ">=0.26.3",
+    "@lykmapipo/env": ">=0.14.0",
+    "@lykmapipo/express-common": ">=0.17.11",
+    "@lykmapipo/express-rest-actions": ">=0.6.8",
+    "@lykmapipo/file": ">=0.1.9",
+    "@lykmapipo/i18n": ">=0.1.13",
+    "@lykmapipo/kue-common": ">=0.3.11",
+    "@lykmapipo/logger": ">=0.3.10",
+    "@lykmapipo/mongoose-common": ">=0.25.13",
+    "@lykmapipo/mongoose-exportable": ">=0.3.8",
+    "@lykmapipo/permission": ">=0.8.8",
+    "@lykmapipo/postman": ">=0.13.1",
+    "@lykmapipo/predefine": ">=0.8.1",
+    "async": ">=3.1.0",
+    "express": ">=4.17.1",
+    "kue": ">=0.11.6",
+    "kue-scheduler": ">=0.9.7",
+    "lodash": ">=4.17.15",
+    "moment": ">=2.24.0",
+    "moment-timezone": ">=0.5.26",
+    "mongoose": ">=5.7.1",
+    "mongoose-geojson-schemas": ">=0.10.10",
+    "mongoose-kue": ">=0.8.6",
+    "mongoose-rest-actions": ">=0.28.9",
+    "redis": ">=2.8.0"
+  },
+  "engines": {
+    "node": ">=12.4.0",
+    "npm": ">=6.9.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
