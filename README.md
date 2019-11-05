@@ -12,6 +12,10 @@
 
 Emergency Early Warning, Early Action Toolkit.
 
+
+![EWEA Context Diagram](./docs/context.png)
+
+
 ## Requirements
 
 - [NodeJS v12+](https://nodejs.org)
