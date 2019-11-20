@@ -1,0 +1,38 @@
+{
+  "apps": [
+  {
+    "name": "ewea",
+    "script": "./src/server.js",
+    "args": [],
+    "node_args": [],
+    "exec_mode": "cluster",
+    "instances": "max",
+    "instance_var": "INSTANCE_ID",
+    "watch": false,
+    "env": { "NODE_ENV": "production" }
+  },
+  {
+
+    "name": "ewea-worker",
+    "script": "./src/worker.js",
+    "args": [],
+    "node_args": [],
+    "exec_mode": "cluster",
+    "instances": 2,
+    "instance_var": "INSTANCE_ID",
+    "watch": false,
+    "env": { "NODE_ENV": "production" }
+  },
+  {
+
+    "name": "ewea-scheduler",
+    "script": "./src/scheduler.js",
+    "args": [],
+    "node_args": [],
+    "exec_mode": "cluster",
+    "instances": 1,
+    "instance_var": "INSTANCE_ID",
+    "watch": false,
+    "env": { "NODE_ENV": "production" }
+  }]
+}

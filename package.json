@@ -5,24 +5,35 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf lib dist es umd logs",
-    "prebuild": "npm test && npm run clean",
-    "build": "rollup -c",
     "lint": "eslint --fix --ext .js src/ test/ seeds/ scripts/",
+    "lint:config": "eslint --print-config rollup.config.js",
     "pretest": "npm run lint",
     "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --exit --timeout=8000 --require @babel/register test/**/*.spec.js",
     "test:unit": "NODE_ENV=test npm run pretest && NODE_ENV=test mocha --exit --timeout=8000 --require @babel/register test/unit/**/*.spec.js",
     "test:integration": "NODE_ENV=test npm run pretest && NODE_ENV=test mocha --exit --timeout=8000 --require @babel/register test/integration/**/*.spec.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "docs": "doxdox 'lib/**/*.js' -p package.json -l markdown -o DOCUMENTATION.md",
-    "cmt": "git add -A && git-cz",
-    "changelog": "changelog",
+    "docs:changelog": "changelog",
     "chore:deps": "ncu -u && npm install --save",
-    "lint:config": "eslint --print-config rollup.config.js",
-    "dev": "npm run seed && npm run start:dev",
-    "start:dev": "NODE_ENV=development node src/server.js",
+    "script:seed": "node scripts/seedData.js",
+    "script:sync:indexes": "node scripts/syncIndexes.js",
     "start": "NODE_ENV=production node src/server.js",
-    "seedData": "node scripts/seedData.js",
-    "syncIndexes": "node scripts/syncIndexes.js"
+    "start:dev": "NODE_ENV=development node src/server.js",
+    "start:heroku": "NODE_ENV=production node src/server.js",
+    "worker": "NODE_ENV=production node src/worker.js",
+    "worker:dev": "NODE_ENV=development node src/worker.js",
+    "worker:heroku": "NODE_ENV=production node src/worker.js",
+    "scheduler": "NODE_ENV=production node src/scheduler.js",
+    "scheduler:dev": "NODE_ENV=development node src/scheduler.js",
+    "scheduler:heroku": "NODE_ENV=production node src/scheduler.js",
+    "process:start": "pm2 start processes.json",
+    "process:stop": "pm2 stop processes.json",
+    "process:restart": "pm2 restart processes.json --update-env",
+    "process:reload": "pm2 reload processes.json --update-env",
+    "process:delete": "pm2 delete processes.json",
+    "process:save": "pm2 save",
+    "process:startup": "pm2 startup",
+    "process:remove": "sudo update-rc.d -f pm2-init.sh remove"
   },
   "repository": {
     "type": "git",
@@ -41,13 +52,11 @@
     "event",
     "risk"
   ],
-  "contributors": [
-    {
-      "name": "lykmapipo",
-      "email": "lallyelias87@gmail.com",
-      "url": "https://github.com/lykmapipo"
-    }
-  ],
+  "contributors": [{
+    "name": "lykmapipo",
+    "email": "lallyelias87@gmail.com",
+    "url": "https://github.com/lykmapipo"
+  }],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/ewea/issues",
