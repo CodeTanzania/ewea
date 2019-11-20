@@ -12,6 +12,8 @@ connect(err => {
     throw err;
   }
 
+  // TODO: worker job events
+
   // start kue worker
   start();
 
