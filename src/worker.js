@@ -1,22 +1,22 @@
-const { getNumber } = require('@lykmapipo/env');
-const { worker, listen } = require('@lykmapipo/postman');
+const { error, debug } = require('@lykmapipo/logger');
+const { start, listen } = require('@lykmapipo/postman');
 const { connect } = require('./database');
 
-// constants
-const KUE_HTTP_PORT = getNumber('KUE_HTTP_PORT');
+debug('Worker starting');
 
 // connect to database
-connect(error => {
+connect(err => {
   // throw if error
-  if (error) {
-    throw error;
+  if (err) {
+    error('Worker start failed', err);
+    throw err;
   }
 
   // start kue worker
-  worker.start();
+  start();
 
-  // start kue ui
-  if (KUE_HTTP_PORT) {
-    listen();
-  }
+  // start kue http & ui
+  listen();
+
+  debug('Worker started');
 });
