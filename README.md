@@ -45,6 +45,13 @@ $ git clone https://github.com/CodeTanzania/ewea.git
 ```sh
 $ npm install
 ```
+
+- Copy environment variables
+
+```sh
+$ cp .env.example .env
+```
+
 - Seed development data
 
 ```sh
