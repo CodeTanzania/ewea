@@ -279,7 +279,256 @@ curl --request GET \
 
 ## EventGroup
 
-> TODO
+`EventGroup` group emergency events based on the nature they fall into. i.e
+Meteorological, Hydrological, Biological e.t.c
+
+### EventGroup Schema
+
+`EventGroup` have the following attributes:
+
+<br />
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event group.                                |
+|   code    | String |                             Unique Human-readable given code of this event group.                             |
+|   name    | Object |                             Human-translatable-readable name for the event group.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event groups visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was updated. |
+
+### Create EventGroup
+
+To create a new event group, send a `POST` request to `https://api.ewea.io/v1/predefines/eventgroups`. The following attributes are supported:
+
+<br/>
+
+| Name  |  Type  |                                   Description                                   | Required |
+| :---: | :----: | :-----------------------------------------------------------------------------: | :------: |
+| code  | String |              Unique Human-readable given code of this event group.              |  false   |
+| name  | Object |              Human-translatable-readable name for the event group.              |   true   |
+| color | String | A color code(in hexadecimal format) used to differentiate event group visually. |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/eventgroups \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "code": "H",
+    "name": { "en": "Hydrological" },
+    "color": "#86C7E8"
+  }'
+```
+
+The response will be a `JSON object` with the standard event group attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event group.                                |
+|   code    | String |                             Unique Human-readable given code of this event group.                             |
+|   name    | Object |                             Human-translatable-readable name for the event group.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event groups visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+  "code": "H",
+  "name": { "en": "Hydrological" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Retrieve EventGroup
+
+To get a event group, send a `GET` request to `https://api.ewea.io/v1/predefines/eventgroups/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventgroups/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event group attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event group.                                |
+|   code    | String |                             Unique Human-readable given code of this event group.                             |
+|   name    | Object |                             Human-translatable-readable name for the event group.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event groups visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+  "code": "H",
+  "name": { "en": "Hydrological" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Update EventGroup
+
+To update existing event group, send a `PATCH` request to `https://api.ewea.io/v1/predefines/eventgroups/:id`. The following attributes are supported:
+
+<br/>
+
+| Name  |  Type  |                      Description                      | Required |
+| :---: | :----: | :---------------------------------------------------: | :------: |
+| name  | Object | Human-translatable-readable name for the event group. |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/eventgroups/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "name": { "en": "Hydrological" },
+  }'
+```
+
+The response will be a `JSON object` with the standard event group attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event group.                                |
+|   code    | String |                             Unique Human-readable given code of this event group.                             |
+|   name    | Object |                             Human-translatable-readable name for the event group.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event groups visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+  "code": "H",
+  "name": { "en": "Hydrological" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### Delete EventGroup
+
+To delete existing event group, send a `DELETE` request to `https://api.ewea.io/v1/predefines/eventgroups/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/eventgroups/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event group attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event group.                                |
+|   code    | String |                             Unique Human-readable given code of this event group.                             |
+|   name    | Object |                             Human-translatable-readable name for the event group.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event groups visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+  "code": "H",
+  "name": { "en": "Hydrological" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### List All EventGroup
+
+To list all event groups, send a `GET` request to `https://api.ewea.io/v1/predefines/eventgroups`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventgroups \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of event group with the standard event group attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event group.                                |
+|   code    | String |                             Unique Human-readable given code of this event group.                             |
+|   name    | Object |                             Human-translatable-readable name for the event group.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event groups visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+    "_id": "5c6ea7dae1dc700018aac95b",
+    "code": "H",
+    "name": { "en": "Hydrological" },
+    "color": "#86C7EE"
+    "updatedAt": "2019-02-21T13:30:04.340Z",
+    "createdAt": "2019-02-21T13:30:04.340Z"
+  }],
+  "total": 26,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 3,
+  "lastModified": "2019-02-21T13:30:04.340Z"
+}
+```
 
 ## EventType
 
@@ -400,9 +649,9 @@ To update existing event type, send a `PATCH` request to `https://api.ewea.io/v1
 
 <br/>
 
-| Name |  Type  |                     Description                      | Required |
-| :--: | :----: | :--------------------------------------------------: | :------: |
-| name | Object | Human-translatable-readable name for the event type. |
+| Name  |  Type  |                     Description                      | Required |
+| :---: | :----: | :--------------------------------------------------: | :------: |
+| name  | Object | Human-translatable-readable name for the event type. |
 
 > Example Request
 
