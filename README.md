@@ -54,6 +54,15 @@ $ npm run start:dev
 $ npm test
 ```
 
+## Document
+It will be nice, to keep documentation under `docs` folder up to date when changes applied. We opted markdown for all documentations.
+
+- Run development documentation server
+```sh
+$ npm run docs:dev
+```
+- Then apply your changes on affected sections.
+
 ## Contribute
 
 It will be nice, if you open an issue first so that we can know what is going on, then, fork this repo and push in your ideas. Do not forget to add a bit of test(s) of what value you adding.
