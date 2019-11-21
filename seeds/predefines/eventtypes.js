@@ -1,4 +1,4 @@
-const certainties = [
+const types = [
   {
     namespace: 'EventType',
     strings: { name: { en: 'Flood' } },
@@ -108,4 +108,4 @@ const certainties = [
   },
 ];
 
-module.exports = certainties;
+module.exports = types;
