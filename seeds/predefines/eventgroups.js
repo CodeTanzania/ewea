@@ -14,6 +14,18 @@ const groups = [
   {
     namespace: 'EventGroup',
     strings: {
+      name: { en: 'Hydrological' },
+    },
+  },
+  {
+    namespace: 'EventGroup',
+    strings: {
+      name: { en: 'Biological' },
+    },
+  },
+  {
+    namespace: 'EventGroup',
+    strings: {
       name: { en: 'Safety' },
     },
   },
@@ -38,7 +50,7 @@ const groups = [
   {
     namespace: 'EventGroup',
     strings: {
-      name: { en: 'Enviromental' },
+      name: { en: 'Environmental' },
     },
   },
   {
