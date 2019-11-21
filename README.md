@@ -29,26 +29,29 @@ Emergency Early Warning, Early Action Toolkit.
 ## Usage
 > WIP
 
-## Testing
+## Develop
 
 - Clone this repository
-
-- Install all development dependencies
-
 ```sh
-npm install
+$ git clone https://github.com/CodeTanzania/ewea.git
 ```
 
-- Run example
+- Install dependencies
 
 ```sh
-npm run dev
+$ npm install
 ```
 
-- Then run test
+- Run development server
 
 ```sh
-npm test
+$ npm run start:dev
+```
+
+- Run test
+
+```sh
+$ npm test
 ```
 
 ## Contribute
