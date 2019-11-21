@@ -284,7 +284,7 @@ curl --request GET \
 | createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event type was created. |
 | updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event type was updated. |
 
-### Create a EventType
+### Create EventType
 To create a new event type, send a `POST` request to `https://api.ewea.io/v1/predefines/eventtypes`. The following attributes are supported:
 
 <br/>

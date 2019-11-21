@@ -29,6 +29,10 @@ Emergency Early Warning, Early Action Toolkit.
 ## Usage
 > WIP
 
+## Data Model
+
+![EWEA Data Model](./docs/domain.png)
+
 ## Develop
 
 - Clone this repository
