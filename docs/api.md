@@ -267,6 +267,9 @@ curl --request GET \
 
 # Core Resources
 
+## EventGroup
+> TODO
+
 ## EventType
 `EventType` classify emergency events from the most generalised(nature and family) to the most specific (main event and peril).
 
@@ -510,6 +513,30 @@ HTTP/1.1 200 Success
   "lastModified": "2019-02-21T13:30:04.340Z"
 }
 ```
+
+## EventSeverity
+> TODO
+
+## EventCertainty
+> TODO
+
+## EventFunction
+> TODO
+
+## EventAction
+> TODO
+
+## EventCatalogue
+> TODO
+
+## Event
+> TODO
+
+## EventNotification
+> TODO
+
+## EventChangeLog
+> TODO
 
 # Acknowledgements
 
