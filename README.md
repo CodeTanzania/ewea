@@ -41,6 +41,11 @@ $ git clone https://github.com/CodeTanzania/ewea.git
 ```sh
 $ npm install
 ```
+- Seed development data
+
+```sh
+$ npm run script:seed
+```
 
 - Run development server
 

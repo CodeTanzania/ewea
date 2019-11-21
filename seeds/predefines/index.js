@@ -3,6 +3,7 @@ const statuses = require('./eventstatuses');
 const severities = require('./eventseverities');
 const urgencies = require('./eventurgencies');
 const certainties = require('./eventcertainties');
+const types = require('./eventtypes');
 
 const predefines = [
   ...functions,
@@ -10,6 +11,7 @@ const predefines = [
   ...severities,
   ...urgencies,
   ...certainties,
+  ...types,
 ];
 
 module.exports = predefines;
