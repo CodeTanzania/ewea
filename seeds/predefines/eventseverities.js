@@ -1,23 +1,23 @@
 const severities = [
   {
     namespace: 'EventSeverity',
-    name: { en: 'Extreme' },
+    strings: { name: { en: 'Extreme' } },
   },
   {
     namespace: 'EventSeverity',
-    name: { en: 'Severe' },
+    strings: { name: { en: 'Severe' } },
   },
   {
     namespace: 'EventSeverity',
-    name: { en: 'Moderate' },
+    strings: { name: { en: 'Moderate' } },
   },
   {
     namespace: 'EventSeverity',
-    name: { en: 'Minor' },
+    strings: { name: { en: 'Minor' } },
   },
   {
     namespace: 'EventSeverity',
-    name: { en: 'Unknown' },
+    strings: { name: { en: 'Unknown' } },
   },
 ];
 

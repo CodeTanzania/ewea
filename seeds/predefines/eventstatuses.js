@@ -1,23 +1,23 @@
 const statuses = [
   {
     namespace: 'EventStatus',
-    name: { en: 'Actual' },
+    strings: { name: { en: 'Actual' } },
   },
   {
     namespace: 'EventStatus',
-    name: { en: 'Exercise' },
+    strings: { name: { en: 'Exercise' } },
   },
   {
     namespace: 'EventStatus',
-    name: { en: 'Draft' },
+    strings: { name: { en: 'Draft' } },
   },
   {
     namespace: 'EventStatus',
-    name: { en: 'System' },
+    strings: { name: { en: 'System' } },
   },
   {
     namespace: 'EventStatus',
-    name: { en: 'Test' },
+    strings: { name: { en: 'Test' } },
   },
 ];
 

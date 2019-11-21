@@ -1,23 +1,23 @@
 const certainties = [
   {
     namespace: 'EventCertainty',
-    name: { en: 'Observed' },
+    strings: { name: { en: 'Observed' } },
   },
   {
     namespace: 'EventCertainty',
-    name: { en: 'Likely' },
+    strings: { name: { en: 'Likely' } },
   },
   {
     namespace: 'EventCertainty',
-    name: { en: 'Possible' },
+    strings: { name: { en: 'Possible' } },
   },
   {
     namespace: 'EventCertainty',
-    name: { en: 'Unlikely' },
+    strings: { name: { en: 'Unlikely' } },
   },
   {
     namespace: 'EventCertainty',
-    name: { en: 'Unknown' },
+    strings: { name: { en: 'Unknown' } },
   },
 ];
 

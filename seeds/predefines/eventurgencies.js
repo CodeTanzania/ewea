@@ -1,23 +1,23 @@
 const urgencies = [
   {
     namespace: 'EventUrgency',
-    name: { en: 'Immediate' },
+    strings: { name: { en: 'Immediate' } },
   },
   {
     namespace: 'EventUrgency',
-    name: { en: 'Expected' },
+    strings: { name: { en: 'Expected' } },
   },
   {
     namespace: 'EventUrgency',
-    name: { en: 'Future' },
+    strings: { name: { en: 'Future' } },
   },
   {
     namespace: 'EventUrgency',
-    name: { en: 'Past' },
+    strings: { name: { en: 'Past' } },
   },
   {
     namespace: 'EventUrgency',
-    name: { en: 'Unknown' },
+    strings: { name: { en: 'Unknown' } },
   },
 ];
 
