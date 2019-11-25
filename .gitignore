@@ -25,5 +25,6 @@ coverage
 
 # Config
 .env
+.idea
 
 # Docs
