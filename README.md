@@ -12,9 +12,7 @@
 
 Emergency Early Warning, Early Action Toolkit.
 
-
 ![EWEA Context Diagram](./docs/context.png)
-
 
 ## Requirements
 
@@ -24,9 +22,11 @@ Emergency Early Warning, Early Action Toolkit.
 - [Mongoose v5.6+](https://github.com/Automattic/mongoose)
 
 ## Installations
+
 > WIP
 
 ## Usage
+
 > WIP
 
 ## Data Model
@@ -36,6 +36,7 @@ Emergency Early Warning, Early Action Toolkit.
 ## Develop
 
 - Clone this repository
+
 ```sh
 $ git clone https://github.com/CodeTanzania/ewea.git
 ```
@@ -55,7 +56,7 @@ $ cp .env.example .env
 - Seed development data
 
 ```sh
-$ npm run script:seed
+$ npm run scripts:seed
 ```
 
 - Run development server
@@ -71,12 +72,15 @@ $ npm test
 ```
 
 ## Document
+
 It will be nice, to keep documentation under `docs` folder up to date when changes applied. We opted markdown for all documentations.
 
 - Run development documentation server
+
 ```sh
 $ npm run docs:dev
 ```
+
 - Then apply your changes on affected sections.
 
 ## Contribute
