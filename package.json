@@ -18,8 +18,8 @@
     "docs:changelog": "changelog",
     "docs:dev": "live-server ./docs",
     "chore:deps": "ncu -u && npm install --save",
-    "script:seed": "node scripts/seedData.js",
-    "script:sync:indexes": "node scripts/syncIndexes.js",
+    "scripts:seed": "node scripts/seedData.js",
+    "scripts:sync:indexes": "node scripts/syncIndexes.js",
     "start": "NODE_ENV=production node src/server.js",
     "start:dev": "NODE_ENV=development node src/server.js",
     "start:heroku": "NODE_ENV=production pm2-runtime start processes.json --only ewea",
@@ -147,19 +147,11 @@
     }
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{md,html}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["eslint --fix", "git add"],
+    "*.{md,html}": ["prettier --write", "git add"]
   },
   "husky": {
     "hooks": {
