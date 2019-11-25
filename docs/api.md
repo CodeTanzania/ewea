@@ -786,13 +786,13 @@ HTTP/1.1 200 Success
 
 > TODO
 
-## EVENTCERTAINTY
+## EventCertainty
 
-`EVENTCERTAINTY` The code denoting the certainty of the subject event of the alert message
+`EventCertainty` The code denoting the certainty of the subject event of the alert message
 
-### EVENTCERTAINTY Schema
+### EventCertainty Schema
 
-`EVENTCERTAINTY` have the following attributes:
+`EventCertainty` have the following attributes:
 
 <br />
 
@@ -805,7 +805,7 @@ HTTP/1.1 200 Success
 | createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
 | updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
 
-### Create EVENTCERTAINTY
+### Create EventCertainty
 
 To create a new event certainty, send a `POST` request to `https://api.ewea.io/v1/predefines/eventcertainties`. The following attributes are supported:
 
@@ -859,7 +859,7 @@ HTTP/1.1 201 Success
 }
 ```
 
-### Retrieve EVENTCERTAINTY
+### Retrieve EventCertainty
 
 To get a event certainty, send a `GET` request to `https://api.ewea.io/v1/predefines/eventcertainties/:id`.
 
@@ -899,7 +899,7 @@ HTTP/1.1 200 Success
 }
 ```
 
-### Update EVENTCERTAINTY
+### Update EventCertainty
 
 To update existing event certainty, send a `PATCH` request to `https://api.ewea.io/v1/predefines/eventcertainties/:id`. The following attributes are supported:
 
@@ -951,7 +951,7 @@ HTTP/1.1 200 Success
 }
 ```
 
-### Delete EVENTCERTAINTY
+### Delete EventCertainty
 
 To delete existing event certainty, send a `DELETE` request to `https://api.ewea.io/v1/predefines/eventcertainties/:id`.
 
@@ -991,7 +991,7 @@ HTTP/1.1 200 Success
 }
 ```
 
-### List All EVENTCERTAINTY
+### List All EventCertainty
 
 To list all event certainties, send a `GET` request to `https://api.ewea.io/v1/predefines/eventcertainties`.
 
