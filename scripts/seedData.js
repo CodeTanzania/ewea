@@ -9,7 +9,10 @@ const ensureConnection = next => {
 
 const ensureIndexes = next => {
   debug('Seeding');
-  return syncIndexes(error => next(error));
+  return syncIndexes(error => {
+    warn('Ensure Indexes Failed', error);
+    next();
+  });
 };
 
 const seed = next => {

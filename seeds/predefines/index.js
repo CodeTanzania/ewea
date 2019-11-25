@@ -5,6 +5,7 @@ const urgencies = require('./eventurgencies');
 const certainties = require('./eventcertainties');
 const types = require('./eventtypes');
 const groups = require('./eventgroups');
+const featureTypes = require('./featuretypes');
 
 const predefines = [
   ...functions,
@@ -14,6 +15,7 @@ const predefines = [
   ...certainties,
   ...types,
   ...groups,
+  ...featureTypes,
 ];
 
 module.exports = predefines;
