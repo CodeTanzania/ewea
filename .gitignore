@@ -21,6 +21,7 @@ coverage
 
 # Editors
 .nvimrc
+.idea
 
 # Config
 .env

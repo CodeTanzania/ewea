@@ -784,7 +784,258 @@ HTTP/1.1 200 Success
 
 ## EventSeverity
 
-> TODO
+`EventSeverity` The code denoting the severity of the subject event of the alert message
+
+### EventSeverity Schema
+
+`EventSeverity` have the following attributes:
+
+<br />
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event severity.                                |
+|description| String |                             Human-translatable-readable description for the event severity.                              |
+|   name    | String |                             Human-translatable-readable name for the event severity.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+
+### Create EventSeverity
+
+To create a new event severity, send a `POST` request to `https://api.ewea.io/v1/predefines/eventseverities`. The following attributes are supported:
+
+<br/>
+
+| Name  |  Type  |                                   Description                                   | Required |
+| :---: | :----: | :-----------------------------------------------------------------------------: | :------: |
+| description  | Object |              Human-translatable-readable description for the event severity.|  false   |
+| name  | Object |              Human-translatable-readable name for the event severity.              |   true   |
+| color | String | A color code(in hexadecimal format) used to differentiate event severity visually. |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/eventseverities \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Be arer <apiKey>' \
+--data '{
+    "description": { "en": "Extraordinary threat to life or property" },
+    "name": { "en": "Extreme" },
+    "color": "#86C7E8"
+  }'
+```
+
+The response will be a `JSON object` with the standard event severity attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event severity.                                |
+|   description    | Object |                        Human-translatable-readable description for the event severity.                             |
+|   name    | Object |                             Human-translatable-readable name for the event severity.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+ "description": { "en": "Extraordinary threat to life or property" },
+ "name": { "en": "Extreme" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Retrieve EventSeverity
+
+To get a event severity, send a `GET` request to `https://api.ewea.io/v1/predefines/eventseverities/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventseverities/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event severity attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event severity.                                |
+|   description    | Object |                        Human-translatable-readable description for the event severity.                            |
+|   name    | Object |                             Human-translatable-readable name for the event severity.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+  "description": { "en": "Extraordinary threat to life or property" },
+  "name": { "en": "Extreme" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Update EventSeverity
+
+To update existing event severity, send a `PATCH` request to `https://api.ewea.io/v1/predefines/eventseverities/:id`. The following attributes are supported:
+
+<br/>
+
+| Name  |  Type  |                      Description                      | Required |
+| :---: | :----: | :---------------------------------------------------: | :------: |
+| description  | Object | Human-translatable-readable description for the event severity. |
+| name  | Object | Human-translatable-readable name for the event severity. |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/eventseverities/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "description": { "en": "Extraordinary threat to life or property" },
+     "name": { "en": "Extreme" },
+  }'
+```
+
+The response will be a `JSON object` with the standard event severity attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event severity.                                |
+|   description    | String |                             Unique Human-readable given code of this event severity.                             |
+|   name    | Object |                             Human-translatable-readable name for the event severity.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+ "description": { "en": "Extraordinary threat to life or property" },
+  "name": { "en": "Extreme" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### Delete EventSeverity
+
+To delete existing event severity, send a `DELETE` request to `https://api.ewea.io/v1/predefines/eventseverities/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/eventseverities/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event severity attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event severity.                                |
+|   description    | Object |                        Human-translatable-readable description for the event severity.                             |
+|   name    | Object |                             Human-translatable-readable name for the event severity.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+  "description": { "en": "Extraordinary threat to life or property" },
+  "name": { "en": "Extreme" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### List All EventSeverity
+
+To list all event severities, send a `GET` request to `https://api.ewea.io/v1/predefines/eventseverities`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventseverities \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of event severity with the standard event severity attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                  |
+| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this event severity.                                |
+|   description    | Object |                        Human-translatable-readable description for the event severity.                             |
+|   name    | Object |                             Human-translatable-readable name for the event severity.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+    "_id": "5c6ea7dae1dc700018aac95b",
+     "description": { "en": "Extraordinary threat to life or property" },
+     "name": { "en": "Extreme" },
+    "color": "#86C7EE"
+    "updatedAt": "2019-02-21T13:30:04.340Z",
+    "createdAt": "2019-02-21T13:30:04.340Z"
+  }],
+  "total": 26,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 3,
+  "lastModified": "2019-02-21T13:30:04.340Z"
+}
+```
+
 
 ## EventCertainty
 
