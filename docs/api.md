@@ -397,9 +397,9 @@ To update existing event group, send a `PATCH` request to `https://api.ewea.io/v
 
 <br/>
 
-| Name  |  Type  |                      Description                      | Required |
-| :---: | :----: | :---------------------------------------------------: | :------: |
-| name  | Object | Human-translatable-readable name for the event group. |
+| Name |  Type  |                      Description                      | Required |
+| :--: | :----: | :---------------------------------------------------: | :------: |
+| name | Object | Human-translatable-readable name for the event group. |
 
 > Example Request
 
@@ -649,9 +649,9 @@ To update existing event type, send a `PATCH` request to `https://api.ewea.io/v1
 
 <br/>
 
-| Name  |  Type  |                     Description                      | Required |
-| :---: | :----: | :--------------------------------------------------: | :------: |
-| name  | Object | Human-translatable-readable name for the event type. |
+| Name |  Type  |                     Description                      | Required |
+| :--: | :----: | :--------------------------------------------------: | :------: |
+| name | Object | Human-translatable-readable name for the event type. |
 
 > Example Request
 
@@ -792,14 +792,14 @@ HTTP/1.1 200 Success
 
 <br />
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event severity.                                |
-|description| String |                             Human-translatable-readable description for the event severity.                              |
-|   name    | String |                             Human-translatable-readable name for the event severity.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+|    Name     |  Type  |                                                   Description                                                    |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event severity.                                |
+| description | String |                         Human-translatable-readable description for the event severity.                          |
+|    name     | String |                             Human-translatable-readable name for the event severity.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event severities visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
 
 ### Create EventSeverity
 
@@ -807,11 +807,11 @@ To create a new event severity, send a `POST` request to `https://api.ewea.io/v1
 
 <br/>
 
-| Name  |  Type  |                                   Description                                   | Required |
-| :---: | :----: | :-----------------------------------------------------------------------------: | :------: |
-| description  | Object |              Human-translatable-readable description for the event severity.|  false   |
-| name  | Object |              Human-translatable-readable name for the event severity.              |   true   |
-| color | String | A color code(in hexadecimal format) used to differentiate event severity visually. |  false   |
+|    Name     |  Type  |                                    Description                                     | Required |
+| :---------: | :----: | :--------------------------------------------------------------------------------: | :------: |
+| description | Object |          Human-translatable-readable description for the event severity.           |  false   |
+|    name     | Object |              Human-translatable-readable name for the event severity.              |   true   |
+|    color    | String | A color code(in hexadecimal format) used to differentiate event severity visually. |  false   |
 
 > Example Request
 
@@ -832,14 +832,14 @@ The response will be a `JSON object` with the standard event severity attributes
 
 <br/>
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event severity.                                |
-|   description    | Object |                        Human-translatable-readable description for the event severity.                             |
-|   name    | Object |                             Human-translatable-readable name for the event severity.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+|    Name     |  Type  |                                                   Description                                                    |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event severity.                                |
+| description | Object |                         Human-translatable-readable description for the event severity.                          |
+|    name     | Object |                             Human-translatable-readable name for the event severity.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event severities visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
 
 > Example Response
 
@@ -872,14 +872,14 @@ The response will be a `JSON object` with the standard event severity attributes
 
 <br/>
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event severity.                                |
-|   description    | Object |                        Human-translatable-readable description for the event severity.                            |
-|   name    | Object |                             Human-translatable-readable name for the event severity.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+|    Name     |  Type  |                                                   Description                                                    |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event severity.                                |
+| description | Object |                         Human-translatable-readable description for the event severity.                          |
+|    name     | Object |                             Human-translatable-readable name for the event severity.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event severities visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
 
 > Example Response
 
@@ -901,10 +901,10 @@ To update existing event severity, send a `PATCH` request to `https://api.ewea.i
 
 <br/>
 
-| Name  |  Type  |                      Description                      | Required |
-| :---: | :----: | :---------------------------------------------------: | :------: |
-| description  | Object | Human-translatable-readable description for the event severity. |
-| name  | Object | Human-translatable-readable name for the event severity. |
+|    Name     |  Type  |                           Description                           | Required |
+| :---------: | :----: | :-------------------------------------------------------------: | :------: |
+| description | Object | Human-translatable-readable description for the event severity. |
+|    name     | Object |    Human-translatable-readable name for the event severity.     |
 
 > Example Request
 
@@ -924,14 +924,14 @@ The response will be a `JSON object` with the standard event severity attributes
 
 <br/>
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event severity.                                |
-|   description    | String |                             Unique Human-readable given code of this event severity.                             |
-|   name    | Object |                             Human-translatable-readable name for the event severity.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+|    Name     |  Type  |                                                   Description                                                    |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event severity.                                |
+| description | String |                             Unique Human-readable given code of this event severity.                             |
+|    name     | Object |                             Human-translatable-readable name for the event severity.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event severities visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
 
 > Example Response
 
@@ -964,14 +964,14 @@ The response will be a `JSON object` with the standard event severity attributes
 
 <br/>
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event severity.                                |
-|   description    | Object |                        Human-translatable-readable description for the event severity.                             |
-|   name    | Object |                             Human-translatable-readable name for the event severity.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+|    Name     |  Type  |                                                   Description                                                    |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event severity.                                |
+| description | Object |                         Human-translatable-readable description for the event severity.                          |
+|    name     | Object |                             Human-translatable-readable name for the event severity.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event severities visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
 
 > Example Response
 
@@ -1004,14 +1004,14 @@ The response will be a `JSON object` with a `data key`. The values in the `data 
 
 <br/>
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event severity.                                |
-|   description    | Object |                        Human-translatable-readable description for the event severity.                             |
-|   name    | Object |                             Human-translatable-readable name for the event severity.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event severities visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+|    Name     |  Type  |                                                   Description                                                    |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event severity.                                |
+| description | Object |                         Human-translatable-readable description for the event severity.                          |
+|    name     | Object |                             Human-translatable-readable name for the event severity.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event severities visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
 
 > Example Response:
 
@@ -1036,7 +1036,6 @@ HTTP/1.1 200 Success
 }
 ```
 
-
 ## EventCertainty
 
 `EventCertainty` The code denoting the certainty of the subject event of the alert message
@@ -1047,14 +1046,14 @@ HTTP/1.1 200 Success
 
 <br />
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event certainty.                                |
-|description| String |                             Human-translatable-readable description for the event certainty.                              |
-|   name    | String |                             Human-translatable-readable name for the event certainty.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event certainty.                                |
+| description | String |                         Human-translatable-readable description for the event certainty.                          |
+|    name     | String |                             Human-translatable-readable name for the event certainty.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
 
 ### Create EventCertainty
 
@@ -1062,11 +1061,11 @@ To create a new event certainty, send a `POST` request to `https://api.ewea.io/v
 
 <br/>
 
-| Name  |  Type  |                                   Description                                   | Required |
-| :---: | :----: | :-----------------------------------------------------------------------------: | :------: |
-| description  | Object |              Human-translatable-readable description for the event certainty.|  false   |
-| name  | Object |              Human-translatable-readable name for the event certainty.              |   true   |
-| color | String | A color code(in hexadecimal format) used to differentiate event certainty visually. |  false   |
+|    Name     |  Type  |                                     Description                                     | Required |
+| :---------: | :----: | :---------------------------------------------------------------------------------: | :------: |
+| description | Object |          Human-translatable-readable description for the event certainty.           |  false   |
+|    name     | Object |              Human-translatable-readable name for the event certainty.              |   true   |
+|    color    | String | A color code(in hexadecimal format) used to differentiate event certainty visually. |  false   |
 
 > Example Request
 
@@ -1087,14 +1086,14 @@ The response will be a `JSON object` with the standard event certainty attribute
 
 <br/>
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event certainty.                                |
-|   description    | Object |                        Human-translatable-readable description for the event certainty.                             |
-|   name    | Object |                             Human-translatable-readable name for the event certainty.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event certainty.                                |
+| description | Object |                         Human-translatable-readable description for the event certainty.                          |
+|    name     | Object |                             Human-translatable-readable name for the event certainty.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
 
 > Example Response
 
@@ -1127,14 +1126,14 @@ The response will be a `JSON object` with the standard event certainty attribute
 
 <br/>
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event certainty.                                |
-|   description    | Object |                        Human-translatable-readable description for the event certainty.                            |
-|   name    | Object |                             Human-translatable-readable name for the event certainty.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event certainty.                                |
+| description | Object |                         Human-translatable-readable description for the event certainty.                          |
+|    name     | Object |                             Human-translatable-readable name for the event certainty.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
 
 > Example Response
 
@@ -1156,10 +1155,10 @@ To update existing event certainty, send a `PATCH` request to `https://api.ewea.
 
 <br/>
 
-| Name  |  Type  |                      Description                      | Required |
-| :---: | :----: | :---------------------------------------------------: | :------: |
-| description  | Object | Human-translatable-readable description for the event certainty. |
-| name  | Object | Human-translatable-readable name for the event certainty. |
+|    Name     |  Type  |                           Description                            | Required |
+| :---------: | :----: | :--------------------------------------------------------------: | :------: |
+| description | Object | Human-translatable-readable description for the event certainty. |
+|    name     | Object |    Human-translatable-readable name for the event certainty.     |
 
 > Example Request
 
@@ -1179,14 +1178,14 @@ The response will be a `JSON object` with the standard event certainty attribute
 
 <br/>
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event certainty.                                |
-|   description    | String |                             Unique Human-readable given code of this event certainty.                             |
-|   name    | Object |                             Human-translatable-readable name for the event certainty.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event certainty.                                |
+| description | String |                             Unique Human-readable given code of this event certainty.                             |
+|    name     | Object |                             Human-translatable-readable name for the event certainty.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
 
 > Example Response
 
@@ -1219,14 +1218,14 @@ The response will be a `JSON object` with the standard event certainty attribute
 
 <br/>
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event certainty.                                |
-|   description    | Object |                        Human-translatable-readable description for the event certainty.                             |
-|   name    | Object |                             Human-translatable-readable name for the event certainty.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event certainty.                                |
+| description | Object |                         Human-translatable-readable description for the event certainty.                          |
+|    name     | Object |                             Human-translatable-readable name for the event certainty.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
 
 > Example Response
 
@@ -1259,14 +1258,14 @@ The response will be a `JSON object` with a `data key`. The values in the `data 
 
 <br/>
 
-|   Name    |  Type  |                                                  Description                                                  |
-| :-------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
-|   \_id    | String |                               Unique universal identifier of this event certainty.                                |
-|   description    | Object |                        Human-translatable-readable description for the event certainty.                             |
-|   name    | Object |                             Human-translatable-readable name for the event certainty.                             |
-|   color   | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.                |
-| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
-| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event certainty.                                |
+| description | Object |                         Human-translatable-readable description for the event certainty.                          |
+|    name     | Object |                             Human-translatable-readable name for the event certainty.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.               |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
 
 > Example Response:
 
@@ -1291,10 +1290,282 @@ HTTP/1.1 200 Success
 }
 ```
 
-
 ## EventFunction
 
-> TODO
+`EventFunction` groups emergency response actitvities
+
+### EventFunction Schema
+
+`EventFunction` have the following attributes:
+
+<br />
+
+|     Name     |  Type  |                                                   Description                                                    |
+| :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     name     | Object |                             Human-translatable-readable name for the event function.                             |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
+| description  | Object |                         Human-translatable-readable description for the event function.                          |
+|     code     | String |                             Unique human-readable given code of this event function.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event functions visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was updated. |
+
+### Create EventFunction
+
+To create a new event function, send a `POST` request to `https://api.ewea.io/v1/predefines/eventfunctions`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                                    Description                                     | Required |
+| :---------: | :----: | :--------------------------------------------------------------------------------: | :------: |
+|    code     | String |              Unique human-readable given code of this event function.              |  false   |
+|    name     | Object |              Human-translatable-readable name for the event function.              |   true   |
+| description | Object |          Human-translatable-readable description for the event function.           |  false   |
+|    color    | String | A color code(in hexadecimal format) used to differentiate event function visually. |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/eventfunctions \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "code": "DBM",
+    "name": { "en": "Dead Bodies Management" },
+    "color": "#F9C5A7"
+  }'
+```
+
+The response will be a `JSON object` with the standard event group attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                   Description                                                    |
+| :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     name     | Object |                             Human-translatable-readable name for the event function.                             |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
+| description  | Object |                         Human-translatable-readable description for the event function.                          |
+|     code     | String |                             Unique human-readable given code of this event function.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event functions visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5ddbbc871283e3131b2d41f4",
+  "name": { "en": "Dead Bodies Management" },
+  "abbreviation": { "en": "DBM" },
+  "description": { "en": "" },
+  "code": "DBM",
+  "color": "#F9C5A7"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Retrieve EventFunction
+
+To get a event frunction, send a `GET` request to `https://api.ewea.io/v1/predefines/eventfunctions/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventfunctions/5ddbbc871283e3131b2d41f4 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event function attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                   Description                                                    |
+| :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     name     | Object |                             Human-translatable-readable name for the event function.                             |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
+| description  | Object |                         Human-translatable-readable description for the event function.                          |
+|     code     | String |                             Unique human-readable given code of this event function.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event functions visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5ddbbc871283e3131b2d41f4",
+  "code": "DBM",
+  "name": { "en": "Dead Bodies Management" },
+  "description": { "en": "" },
+  "abbreviation": { "en": "DBM" },
+  "color": "#F9C5A7"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Update EventFunction
+
+To update existing event function, send a `PATCH` request to `https://api.ewea.io/v1/predefines/eventfunctions/:id`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                           Description                           | Required |
+| :---------: | :----: | :-------------------------------------------------------------: | :------: |
+|    name     | Object |    Human-translatable-readable name for the event function.     |   true   |
+| description | Object | Human-translatable-readable description for the event function. |  false   |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/eventfunctions/5ddbbc871283e3131b2d41f4 \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "name": { "en": "Dead Bodies Management" },
+    "description": { "en": "" },
+  }'
+```
+
+The response will be a `JSON object` with the standard event function attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                   Description                                                    |
+| :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     name     | Object |                             Human-translatable-readable name for the event function.                             |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
+| description  | Object |                         Human-translatable-readable description for the event function.                          |
+|     code     | String |                             Unique human-readable given code of this event function.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event functions visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5ddbbc871283e3131b2d41f4",
+  "code": "DBM",
+  "name": { "en": "Dead Bodies Management" },
+  "abbreviation": { "en": "DBM" },
+  "description": { "en": "" },
+  "color": "#F9C5A7"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Delete EventFunction
+
+To delete existing event group, send a `DELETE` request to `https://api.ewea.io/v1/predefines/eventfunctions/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/eventfunctions/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event function attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                   Description                                                    |
+| :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     name     | Object |                             Human-translatable-readable name for the event function.                             |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
+| description  | Object |                         Human-translatable-readable description for the event function.                          |
+|     code     | String |                             Unique human-readable given code of this event function.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event functions visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5ddbbc871283e3131b2d41f4",
+  "code": "DBM",
+  "name": { "en": "Dead Bodies Management" },
+  "abbreviation": { "en": "DBM" },
+  "description": { "en": "" },
+  "color": "#F9C5A7"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### List All EventFuntion
+
+To list all event functions, send a `GET` request to `https://api.ewea.io/v1/predefines/`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventfunctions \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of eventfunction with the standard event function attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                   Description                                                    |
+| :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     name     | Object |                             Human-translatable-readable name for the event function.                             |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
+| description  | Object |                         Human-translatable-readable description for the event function.                          |
+|     code     | String |                             Unique human-readable given code of this event function.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event functions visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+  "_id": "5ddbbc871283e3131b2d41f4",
+  "name": { "en": "Dead Bodies Management" },
+  "abbreviation": { "en": "DBM" },
+  "description": { "en": "" },
+  "code": "DBM",
+  "color": "#F9C5A7"
+  "updatedAt": "2019-11-25T12:48:43.342Z",
+  "createdAt": "2019-11-25T11:35:35.519Z"
+  }],
+  "total": 26,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 3,
+  "lastModified": "2019-11-25T12:48:43.342Z"
+}
+```
 
 ## EventAction
 
