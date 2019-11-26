@@ -1587,6 +1587,22 @@ HTTP/1.1 200 Success
 
 > TODO
 
+## AdministrativeLevel
+
+> TODO
+
+## AdministrativeArea
+
+> TODO
+
+## FeatureType
+
+> TODO
+
+## Feature
+
+> TODO
+
 # Acknowledgements
 
 © 2019, EWEA. Released under the <a href="https://github.com/CodeTanzania/ewea/blob/develop/LICENSE" target="_blank">MIT License</a>.
