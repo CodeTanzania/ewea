@@ -7,6 +7,7 @@ const types = require('./eventtypes');
 const groups = require('./eventgroups');
 const featureTypes = require('./featuretypes');
 const partyGroups = require('./partygroups');
+const partyRoles = require('./partyroles');
 
 const predefines = [
   ...functions,
@@ -18,6 +19,7 @@ const predefines = [
   ...groups,
   ...featureTypes,
   ...partyGroups,
+  ...partyRoles,
 ];
 
 module.exports = predefines;

@@ -1,4 +1,4 @@
-const { waterfall } = require('async');
+const { parallel, waterfall } = require('async');
 const { warn, debug } = require('@lykmapipo/logger');
 const { connect, syncIndexes, Predefine } = require('../src/database');
 
@@ -20,16 +20,19 @@ const ensureIndexes = next => {
 };
 
 const seed = next => {
-  return Predefine.seed(next);
+  const seeds = {
+    predefines: then => Predefine.seed(then),
+  };
+  return parallel(seeds, next);
 };
 
 const tasks = [ensureConnection, ensureIndexes, seed];
 
-waterfall(tasks, (error, results) => {
+waterfall(tasks, error => {
   if (error) {
     warn('Fail Seeding Data', error);
   } else {
-    debug('Finish Seeding Data', results);
+    debug('Finish Seeding Data');
   }
   process.exit(0);
 });

@@ -281,6 +281,16 @@ curl --request GET \
 
 ### Signin
 
+> TODO
+
+## PartyRole
+
+> TODO
+
+## PartyGroup
+
+> TODO
+
 ## EventGroup
 
 `EventGroup` group emergency events based on the nature they fall into. i.e
