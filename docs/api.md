@@ -283,6 +283,10 @@ curl --request GET \
 
 > TODO
 
+## Party
+
+> TODO
+
 ## PartyRole
 
 > TODO
