@@ -48,6 +48,13 @@ const roles = [
     strings: { name: { en: 'Unknown' } },
     booleans: { default: true },
   },
+  {
+    namespace: 'PartyRole',
+    strings: { name: { en: 'Administrator' } },
+    populate: {
+      'relations.permissions': { model: 'Permission', match: {}, array: true },
+    },
+  },
 ];
 
 module.exports = roles;
