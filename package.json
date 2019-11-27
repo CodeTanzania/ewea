@@ -122,7 +122,7 @@
     "@lykmapipo/mongoose-exportable": ">=0.3.14",
     "@lykmapipo/permission": ">=0.8.12",
     "@lykmapipo/postman": ">=0.16.1",
-    "@lykmapipo/predefine": ">=1.1.0",
+    "@lykmapipo/predefine": ">=1.2.0",
     "async": ">=3.1.0",
     "express": ">=4.17.1",
     "kue": ">=0.11.6",
