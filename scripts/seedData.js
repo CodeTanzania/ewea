@@ -1,6 +1,12 @@
 const { parallel, waterfall } = require('async');
 const { warn, debug } = require('@lykmapipo/logger');
-const { connect, syncIndexes, Predefine } = require('../src/database');
+const { listPermissions } = require('@lykmapipo/predefine');
+const {
+  connect,
+  syncIndexes,
+  Predefine,
+  Permission,
+} = require('../src/database');
 
 const ensureConnection = next => {
   debug('Start Seeding Data');
@@ -21,6 +27,8 @@ const ensureIndexes = next => {
 
 const seed = next => {
   const seeds = {
+    allPermissions: then => Permission.seed(then),
+    predefinePermissions: then => Permission.seed(listPermissions(), then),
     predefines: then => Predefine.seed(then),
   };
   return parallel(seeds, next);
