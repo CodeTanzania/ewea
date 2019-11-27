@@ -109,7 +109,7 @@
   "dependencies": {
     "@codetanzania/emis-feature": ">=1.4.3",
     "@codetanzania/emis-role": ">=1.5.2",
-    "@codetanzania/emis-stakeholder": ">=1.9.0",
+    "@codetanzania/emis-stakeholder": ">=2.0.0",
     "@lykmapipo/common": ">=0.28.11",
     "@lykmapipo/env": ">=0.15.0",
     "@lykmapipo/express-common": ">=0.17.14",
