@@ -277,6 +277,10 @@ curl --request GET \
 
 # Core Resources
 
+## Authentication
+
+### Signin
+
 ## EventGroup
 
 `EventGroup` group emergency events based on the nature they fall into. i.e
