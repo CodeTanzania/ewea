@@ -8,8 +8,8 @@ const { partyRouter } = require('@codetanzania/emis-stakeholder');
 
 const { connect } = require('./database');
 
-debug('Http routers mount started');
+debug('Start Mounting Http Routers');
 mount(predefineRouter, permissionRouter, roleRouter, partyRouter);
-debug('Http routers mount finished');
+debug('Finish Mounting Http Routers');
 
 module.exports = { app, start, connect };

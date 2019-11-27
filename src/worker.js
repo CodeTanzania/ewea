@@ -2,13 +2,13 @@ const { error, debug } = require('@lykmapipo/logger');
 const { start, listen } = require('@lykmapipo/postman');
 const { connect } = require('./database');
 
-debug('Worker starting');
+debug('Start Launching Worker');
 
 // connect to database
 connect(err => {
   // throw if error
   if (err) {
-    error('Worker start failed', err);
+    error('Fail Launching Worker', err);
     throw err;
   }
 
@@ -20,5 +20,5 @@ connect(err => {
   // start kue http & ui
   listen();
 
-  debug('Worker started');
+  debug('Finish Launching Worker');
 });
