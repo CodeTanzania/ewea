@@ -118,7 +118,7 @@
     "@lykmapipo/i18n": ">=0.1.17",
     "@lykmapipo/kue-common": ">=0.6.0",
     "@lykmapipo/logger": ">=0.5.0",
-    "@lykmapipo/mongoose-common": ">=0.27.1",
+    "@lykmapipo/mongoose-common": ">=0.28.0",
     "@lykmapipo/mongoose-exportable": ">=0.3.14",
     "@lykmapipo/permission": ">=0.8.12",
     "@lykmapipo/postman": ">=0.16.1",
