@@ -293,7 +293,258 @@ curl --request GET \
 
 ## PartyGroup
 
-> TODO
+`PartyGroup` group of parties based on a well know kinds or types they fall into.
+eg. Government Agencies, Ambulance Services etc...
+
+### PartyGroup Schema
+
+`PartyGroup` have the following attributes:
+
+<br />
+
+|    Name     |  Type  |                                                  Description                                                  |
+| :---------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party group.                                |
+| description | Object |                         Human-translatable-readable description for the party group.                          |
+|    name     | Object |                             Human-translatable-readable name for the party group.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party groups visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was updated. |
+
+### Create PartyGroup
+
+To create a new party group, send a `POST` request to `https://api.ewea.io/v1/predefines/partygroups`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                                   Description                                   | Required |
+| :---------: | :----: | :-----------------------------------------------------------------------------: | :------: |
+| description | Object |          Human-translatable-readable description for the party group.           |  false   |
+|    name     | Object |              Human-translatable-readable name for the party group.              |   true   |
+|    color    | String | A color code(in hexadecimal format) used to differentiate party group visually. |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/partygroups \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "description": { "en": "Group of Agencies belonging to the government" },
+    "name": { "en": "Government Agencies" },
+    "color": "#86C7E8"
+  }'
+```
+
+The response will be a `JSON object` with the standard party group attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                  Description                                                  |
+| :---------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party group.                                |
+| description | Object |                         Human-translatable-readable description for the party group.                          |
+|    name     | Object |                             Human-translatable-readable name for the party group.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party groups visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+ "description": { "en": "Group of Agencies belonging to the government" },
+ "name": { "en": "Government Agencies" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Retrieve PartyGroup
+
+To get a party group, send a `GET` request to `https://api.ewea.io/v1/predefines/partygroups/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/partygroups/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard party group attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                  Description                                                  |
+| :---------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party group.                                |
+| description | Object |                         Human-translatable-readable description for the party group.                          |
+|    name     | Object |                             Human-translatable-readable name for the party group.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party groups visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+  "description": { "en": "Group of Agencies belonging to the government" },
+  "name": { "en": "Government Agencies" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Update PartyGroup
+
+To update existing party group, send a `PATCH` request to `https://api.ewea.io/v1/predefines/partygroups/:id`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                         Description                          | Required |
+| :---------: | :----: | :----------------------------------------------------------: | :------: |
+| description | Object | Human-translatable-readable description for the party group. |
+|    name     | Object |    Human-translatable-readable name for the party group.     |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/partygroups/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "description": { "en": "Group of Agencies belonging to the government" },
+     "name": { "en": "Government Agencies" },
+  }'
+```
+
+The response will be a `JSON object` with the standard party group attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                  Description                                                  |
+| :---------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party group.                                |
+| description | String |                             Unique Human-readable given code of this party group.                             |
+|    name     | Object |                             Human-translatable-readable name for the party group.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party groups visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+ "description": { "en": "Group of Agencies belonging to the government" },
+  "name": { "en": "Government Agencies" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### Delete PartyGroup
+
+To delete existing party group, send a `DELETE` request to `https://api.ewea.io/v1/predefines/partygroups/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/partygroups/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard party group attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                  Description                                                  |
+| :---------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party group.                                |
+| description | Object |                         Human-translatable-readable description for the party group.                          |
+|    name     | Object |                             Human-translatable-readable name for the party group.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party groups visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+  "description": { "en": "Group of Agencies belonging to the government" },
+  "name": { "en": "Government Agencies" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### List All PartyGroup
+
+To list all party groups, send a `GET` request to `https://api.ewea.io/v1/predefines/partygroups`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/partygroups \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of party group with the standard party group attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                  Description                                                  |
+| :---------: | :----: | :-----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party group.                                |
+| description | Object |                         Human-translatable-readable description for the party group.                          |
+|    name     | Object |                             Human-translatable-readable name for the party group.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party groups visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+    "_id": "5c6ea7dae1dc700018aac95b",
+     "description": { "en": "Group of Agencies belonging to the government" },
+     "name": { "en": "Government Agencies" },
+    "color": "#86C7EE"
+    "updatedAt": "2019-02-21T13:30:04.340Z",
+    "createdAt": "2019-02-21T13:30:04.340Z"
+  }],
+  "total": 26,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 3,
+  "lastModified": "2019-02-21T13:30:04.340Z"
+}
+```
 
 ## EventGroup
 
