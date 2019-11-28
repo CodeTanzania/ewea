@@ -6,6 +6,7 @@ const certainties = require('./eventcertainties');
 const types = require('./eventtypes');
 const groups = require('./eventgroups');
 const featureTypes = require('./featuretypes');
+const administrativeLevels = require('./administrativelevels');
 
 const predefines = [
   ...functions,
@@ -16,6 +17,7 @@ const predefines = [
   ...types,
   ...groups,
   ...featureTypes,
+  ...administrativeLevels,
 ];
 
 module.exports = predefines;
