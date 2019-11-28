@@ -277,6 +277,24 @@ curl --request GET \
 
 # Core Resources
 
+## Authentication
+
+### Signin
+
+> TODO
+
+## Party
+
+> TODO
+
+## PartyRole
+
+> TODO
+
+## PartyGroup
+
+> TODO
+
 ## EventGroup
 
 `EventGroup` group emergency events based on the nature they fall into. i.e
@@ -1584,6 +1602,22 @@ HTTP/1.1 200 Success
 > TODO
 
 ## EventChangeLog
+
+> TODO
+
+## AdministrativeLevel
+
+> TODO
+
+## AdministrativeArea
+
+> TODO
+
+## FeatureType
+
+> TODO
+
+## Feature
 
 > TODO
 

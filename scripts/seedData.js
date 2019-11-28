@@ -1,31 +1,48 @@
-const { waterfall } = require('async');
+const { parallel, waterfall } = require('async');
 const { warn, debug } = require('@lykmapipo/logger');
-const { connect, syncIndexes, Predefine } = require('../src/database');
+const { listPermissions } = require('@lykmapipo/predefine');
+const {
+  connect,
+  syncIndexes,
+  Predefine,
+  Permission,
+  Party,
+} = require('../src/database');
 
 const ensureConnection = next => {
-  debug('Seeding start');
+  debug('Start Seeding Data');
   return connect(error => next(error));
 };
 
 const ensureIndexes = next => {
-  debug('Seeding');
-  return syncIndexes(error => {
-    warn('Ensure Indexes Failed', error);
+  debug('Start Syncing Indexes');
+  return syncIndexes((error, results) => {
+    if (error) {
+      warn('Fail Syncing Indexes', error);
+    } else {
+      debug('Finish Syncing Indexes', results);
+    }
     next();
   });
 };
 
 const seed = next => {
-  return Predefine.seed(next);
+  const seeds = {
+    allPermissions: then => Permission.seed(then),
+    predefinePermissions: then => Permission.seed(listPermissions(), then),
+    predefines: then => Predefine.seed(then),
+    parties: then => Party.seed(then),
+  };
+  return parallel(seeds, next);
 };
 
 const tasks = [ensureConnection, ensureIndexes, seed];
 
-waterfall(tasks, (error, results) => {
+waterfall(tasks, error => {
   if (error) {
-    warn('Seeding failed', error);
+    warn('Fail Seeding Data', error);
   } else {
-    debug('Seeding finished', results);
+    debug('Finish Seeding Data');
   }
   process.exit(0);
 });
