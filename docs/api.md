@@ -1940,7 +1940,7 @@ HTTP/1.1 200 Success
 |    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
 | description | Object |                         Human-translatable-readable description for the administrative level.                          |
 |    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
-|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|    level    | Number |                                                 Administrative level.                                                  |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
 
@@ -1950,12 +1950,12 @@ To create a new adminstrative level, send a `POST` request to `https://api.ewea.
 
 <br/>
 
-|    Name     |  Type  |                                       Description                                        | Required |
-| :---------: | :----: | :--------------------------------------------------------------------------------------: | :------: |
-|    name     | Object |              Human-translatable-readable name for the administrative level.              |   true   |
-| description | Object |          Human-translatable-readable description for the administrative level.           |  false   |
-|    color    | String | A color code(in hexadecimal format) used to differentiate administrative level visually. |  false   |
-|    level    | Number |             Human-translatable-readable level for the administrative level.              |   true   |
+|    Name     |             Type             |                                       Description                                        | Required |
+| :---------: | :--------------------------: | :--------------------------------------------------------------------------------------: | :------: |
+|    name     |            Object            |              Human-translatable-readable name for the administrative level.              |   true   |
+| description |            Object            |          Human-translatable-readable description for the administrative level.           |  false   |
+|    color    |            String            | A color code(in hexadecimal format) used to differentiate administrative level visually. |  false   |
+|    level    | Number Administrative level. |                                           true                                           |
 
 > Example Request
 
@@ -1983,7 +1983,7 @@ The response will be a `JSON object` with the standard administrative level attr
 |    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
 | description | Object |                         Human-translatable-readable description for the administrative level.                          |
 |    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
-|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|    level    | Number |                                                 Administrative level.                                                  |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
 
@@ -2025,7 +2025,7 @@ The response will be a `JSON object` with the standard administrative level attr
 |    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
 | description | Object |                         Human-translatable-readable description for the administrative level.                          |
 |    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
-|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|    level    | Number |                                                 Administrative level.                                                  |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
 
@@ -2050,11 +2050,11 @@ To update existing administrative level, send a `PATCH` request to `https://api.
 
 <br/>
 
-|    Name     |  Type  |                              Description                              | Required |
-| :---------: | :----: | :-------------------------------------------------------------------: | :------: |
-|    name     | Object |    Human-translatable-readable name for the administrative level.     |   true   |
-| description | Object | Human-translatable-readable description for the administrative level. |  false   |
-|    level    | Number |    Human-translatable-readable level for the administrative level.    |   true   |
+|            Name             |  Type  |                              Description                              | Required |
+| :-------------------------: | :----: | :-------------------------------------------------------------------: | :------: |
+|            name             | Object |    Human-translatable-readable name for the administrative level.     |   true   |
+|         description         | Object | Human-translatable-readable description for the administrative level. |  false   |
+| level Administrative level. |  true  |
 
 > Example Request
 
@@ -2081,7 +2081,7 @@ The response will be a `JSON object` with the standard administrative level attr
 |    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
 | description | Object |                         Human-translatable-readable description for the administrative level.                          |
 |    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
-|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|    level    | Number |                                                 Administrative level.                                                  |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
 
@@ -2123,7 +2123,7 @@ The response will be a `JSON object` with the standard administrative level attr
 |    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
 | description | Object |                         Human-translatable-readable description for the administrative level.                          |
 |    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
-|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|    level    | Number |                                                 Administrative level.                                                  |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
 
@@ -2165,7 +2165,7 @@ The response will be a `JSON object` with a `data key`. The values in the `data 
 |    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
 | description | Object |                         Human-translatable-readable description for the administrative level.                          |
 |    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
-|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|    level    | Number |                                                 Administrative level.                                                  |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
 
