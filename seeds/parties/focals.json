@@ -7,6 +7,7 @@
     "email": "lallyelias87@gmail.com",
     "mobile": "255714095061",
     "password": "$2a$10$rwpL/BhU8xY4fkf8SG7fHugF4PCioTJqy8BLU7BZ8N0YV.8Y1dXem",
+    "confirmedAt": "2018-12-01T11:22:37.185+00:00",
     "populate": {
       "group": {
         "match": {
@@ -39,6 +40,7 @@
     "email": "benmaruchu@gmail.com",
     "mobile": "255719818179",
     "password": "$2a$10$rwpL/BhU8xY4fkf8SG7fHugF4PCioTJqy8BLU7BZ8N0YV.8Y1dXem",
+    "confirmedAt": "2018-12-01T11:22:37.185+00:00",
     "populate": {
       "group": {
         "match": {
@@ -71,6 +73,7 @@
     "email": "navish45@gmail.com",
     "mobile": "255782120252",
     "password": "$2a$10$rwpL/BhU8xY4fkf8SG7fHugF4PCioTJqy8BLU7BZ8N0YV.8Y1dXem",
+    "confirmedAt": "2018-12-01T11:22:37.185+00:00",
     "populate": {
       "group": {
         "match": {
@@ -103,6 +106,7 @@
     "email": "mloweedgarvitus@gmail.com",
     "mobile": "255654988047",
     "password": "$2a$10$rwpL/BhU8xY4fkf8SG7fHugF4PCioTJqy8BLU7BZ8N0YV.8Y1dXem",
+    "confirmedAt": "2018-12-01T11:22:37.185+00:00",
     "populate": {
       "group": {
         "match": {
@@ -135,6 +139,7 @@
     "email": "charsbeaty@gmail.com",
     "mobile": "255687902733",
     "password": "$2a$10$rwpL/BhU8xY4fkf8SG7fHugF4PCioTJqy8BLU7BZ8N0YV.8Y1dXem",
+    "confirmedAt": "2018-12-01T11:22:37.185+00:00",
     "populate": {
       "group": {
         "match": {
