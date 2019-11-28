@@ -1607,7 +1607,272 @@ HTTP/1.1 200 Success
 
 ## AdministrativeLevel
 
-> TODO
+`AdministrativeLevel` Subdivisions of areas/territories/jurisdictions recognized by governments or other organizations for administrative purposes.
+
+### AdministrativeLevel Schema
+
+`AdministrativeLevel` have the following attributes:
+
+<br />
+
+|    Name     |  Type  |                                                      Description                                                       |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this administrative level.                                |
+|    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
+| description | Object |                         Human-translatable-readable description for the administrative level.                          |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
+|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
+
+### Create AdministrativeLevel
+
+To create a new adminstrative level, send a `POST` request to `https://api.ewea.io/v1/predefines/administrativelevels`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                                       Description                                        | Required |
+| :---------: | :----: | :--------------------------------------------------------------------------------------: | :------: |
+|    name     | Object |              Human-translatable-readable name for the administrative level.              |   true   |
+| description | Object |          Human-translatable-readable description for the administrative level.           |  false   |
+|    color    | String | A color code(in hexadecimal format) used to differentiate administrative level visually. |  false   |
+|    level    | Number |             Human-translatable-readable level for the administrative level.              |   true   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/administrativelevels \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "name": { "en": "City" },
+    "description": { "en": "The name of the metropolitan area itself" },
+    "level": 1
+    "color": "#F9C5A7"
+  }'
+```
+
+The response will be a `JSON object` with the standard administrative level attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                      Description                                                       |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this administrative level.                                |
+|    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
+| description | Object |                         Human-translatable-readable description for the administrative level.                          |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
+|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5dabbc871283e3131b2d41f2",
+  "name": { "en": "City" },
+  "description": { "en": "The name of the metropolitan area itself" },
+  "level": 1
+  "color": "#F9C5A7"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Retrieve AdministrativeLevel
+
+To get a administrative level, send a `GET` request to `https://api.ewea.io/v1/predefines/administrativelevels/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/administrativelevels/5dabbc871283e3131b2d41f2 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard administrative level attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                      Description                                                       |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this administrative level.                                |
+|    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
+| description | Object |                         Human-translatable-readable description for the administrative level.                          |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
+|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dabbc871283e3131b2d41f2",
+  "name": { "en": "City" },
+  "description": { "en": "The name of the metropolitan area itself" },
+  "level": 1
+  "color": "#F9C5A7"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Update AdministrativeLevel
+
+To update existing administrative level, send a `PATCH` request to `https://api.ewea.io/v1/predefines/administrativelevels/:id`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                              Description                              | Required |
+| :---------: | :----: | :-------------------------------------------------------------------: | :------: |
+|    name     | Object |    Human-translatable-readable name for the administrative level.     |   true   |
+| description | Object | Human-translatable-readable description for the administrative level. |  false   |
+|    level    | Number |    Human-translatable-readable level for the administrative level.    |   true   |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/administrativelevels/5dabbc871283e3131b2d41f2 \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "name": { "en": "City" },
+  "description": { "en": "" },
+  "level": 0
+  }'
+```
+
+The response will be a `JSON object` with the standard administrative level attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                      Description                                                       |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this administrative level.                                |
+|    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
+| description | Object |                         Human-translatable-readable description for the administrative level.                          |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
+|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dabbc871283e3131b2d41f2",
+  "name": { "en": "City" },
+  "description": { "en": "The name of the metropolitan area itself" },
+  "level": 0
+  "color": "#F9C5A7"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Delete AdministrativeLevel
+
+To delete existing administrative level, send a `DELETE` request to `https://api.ewea.io/v1/predefines/administrativelevels/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/administrativelevels/5dabbc871283e3131b2d41f2 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard administrative level attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                      Description                                                       |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this administrative level.                                |
+|    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
+| description | Object |                         Human-translatable-readable description for the administrative level.                          |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
+|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dabbc871283e3131b2d41f2",
+  "name": { "en": "City" },
+  "description": { "en": "" },
+  "level": 1
+  "color": "#F9C5A7"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### List All AdministrativeLevel
+
+To list all administrative level, send a `GET` request to `https://api.ewea.io/v1/predefines/`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/administrativelevels \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of administrativelevels with the standard administrative level attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                      Description                                                       |
+| :---------: | :----: | :--------------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this administrative level.                                |
+|    name     | Object |                             Human-translatable-readable name for the administrative level.                             |
+| description | Object |                         Human-translatable-readable description for the administrative level.                          |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate administrative levels visually.                |
+|    level    | Number |                            Human-translatable-readable level for the administrative level.                             |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+  "_id": "5dabbc871283e3131b2d41f2",
+  "name": { "en": "City" },
+  "description": { "en": "The name of the metropolitan area itself" },
+  "level": 1
+  "color": "#F9C5A7"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+  }],
+  "total": 26,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 3,
+  "lastModified": "2019-11-25T12:48:43.342Z"
+}
+```
 
 ## AdministrativeArea
 
