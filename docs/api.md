@@ -285,7 +285,326 @@ curl --request GET \
 
 ## Party
 
-> TODO
+`Party` A representation of an entity (e.g municipal, individual, agency,
+organization etc) consisting of contact information (e.g. name, e-mail
+addresses, phone numbers) and other descriptive information of interest in
+emergency(or disaster) management.
+
+It may be a self managed entity or division within another entity(party) in case there is hierarchy.
+
+### Party Schema
+
+`Party` have the following attributes:
+
+<br />
+
+|      Name       |  Type  |                                             Description                                             |
+| :-------------: | :----: | :-------------------------------------------------------------------------------------------------: |
+|      \_id       | String |                             Unique universal identifier of this party.                              |
+|      party      | String |  Top party(i.e company, organization etc) under which a party is derived(or member, part of etc).   |
+|      type       | String |                                   Human readable type of a party.                                   |
+|      group      | String |                                  Human readable group of a party.                                   |
+|      name       | Object |                                   Human readable name of a party.                                   |
+|  abbreviation   | String |                             Human readable short form of a party name.                              |
+|     locale      | string |              Defines the party's language, region and any special variant preferences.              |
+|      email      | String |                           Primary email address used to contact a party.                            |
+|     mobile      | String |                        Primary mobile phone number used to contact a party.                         |
+|    landline     | String |               Primary main-line(or fixed-line) phone number used to contact a party.                |
+|       fax       | String |                             Primary fax number used to contact a party.                             |
+|     website     | String |                              Primary website url(or link) of a party.                               |
+| physicalAddress | String |                              Primary physical address of party office.                              |
+|  postalAddress  | String |                               Primary postal address of party office.                               |
+|     centre      | Object |               A geo-location coordinates of a party main office or area of operation.               |
+|      area       | String |                 Geographical location of a party main office or area of operation.                  |
+|      role       | String |                                Assignable or given role to a party.                                 |
+|    createdAt    | String | A time value given in ISO8601 combined date and time format that represents when party was created. |
+|    updatedAt    | String | A time value given in ISO8601 combined date and time format that represents when party was updated. |
+
+### Create Party
+
+To create a new event group, send a `POST` request to `https://api.ewea.io/v1/parties`. The following attributes are supported:
+
+<br />
+
+|      Name       |  Type  |                                           Description                                            | Required |
+| :-------------: | :----: | :----------------------------------------------------------------------------------------------: | :------: |
+|      party      | String | Top party(i.e company, organization etc) under which a party is derived(or member, part of etc). |  false   |
+|      type       | String |                                 Human readable type of a party.                                  |  false   |
+|      group      | String |                                 Human readable group of a party.                                 |  false   |
+|      name       | Object |                                 Human readable name of a party.                                  |   true   |
+|  abbreviation   | String |                            Human readable short form of a party name.                            |  false   |
+|     locale      | string |            Defines the party's language, region and any special variant preferences.             |  false   |
+|      email      | String |                          Primary email address used to contact a party.                          |   true   |
+|     mobile      | String |                       Primary mobile phone number used to contact a party.                       |   true   |
+|    landline     | String |              Primary main-line(or fixed-line) phone number used to contact a party.              |  false   |
+|       fax       | String |                           Primary fax number used to contact a party.                            |  false   |
+|     website     | String |                             Primary website url(or link) of a party.                             |  false   |
+| physicalAddress | String |                            Primary physical address of party office.                             |  false   |
+|  postalAddress  | String |                             Primary postal address of party office.                              |  false   |
+|     centre      | Object |             A geo-location coordinates of a party main office or area of operation.              |  false   |
+|      area       | String |                Geographical location of a party main office or area of operation.                |  false   |
+|      role       | String |                               Assignable or given role to a party.                               |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/parties \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "mobile": "231789321212"
+  }'
+```
+
+The response will be a `JSON object` with the standard party attributes:
+
+|     Name     |  Type  |                                                Description                                                 |
+| :----------: | :----: | :--------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                 Unique universal identifier of this party.                                 |
+|     type     | String |                                      Human readable type of a party.                                       |
+|     name     | Object |                                      Human readable name of a party.                                       |
+| abbreviation | String |                                 Human readable short form of a party name.                                 |
+|    locale    | string |                 Defines the party's language, region and any special variant preferences.                  |
+|    email     | String |                               Primary email address used to contact a party.                               |
+|    mobile    | String |                            Primary mobile phone number used to contact a party.                            |
+|  createdAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
+|  updatedAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
+|   lockedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+    "type": "Focal Person",
+    "name": "John Doe",
+    "abbreviation": "JD",
+    "locale": "en",
+    "email": "john.doe@example.com",
+    "mobile": "255789321212",
+    "_id": "5ddfadfd8fadd0276378b0d6",
+    "updatedAt": "2019-11-28T11:22:37.254Z",
+    "createdAt": "2019-11-28T11:22:37.199Z",
+    "lockedAt": null
+}
+```
+
+### Retrieve Party
+
+To get a party, send a `GET` request to `https://api.ewea.io/v1/parties/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/parties/5ddfadfd8fadd0276378b0d6 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard party attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                Description                                                 |
+| :----------: | :----: | :--------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                 Unique universal identifier of this party.                                 |
+|     name     | Object |                                      Human readable name of a party.                                       |
+|     type     | String |                                      Human readable type of a party.                                       |
+| abbreviation | String |                                 Human readable short form of a party name.                                 |
+|    locale    | string |                 Defines the party's language, region and any special variant preferences.                  |
+|    email     | String |                               Primary email address used to contact a party.                               |
+|    mobile    | String |                            Primary mobile phone number used to contact a party.                            |
+|  createdAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
+|  updatedAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
+|   lockedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "type": "Focal Person",
+  "name": "John Doe",
+  "abbreviation": "JD",
+  "locale": "en",
+  "email": "john.doe@example.com",
+  "mobile": "255789321212",
+  "_id": "5ddfadfd8fadd0276378b0d6",
+  "updatedAt": "2019-11-28T11:22:37.254Z",
+  "createdAt": "2019-11-28T11:22:37.199Z",
+  "lockedAt": null
+}
+```
+
+### Update Party
+
+To update existing party, send a `PATCH` request to `https://api.ewea.io/v1/parties/:id`. The following attributes are supported:
+
+<br/>
+
+| Name |  Type  |           Description           |
+| :--: | :----: | :-----------------------------: |
+| name | Object | Human readable name of a party. |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/parties/5ddfadfd8fadd0276378b0d6 \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "name": "John Dae"
+  }'
+```
+
+The response will be a `JSON object` with the standard party attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                Description                                                 |
+| :----------: | :----: | :--------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                 Unique universal identifier of this party.                                 |
+|     name     | Object |                                      Human readable name of a party.                                       |
+|     type     | String |                                      Human readable type of a party.                                       |
+| abbreviation | String |                                 Human readable short form of a party name.                                 |
+|    locale    | string |                 Defines the party's language, region and any special variant preferences.                  |
+|    email     | String |                               Primary email address used to contact a party.                               |
+|    mobile    | String |                            Primary mobile phone number used to contact a party.                            |
+|  createdAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
+|  updatedAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
+|   lockedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "type": "Focal Person",
+  "name": "John Dae",
+  "abbreviation": "JD",
+  "locale": "en",
+  "email": "john.doe@example.com",
+  "mobile": "255789321212",
+  "_id": "5ddfadfd8fadd0276378b0d6",
+  "updatedAt": "2019-11-28T12:00:38.597Z",
+  "createdAt": "2019-11-28T11:22:37.199Z",
+  "lockedAt": null
+}
+```
+
+### Delete Party
+
+To delete existing party, send a `DELETE` request to `https://api.ewea.io/v1/parties/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/parties/5ddfadfd8fadd0276378b0d6 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard party attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                 Description                                                 |
+| :----------: | :----: | :---------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                 Unique universal identifier of this party.                                  |
+|     name     | Object |                                       Human readable name of a party.                                       |
+|     type     | String |                                       Human readable type of a party.                                       |
+| abbreviation | String |                                 Human readable short form of a party name.                                  |
+|    locale    | string |                  Defines the party's language, region and any special variant preferences.                  |
+|    email     | String |                               Primary email address used to contact a party.                                |
+|    mobile    | String |                            Primary mobile phone number used to contact a party.                             |
+|  createdAt   | String |     A time value given in ISO8601 combined date and time format that represents when party was created.     |
+|  updatedAt   | String |     A time value given in ISO8601 combined date and time format that represents when party was updated.     |
+|   lockedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was locked.  |
+|  deletedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was deleted. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+    "type": "Focal Person",
+    "name": "John Dae",
+    "abbreviation": "JD",
+    "locale": "en",
+    "email": "john.doe@example.com",
+    "mobile": "255789321212",
+    "_id": "5ddfadfd8fadd0276378b0d6",
+    "updatedAt": "2019-11-28T12:07:33.736Z",
+    "createdAt": "2019-11-28T11:22:37.199Z",
+    "lockedAt": null,
+    "deletedAt": "2019-11-28T12:07:33.717Z"
+}
+```
+
+### List All Parties
+
+To list all parties, send a `GET` request to `https://api.ewea.io/v1/parties`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/parties \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of the standard party attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                Description                                                 |
+| :----------: | :----: | :--------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                 Unique universal identifier of this party.                                 |
+|     name     | Object |                                      Human readable name of a party.                                       |
+|     type     | String |                                      Human readable type of a party.                                       |
+| abbreviation | String |                                 Human readable short form of a party name.                                 |
+|    locale    | string |                 Defines the party's language, region and any special variant preferences.                  |
+|    email     | String |                               Primary email address used to contact a party.                               |
+|    mobile    | String |                            Primary mobile phone number used to contact a party.                            |
+|  createdAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
+|  updatedAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
+|   lockedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+    "type": "Focal Person",
+    "name": "John Dae",
+    "abbreviation": "JD",
+    "locale": "en",
+    "email": "john.doe@example.com",
+    "mobile": "255789321212",
+    "_id": "5ddfadfd8fadd0276378b0d6",
+    "updatedAt": "2019-11-28T12:00:38.597Z",
+    "createdAt": "2019-11-28T11:22:37.199Z",
+    "lockedAt": null
+  },
+  "total": 26,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 3,
+  "lastModified": "2019-02-21T13:30:04.340Z"
+}
+```
 
 ## PartyRole
 
@@ -755,7 +1074,7 @@ HTTP/1.1 200 Success
 
 To list all event types, send a `GET` request to `https://api.ewea.io/v1/predefines/eventtypes`.
 
-> Example Request
+> Example **Request**
 
 ```curl
 curl --request GET \
