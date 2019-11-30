@@ -8,6 +8,7 @@ const {
   Permission,
   Party,
 } = require('../src/database');
+const { seedRegions } = require('./seedGeo');
 
 const ensureConnection = next => {
   debug('Start Seeding Data');
@@ -31,6 +32,7 @@ const seed = next => {
     allPermissions: then => Permission.seed(then),
     predefinePermissions: then => Permission.seed(listPermissions(), then),
     predefines: then => Predefine.seed(then),
+    regions: then => seedRegions(then),
     parties: then => Party.seed(then),
   };
   return parallel(seeds, next);
