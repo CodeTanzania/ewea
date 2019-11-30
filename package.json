@@ -85,11 +85,11 @@
     "coveralls": "^3.0.9",
     "cz-conventional-changelog": "^3.0.2",
     "doxdox": "^3.0.0",
-    "eslint": "^6.7.1",
+    "eslint": "^6.7.2",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsdoc": "^18.1.5",
+    "eslint-plugin-jsdoc": "^18.2.0",
     "eslint-plugin-mocha": "^6.2.2",
     "eslint-plugin-prettier": "^3.1.1",
     "generate-changelog": "^1.8.0",
@@ -103,7 +103,7 @@
     "nyc": "^14.1.1",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
-    "rollup": "^1.27.5",
+    "rollup": "^1.27.6",
     "shelljs": "^0.8.3"
   },
   "dependencies": {
