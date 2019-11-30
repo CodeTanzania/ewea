@@ -1,23 +1,23 @@
-const functions = require('./eventfunctions');
-const statuses = require('./eventstatuses');
-const severities = require('./eventseverities');
-const urgencies = require('./eventurgencies');
-const certainties = require('./eventcertainties');
-const types = require('./eventtypes');
-const groups = require('./eventgroups');
-const featureTypes = require('./featuretypes');
 const administrativeLevels = require('./administrativelevels');
+const eventCertainties = require('./eventcertainties');
+const eventFunctions = require('./eventfunctions');
+const eventGroups = require('./eventgroups');
+const eventSeverities = require('./eventseverities');
+const eventStatuses = require('./eventstatuses');
+const eventTypes = require('./eventtypes');
+const eventUrgencies = require('./eventurgencies');
+const featureTypes = require('./featuretypes');
 const partyGroups = require('./partygroups');
 const partyRoles = require('./partyroles');
 
 const predefines = [
-  ...functions,
-  ...statuses,
-  ...severities,
-  ...urgencies,
-  ...certainties,
-  ...types,
-  ...groups,
+  ...eventFunctions,
+  ...eventStatuses,
+  ...eventSeverities,
+  ...eventUrgencies,
+  ...eventCertainties,
+  ...eventTypes,
+  ...eventGroups,
   ...featureTypes,
   ...administrativeLevels,
   ...partyGroups,
