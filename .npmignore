@@ -12,6 +12,7 @@ coverage
 test
 examples
 docs
+data
 .travis.yml
 Gruntfile.js
 .nvimrc
