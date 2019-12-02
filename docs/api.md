@@ -281,7 +281,61 @@ curl --request GET \
 
 ### Signin
 
-> TODO
+To signin, send a `POST` request to `https://api.ewea.io/v1/signin`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                       Description                       | Required |
+| :---------: | :----: | :-----------------------------------------------------: | :------: |
+|    Email    | String | Registered primary email address used to contact party  |   True   |
+|  Username   | String |       Registered human readable name for a party        | Optional |
+| PhoneNumber | String | Registered mobile phone number used to contact a party. | Optional |
+|  Password   | String |      Registered passkey used authenticate a party.      |   True   |
+
+> Example Request:
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/signin \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--body '{
+    "email": "lallyelias@gmail.com",
+    "password": "1234567890"
+  }'
+```
+
+The response will be a `JSON object` with the following attributes:
+
+|  Name   |  Type   |                    Description                    |
+| :-----: | :-----: | :-----------------------------------------------: |
+| Success | Boolean |               Authentication State                |
+|  Party  | Object  | Contains information of the authenticated `Party` |
+|  Token  | String  |         JWT for the authenticated `Party`         |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "success":true,
+  "party": {
+    "type": "Focal Person",
+    "name": "John Doe",
+    "abbreviation": "JD",
+    "locale": "en",
+    "email": "john.doe@example.com",
+    "mobile": "255789321212",
+    "_id": "5ddfadfd8fadd0276378b0d6",
+    "updatedAt": "2019-11-28T11:22:37.254Z",
+    "createdAt": "2019-11-28T11:22:37.199Z",
+    "lockedAt": null
+  },
+  "token": "gzSraSYS8EXBxLN_oWnFSRgCzcmJmMjLiuyu5CSpyHI",
+}
+
+```
 
 ## Party
 
