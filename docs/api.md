@@ -608,7 +608,257 @@ HTTP/1.1 200 Success
 
 ## PartyRole
 
-> TODO
+`PartyRole` role of parties based on roles defined in emergency plan
+
+### PartyRole Schema
+
+`PartyRole` have the following attributes:
+
+<br />
+
+|    Name     |  Type  |                                                 Description                                                  |
+| :---------: | :----: | :----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party role.                                |
+| description | Object |                         Human-translatable-readable description for the party role.                          |
+|    name     | Object |                             Human-translatable-readable name for the party role.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party roles visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was updated. |
+
+### Create PartyRole
+
+To create a new party role, send a `POST` request to `https://api.ewea.io/v1/predefines/partyroles`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                                  Description                                   | Required |
+| :---------: | :----: | :----------------------------------------------------------------------------: | :------: |
+| description | Object |          Human-translatable-readable description for the party role.           |  false   |
+|    name     | Object |              Human-translatable-readable name for the party role.              |   true   |
+|    color    | String | A color code(in hexadecimal format) used to differentiate party role visually. |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/partyroles \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "description": { "en": "ICT officer" },
+    "name": { "en": "ICT officer" },
+    "color": "#86C7E8"
+  }'
+```
+
+The response will be a `JSON object` with the standard party role attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                 Description                                                  |
+| :---------: | :----: | :----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party role.                                |
+| description | Object |                         Human-translatable-readable description for the party role.                          |
+|    name     | Object |                             Human-translatable-readable name for the party role.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party roles visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+ "description": { "en": "ICT officer" },
+ "name": { "en": "ICT officer" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Retrieve PartyRole
+
+To get a party role, send a `GET` request to `https://api.ewea.io/v1/predefines/partyroles/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/partyroles/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard party role attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                 Description                                                  |
+| :---------: | :----: | :----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party role.                                |
+| description | Object |                         Human-translatable-readable description for the party role.                          |
+|    name     | Object |                             Human-translatable-readable name for the party role.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party roles visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+  "description": { "en": "ICT officer" },
+  "name": { "en": "ICT officer" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Update PartyRole
+
+To update existing party role, send a `PATCH` request to `https://api.ewea.io/v1/predefines/partyroles/:id`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                         Description                         | Required |
+| :---------: | :----: | :---------------------------------------------------------: | :------: |
+| description | Object | Human-translatable-readable description for the party role. |
+|    name     | Object |    Human-translatable-readable name for the party role.     |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/partyroles/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "description": { "en": "ICT officer" },
+     "name": { "en": "ICT officer" },
+  }'
+```
+
+The response will be a `JSON object` with the standard party role attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                 Description                                                  |
+| :---------: | :----: | :----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party role.                                |
+| description | String |                             Unique Human-readable given code of this party role.                             |
+|    name     | Object |                             Human-translatable-readable name for the party role.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party roles visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+ "description": { "en": "ICT officer" },
+  "name": { "en": "ICT officer" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### Delete PartyRole
+
+To delete existing party role, send a `DELETE` request to `https://api.ewea.io/v1/predefines/partyroles/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/partyroles/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard party role attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                 Description                                                  |
+| :---------: | :----: | :----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party role.                                |
+| description | Object |                         Human-translatable-readable description for the party role.                          |
+|    name     | Object |                             Human-translatable-readable name for the party role.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party roles visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5c6ea7dae1dc700018aac95b",
+  "description": { "en": "ICT officer" },
+  "name": { "en": "ICT officer" },
+  "color": "#86C7EE"
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### List All PartyRole
+
+To list all party roles, send a `GET` request to `https://api.ewea.io/v1/predefines/partyroles`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/partyroles \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of party role with the standard party role attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                 Description                                                  |
+| :---------: | :----: | :----------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this party role.                                |
+| description | Object |                         Human-translatable-readable description for the party role.                          |
+|    name     | Object |                             Human-translatable-readable name for the party role.                             |
+|    color    | String |               A color code(in hexadecimal format) used to differentiate party roles visually.                |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+    "_id": "5c6ea7dae1dc700018aac95b",
+     "description": { "en": "ICT officer" },
+     "name": { "en": "ICT officer" },
+    "color": "#86C7EE"
+    "updatedAt": "2019-02-21T13:30:04.340Z",
+    "createdAt": "2019-02-21T13:30:04.340Z"
+  }],
+  "total": 26,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 3,
+  "lastModified": "2019-02-21T13:30:04.340Z"
+}
+```
 
 ## PartyGroup
 
