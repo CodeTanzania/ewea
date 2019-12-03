@@ -8,7 +8,7 @@ const {
   Permission,
   Party,
 } = require('../src/database');
-const { seedRegions, seedDistricts } = require('./seedGeo');
+const { seedRegions, seedDistricts, seedWards } = require('./seedGeo');
 
 const ensureConnection = next => {
   debug('Start Seeding Data');
@@ -34,6 +34,7 @@ const seed = next => {
     predefines: then => Predefine.seed(then),
     regions: then => seedRegions(then),
     districts: then => seedDistricts(then),
+    wards: then => seedWards(then),
     parties: then => Party.seed(then),
   };
   return parallel(seeds, next);

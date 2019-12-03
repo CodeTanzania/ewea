@@ -65,3 +65,35 @@ exports.seedDistricts = done => {
     return next && next();
   });
 };
+
+exports.seedWards = done => {
+  const path = `${__dirname}/../data/administrativeareas/Dar_Wards_Polygon.shp`;
+  readShapefile(path, (error, { finished, feature, next }) => {
+    // handle read errors
+    if (error) {
+      return done(error);
+    }
+    // handle read finish
+    if (finished) {
+      return done();
+    }
+    // process features
+    if (feature && next) {
+      // prepare feature seed
+      const ward = {
+        namespace: 'AdministrativeArea',
+        strings: {
+          name: { en: get(feature, 'properties.Ward_Name') },
+        },
+        // geos: { geometry: get(feature, 'geometry') },
+        properties: get(feature, 'properties'),
+      };
+      // seed feature
+      return Predefine.seed(ward, (err, seeded) => {
+        return next(err, seeded);
+      });
+    }
+    // request next chunk from stream
+    return next && next();
+  });
+};
