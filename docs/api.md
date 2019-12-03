@@ -287,8 +287,8 @@ To signin, send a `POST` request to `https://api.ewea.io/v1/signin`. The followi
 
 |   Name   |  Type  |                  Description                  | Required |
 | :------: | :----: | :-------------------------------------------: | :------: |
-| Username | String |     Registered `email` or `phone number`      |   True   |
-| Password | String | Registered passkey used authenticate a party. |   True   |
+| username | String |     Registered `email` or `phone number`      |   true   |
+| password | String | Registered passkey used authenticate a party. |   true   |
 
 > Example Request:
 
