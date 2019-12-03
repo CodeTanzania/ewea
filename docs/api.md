@@ -285,12 +285,10 @@ To signin, send a `POST` request to `https://api.ewea.io/v1/signin`. The followi
 
 <br/>
 
-|    Name     |  Type  |                       Description                       | Required |
-| :---------: | :----: | :-----------------------------------------------------: | :------: |
-|    Email    | String | Registered primary email address used to contact party  |   True   |
-|  Username   | String |       Registered human readable name for a party        | Optional |
-| PhoneNumber | String | Registered mobile phone number used to contact a party. | Optional |
-|  Password   | String |      Registered passkey used authenticate a party.      |   True   |
+|   Name   |  Type  |                  Description                  | Required |
+| :------: | :----: | :-------------------------------------------: | :------: |
+| Username | String |     Registered `email` or `phone number`      |   True   |
+| Password | String | Registered passkey used authenticate a party. |   True   |
 
 > Example Request:
 
@@ -301,7 +299,7 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --body '{
-    "email": "lallyelias@gmail.com",
+    "username": "test@example.com",
     "password": "1234567890"
   }'
 ```
@@ -310,9 +308,9 @@ The response will be a `JSON object` with the following attributes:
 
 |  Name   |  Type   |                    Description                    |
 | :-----: | :-----: | :-----------------------------------------------: |
-| Success | Boolean |               Authentication State                |
-|  Party  | Object  | Contains information of the authenticated `Party` |
-|  Token  | String  |         JWT for the authenticated `Party`         |
+| success | Boolean |               Authentication State                |
+|  party  | Object  | Contains information of the authenticated `Party` |
+|  token  | String  |         JWT for the authenticated `Party`         |
 
 > Example Response
 
