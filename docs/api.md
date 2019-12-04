@@ -2417,7 +2417,7 @@ HTTP/1.1 200 Success
 }
 ```
 
-### List All EventFuntion
+### List All EventFunction
 
 To list all event functions, send a `GET` request to `https://api.ewea.io/v1/predefines/`.
 
