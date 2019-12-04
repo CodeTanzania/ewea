@@ -1,0 +1,1829 @@
+{
+	"info": {
+		"_postman_id": "c72fda44-e242-4187-af65-f08543fd63d7",
+		"name": "EWEA V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"richardaggrey7@gmail.com\",\n    \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Party",
+			"item": [
+				{
+					"name": "Create Party",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"mobile\": \"255789321212\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/v1/parties",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"parties"
+							]
+						},
+						"description": "Create a single party"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Party",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/parties/5de67e5b36c38aa77e78ba09",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"parties",
+								"5de67e5b36c38aa77e78ba09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Party",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\" : \"John Dae\" }"
+						},
+						"url": {
+							"raw": "localhost:5000/v1/parties/5de67e5b36c38aa77e78ba09",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"parties",
+								"5de67e5b36c38aa77e78ba09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Party",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\" : \"John Dae\" }"
+						},
+						"url": {
+							"raw": "localhost:5000/v1/parties/5de67e5b36c38aa77e78ba09",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"parties",
+								"5de67e5b36c38aa77e78ba09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Party",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/parties/5de67e5b36c38aa77e78ba09",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"parties",
+								"5de67e5b36c38aa77e78ba09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Parties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/parties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"parties"
+							]
+						},
+						"description": "An Entity registered to access the system"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PartyRole",
+			"item": [
+				{
+					"name": "Create PartyRole",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"ICT officer\"\n        },\n        \"name\": {\n            \"en\": \"ICT officer\"\n        },\n        \"color\": \"#86C7E8\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partyroles",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partyroles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve PartyRole",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partyroles",
+								"5de6795836c38aa77e78b9fa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update PartyRole",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Technical Support\"\n        },\n        \"name\": {\n            \"en\": \"ICT officer\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partyroles",
+								"5de6795836c38aa77e78b9fa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update PartyRole",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Technical Support\"\n        },\n        \"name\": {\n            \"en\": \"ICT officer\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partyroles",
+								"5de6795836c38aa77e78b9fa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete PartyRole",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partyroles",
+								"5de6795836c38aa77e78b9fa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All PartyRole",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partyroles",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partyroles"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PartyGroup",
+			"item": [
+				{
+					"name": "Create PartyGroup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"International Organisations\"\n        },\n        \"name\": {\n            \"en\": \"International Organisations\"\n        },\n        \"color\": \"#86C7E8\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partygroups",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partygroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve PartyGroup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partygroups",
+								"5de76fac36c38aa77e78ba14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update PartyGroup",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Group of Agencies belonging to the government\"\n        },\n        \"name\": {\n            \"en\": \"International Organisations\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partygroups",
+								"5de76fac36c38aa77e78ba14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update PartyGroup Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Group of Agencies belonging to the government\"\n        },\n        \"name\": {\n            \"en\": \"International Organisations\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partygroups",
+								"5de76fac36c38aa77e78ba14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete PartyGroup",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partygroups",
+								"5de76fac36c38aa77e78ba14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All PartyGroup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/predefines/partygroups",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"partygroups"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EventGroup",
+			"item": [
+				{
+					"name": "Create EventGroup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"code\": \"H\",\n        \"name\": {\n            \"en\": \"Meteorological\"\n        },\n        \"color\": \"#86C7E8\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventgroups/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventgroups",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve EventGroup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventgroups",
+								"5de672d536c38aa77e78b9e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventGroup",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"Biological\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventgroups",
+								"5de672d536c38aa77e78b9e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventGroup",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"Biological\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventgroups",
+								"5de672d536c38aa77e78b9e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete EventGroup",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventgroups",
+								"5de672d536c38aa77e78b9e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All EventGroup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventgroups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventgroups"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EventType",
+			"item": [
+				{
+					"name": "Create EventType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"code\": \"SW\",\n        \"name\": {\n            \"en\": \"Volcanic activity\"\n        },\n        \"color\": \"#86C7E8\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventtypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventtypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve EventType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventtypes",
+								"5de6771336c38aa77e78b9f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventType",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"Mass Movement (dry)\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventtypes",
+								"5de6771336c38aa77e78b9f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventType",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"Mass Movement (dry)\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventtypes",
+								"5de6771336c38aa77e78b9f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete EventType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventtypes",
+								"5de6771336c38aa77e78b9f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All EventType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventtypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventtypes"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EventSeverity",
+			"item": [
+				{
+					"name": "Create EventSeverity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Requires immediate attention\"\n        },\n        \"name\": {\n            \"en\": \"Critial\"\n        },\n        \"color\": \"#86C7E8\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventseverities",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventseverities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve EventSeverity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventseverities",
+								"5de772f036c38aa77e78ba1e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventSeverity ",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Requires immediate attention from party\"\n        },\n        \"name\": {\n            \"en\": \"Critial\"\n        },\n        \"color\": \"#86C7E8\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventseverities",
+								"5de772f036c38aa77e78ba1e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventSeverity",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Requires immediate attention from party\"\n        },\n        \"name\": {\n            \"en\": \"Critial\"\n        },\n        \"color\": \"#86C7E8\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventseverities",
+								"5de772f036c38aa77e78ba1e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventSeverity",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Requires immediate attention from party\"\n        },\n        \"name\": {\n            \"en\": \"Critial\"\n        },\n        \"color\": \"#86C7E8\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventseverities",
+								"5de772f036c38aa77e78ba1e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All EventSeverity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventseverities",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventseverities"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EventCertainty",
+			"item": [
+				{
+					"name": "Create EventCertainty",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Determined to have occured or to be ongoing\"\n        },\n        \"name\": {\n            \"en\": \"Predicted\"\n        },\n        \"color\": \"#86C7E9\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventcertainties",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventcertainties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve EventCertainty",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventcertainties",
+								"5de7785536c38aa77e78ba29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventCertainty",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Possibility to occur\"\n        },\n        \"name\": {\n            \"en\": \"Predicted\"\n        },\n        \"color\": \"#86C7E9\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventcertainties",
+								"5de7785536c38aa77e78ba29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventCertainty",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"Possibility to occur\"\n        },\n        \"name\": {\n            \"en\": \"Predicted\"\n        },\n        \"color\": \"#86C7E9\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventcertainties",
+								"5de7785536c38aa77e78ba29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventCertainty",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventcertainties",
+								"5de7785536c38aa77e78ba29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All EventCertainty",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/v1/predefines/eventcertainties",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventcertainties"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5099208b-e72d-4a1f-bc02-556fb2bf3957",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e00e674-f15d-493b-9ad6-9f9b4d5c713f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EventFunction",
+			"item": [
+				{
+					"name": "Create EventFunction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"code\": \"DBM\",\n        \"name\": {\n            \"en\": \"Dead Bodies Management\"\n        },\n        \"color\": \"#F9C5A7\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventfunctions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventfunctions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve EventFunction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventfunctions",
+								"5de77a1f36c38aa77e78ba2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventFunction",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"Dead Bodies Management\"\n        },\n        \"description\": {\n            \"en\": \"\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventfunctions",
+								"5de77a1f36c38aa77e78ba2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventFunction",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"Dead Bodies Management\"\n        },\n        \"description\": {\n            \"en\": \"\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventfunctions",
+								"5de77a1f36c38aa77e78ba2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete EventFunction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventfunctions",
+								"5de77a1f36c38aa77e78ba2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All EventFunction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventfunctions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventfunctions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EventAction",
+			"item": [
+				{
+					"name": "Create EventAction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventactions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EventCatalogue",
+			"item": [
+				{
+					"name": "Create EventCatalogue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/eventcatalogues",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"eventcatalogues"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"richardaggrey7@gmail.com\",\n    \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EventNotification",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EventChangelog",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "AdministrativeArea",
+			"item": [
+				{
+					"name": "Create AdministrativeArea",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"District\"\n        },\n        \"description\": {\n            \"en\": \"The name of the metropolitan area itself\"\n        },\n        \"level\": 1,\n        \"color\": \"#F9C5A7\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/administrativelevels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve AdministrativeArea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels",
+								"5de67b8436c38aa77e78ba01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update AdministrativeArea",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"District\"\n        },\n        \"description\": {\n            \"en\": \"District Area\"\n        },\n        \"level\": 0\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels",
+								"5de67b8436c38aa77e78ba01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update AdministrativeArea",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"District\"\n        },\n        \"description\": {\n            \"en\": \"District Area\"\n        },\n        \"level\": 0\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels",
+								"5de67b8436c38aa77e78ba01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete AdministrativeArea",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels",
+								"5de67b8436c38aa77e78ba01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All AdministrativeArea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/predefines/administrativelevels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "FeatureType",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Feature",
+			"item": [],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
