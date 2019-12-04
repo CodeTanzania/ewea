@@ -8,6 +8,7 @@ const {
   authenticationRouter,
   partyRouter,
 } = require('@codetanzania/emis-stakeholder');
+const { eventRouter } = require('@codetanzania/ewea-event');
 
 const { connect } = require('./database');
 
@@ -17,7 +18,13 @@ get(`/${apiVersion()}/schemas`, (request, response) => {
   response.status(200);
   response.json(schema);
 });
-mount(authenticationRouter, predefineRouter, permissionRouter, partyRouter);
+mount(
+  authenticationRouter,
+  predefineRouter,
+  permissionRouter,
+  partyRouter,
+  eventRouter
+);
 debug('Finish Mounting Http Routers');
 
 module.exports = { app, start, connect };

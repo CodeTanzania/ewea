@@ -7,6 +7,7 @@ const {
   Predefine,
   Permission,
   Party,
+  Event,
 } = require('../src/database');
 const {
   seedRegions,
@@ -42,6 +43,7 @@ const seed = next => {
     wards: then => seedWards(then),
     subwards: then => seedSubWards(then),
     parties: then => Party.seed(then),
+    events: then => Event.seed(then),
   };
   return parallel(seeds, next);
 };
