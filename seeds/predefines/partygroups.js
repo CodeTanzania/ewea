@@ -61,6 +61,30 @@ const groups = [
   },
   {
     namespace: 'PartyGroup',
+    strings: { name: { en: 'Region Disaster Committee' } },
+  },
+  {
+    namespace: 'PartyGroup',
+    strings: { name: { en: 'District Disaster Committee' } },
+  },
+  {
+    namespace: 'PartyGroup',
+    strings: { name: { en: 'Ward Disaster Committee' } },
+  },
+  {
+    namespace: 'PartyGroup',
+    strings: { name: { en: 'Ward Management Team' } },
+  },
+  {
+    namespace: 'PartyGroup',
+    strings: { name: { en: 'Village Disaster Committee' } },
+  },
+  {
+    namespace: 'PartyGroup',
+    strings: { name: { en: 'Village Management Team' } },
+  },
+  {
+    namespace: 'PartyGroup',
     strings: { name: { en: 'Unknown' } },
     booleans: { default: true },
   },
