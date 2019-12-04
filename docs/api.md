@@ -1891,6 +1891,7 @@ HTTP/1.1 200 Success
 |     Name     |  Type  |                                                   Description                                                    |
 | :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
 |     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     type     | String |                                     Human readable type of a event function.                                     |
 |     name     | Object |                             Human-translatable-readable name for the event function.                             |
 | abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
 | description  | Object |                         Human-translatable-readable description for the event function.                          |
@@ -1908,6 +1909,7 @@ To create a new event function, send a `POST` request to `https://api.ewea.io/v1
 |    Name     |  Type  |                                    Description                                     | Required |
 | :---------: | :----: | :--------------------------------------------------------------------------------: | :------: |
 |    code     | String |              Unique human-readable given code of this event function.              |  false   |
+|    type     | String |                      Human readable type of a event function.                      |   true   |
 |    name     | Object |              Human-translatable-readable name for the event function.              |   true   |
 | description | Object |          Human-translatable-readable description for the event function.           |  false   |
 |    color    | String | A color code(in hexadecimal format) used to differentiate event function visually. |  false   |
@@ -1921,6 +1923,7 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
+    "type": "Flood"
     "code": "DBM",
     "name": { "en": "Dead Bodies Management" },
     "color": "#F9C5A7"
@@ -1934,6 +1937,7 @@ The response will be a `JSON object` with the standard event group attributes:
 |     Name     |  Type  |                                                   Description                                                    |
 | :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
 |     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     type     | String |                                     Human readable type of a event function.                                     |
 |     name     | Object |                             Human-translatable-readable name for the event function.                             |
 | abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
 | description  | Object |                         Human-translatable-readable description for the event function.                          |
@@ -1948,6 +1952,7 @@ The response will be a `JSON object` with the standard event group attributes:
 HTTP/1.1 201 Success
 {
   "_id": "5ddbbc871283e3131b2d41f4",
+  "type": "Flood",
   "name": { "en": "Dead Bodies Management" },
   "abbreviation": { "en": "DBM" },
   "description": { "en": "" },
@@ -1978,6 +1983,7 @@ The response will be a `JSON object` with the standard event function attributes
 |     Name     |  Type  |                                                   Description                                                    |
 | :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
 |     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     type     | String |                                     Human readable type of a event function.                                     |
 |     name     | Object |                             Human-translatable-readable name for the event function.                             |
 | abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
 | description  | Object |                         Human-translatable-readable description for the event function.                          |
@@ -1992,6 +1998,7 @@ The response will be a `JSON object` with the standard event function attributes
 HTTP/1.1 200 Success
 {
   "_id": "5ddbbc871283e3131b2d41f4",
+  "type": "Flood",
   "code": "DBM",
   "name": { "en": "Dead Bodies Management" },
   "description": { "en": "" },
@@ -2010,6 +2017,7 @@ To update existing event function, send a `PATCH` request to `https://api.ewea.i
 
 |    Name     |  Type  |                           Description                           | Required |
 | :---------: | :----: | :-------------------------------------------------------------: | :------: |
+|    type     | String |            Human readable type of a event function.             |   true   |
 |    name     | Object |    Human-translatable-readable name for the event function.     |   true   |
 | description | Object | Human-translatable-readable description for the event function. |  false   |
 
@@ -2022,6 +2030,7 @@ curl --request PATCH \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
+    "type": "Flood",
     "name": { "en": "Dead Bodies Management" },
     "description": { "en": "" },
   }'
@@ -2034,6 +2043,7 @@ The response will be a `JSON object` with the standard event function attributes
 |     Name     |  Type  |                                                   Description                                                    |
 | :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
 |     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     type     | String |                                     Human readable type of a event function.                                     |
 |     name     | Object |                             Human-translatable-readable name for the event function.                             |
 | abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
 | description  | Object |                         Human-translatable-readable description for the event function.                          |
@@ -2049,6 +2059,7 @@ HTTP/1.1 200 Success
 {
   "_id": "5ddbbc871283e3131b2d41f4",
   "code": "DBM",
+  "type": "Flood",
   "name": { "en": "Dead Bodies Management" },
   "abbreviation": { "en": "DBM" },
   "description": { "en": "" },
@@ -2078,6 +2089,7 @@ The response will be a `JSON object` with the standard event function attributes
 |     Name     |  Type  |                                                   Description                                                    |
 | :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
 |     \_id     | String |                               Unique universal identifier of this event function.                                |
+|     type     | String |                                     Human readable type of a event function.                                     |
 |     name     | Object |                             Human-translatable-readable name for the event function.                             |
 | abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
 | description  | Object |                         Human-translatable-readable description for the event function.                          |
@@ -2093,6 +2105,7 @@ HTTP/1.1 200 Success
 {
   "_id": "5ddbbc871283e3131b2d41f4",
   "code": "DBM",
+  "type": "Flood",
   "name": { "en": "Dead Bodies Management" },
   "abbreviation": { "en": "DBM" },
   "description": { "en": "" },
@@ -2123,6 +2136,7 @@ The response will be a `JSON object` with a `data key`. The values in the `data 
 | :----------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
 |     \_id     | String |                               Unique universal identifier of this event function.                                |
 |     name     | Object |                             Human-translatable-readable name for the event function.                             |
+|     type     | String |                                     Human readable type of a event function.                                     |
 | abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event function.                   |
 | description  | Object |                         Human-translatable-readable description for the event function.                          |
 |     code     | String |                             Unique human-readable given code of this event function.                             |
@@ -2137,6 +2151,7 @@ HTTP/1.1 200 Success
 {
   "data": [{
   "_id": "5ddbbc871283e3131b2d41f4",
+  "type": "Flood",
   "name": { "en": "Dead Bodies Management" },
   "abbreviation": { "en": "DBM" },
   "description": { "en": "" },
