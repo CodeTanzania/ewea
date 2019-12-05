@@ -2771,7 +2771,283 @@ HTTP/1.1 200 Success
 
 ## Feature
 
-> TODO
+`Feature` A representation of geographical feature of interest(i.e mapped physical
+element with their attributes in landscape e.g. administrative boundaries, roads, buildings etc)
+both natural and man made used in emergency(or disaster) management(or event).
+
+### Feature Schema
+
+`Feature` have the following attributes:
+
+<br />
+
+|   Name    |  Type  |                                                Description                                                |
+| :-------: | :----: | :-------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature.                                |
+|   type    | String |                                     Human readable type of a feature.                                     |
+|   name    | Object |                             Human-translatable-readable name for the feature.                             |
+| geometry  | Object |                                A geo-geometry representation of a feature                                 |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was updated. |
+
+### Create Feature
+
+To create a new feature, send a `POST` request to `https://api.ewea.io/v1/predefines/features`. The following attributes are supported:
+
+<br/>
+
+|   Name   |  Type  |                    Description                    | Required |
+| :------: | :----: | :-----------------------------------------------: | :------: |
+|   type   | String |         Human readable type of a feature.         |   true   |
+|   name   | Object | Human-translatable-readable name for the feature. |   true   |
+| geometry | Object |    A geo-geometry representation of a feature     |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/features \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "type": "Hospital"
+    "name": { "en": "Mbezi Health Centre" },
+    "geometry": {
+                "type": "Point",
+                "coordinates": [39.2155451,-6.7269984]
+        }
+
+  }'
+```
+
+The response will be a `JSON object` with the standard feature attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                Description                                                |
+| :-------: | :----: | :-------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature.                                |
+|   type    | String |                                     Human readable type of a feature.                                     |
+|   name    | Object |                             Human-translatable-readable name for the feature.                             |
+| geometry  | Object |                                A geo-geometry representation of a feature                                 |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5ddbbc871283e3131b2d41f4",
+  "type": "Hospital",
+  "name": { "en": "Mbezi Health Centre" },
+  "geometry": {
+            "type": "Point",
+            "coordinates": [39.2155451,-6.7269984]
+    }
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Retrieve Feature
+
+To get a feature, send a `GET` request to `https://api.ewea.io/v1/predefines/features/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/features/5ddbbc871283e3131b2d41f4 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard feature attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                Description                                                |
+| :-------: | :----: | :-------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature.                                |
+|   type    | String |                                     Human readable type of a feature.                                     |
+|   name    | Object |                             Human-translatable-readable name for the feature.                             |
+| geometry  | Object |                                A geo-geometry representation of a feature                                 |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5ddbbc871283e3131b2d41f4",
+  "type": "Hospital"
+  "name": { "en": "Mbezi Health Centre" },
+  "geometry": {
+            "type": "Point",
+            "coordinates": [39.2155451,-6.7269984]
+    },
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Update Feature
+
+To update existing feature, send a `PATCH` request to `https://api.ewea.io/v1/predefines/features/:id`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                    Description                    | Required |
+| :---------: | :----: | :-----------------------------------------------: | :------: |
+|    type     | String |         Human readable type of a feature.         |   true   |
+|    name     | Object | Human-translatable-readable name for the feature. |   true   |
+| description | Object |    A geo-geometry representation of a feature     |  false   |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/features/5ddbbc871283e3131b2d41f4 \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "type": "Hospital",
+    "name": { "en": "Mbezi Health Centre" },
+    "geometry": {
+            "type": "Point",
+            "coordinates": [39.2155451,-6.7269984]
+    },
+  }'
+```
+
+The response will be a `JSON object` with the standard feature attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                Description                                                |
+| :-------: | :----: | :-------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature.                                |
+|   type    | String |                                     Human readable type of a feature.                                     |
+|   name    | Object |                             Human-translatable-readable name for the feature.                             |
+| geometry  | Object |                                A geo-geometry representation of a feature                                 |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5ddbbc871283e3131b2d41f4"
+  "type": "Hospital",
+  "name": { "en": "Mbezi Health Centre" },
+  "geometry": {
+            "type": "Point",
+            "coordinates": [39.2155451,-6.7269984]
+    },
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### Delete Feature
+
+To delete existing feature, send a `DELETE` request to `https://api.ewea.io/v1/predefines/features/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/features/5c6ea7dae1dc700018aac95b \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard feature attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                Description                                                |
+| :-------: | :----: | :-------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature.                                |
+|   type    | String |                                     Human readable type of a feature.                                     |
+|   name    | Object |                             Human-translatable-readable name for the feature.                             |
+| geometry  | Object |                                A geo-geometry representation of a feature                                 |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5ddbbc871283e3131b2d41f4"
+  "type": "Hospital",
+  "name": { "en": "Mbezi Health Centre" },
+  "geometry": {
+            "type": "Point",
+            "coordinates": [39.2155451,-6.7269984]
+    },
+  "updatedAt": "2019-02-21T13:45:04.340Z",
+  "createdAt": "2019-02-21T13:45:04.340Z"
+}
+```
+
+### List All Features
+
+To list all features, send a `GET` request to `https://api.ewea.io/v1/predefines/`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/features \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of eventfunction with the standard feature attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                Description                                                |
+| :-------: | :----: | :-------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature.                                |
+|   name    | Object |                             Human-translatable-readable name for the feature.                             |
+|   type    | String |                                     Human readable type of a feature.                                     |
+| geometry  | Object |                                A geo-geometry representation of a feature                                 |
+| createdAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was created. |
+| updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the feature was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+  "_id": "5ddbbc871283e3131b2d41f4",
+  "type": "Hospital",
+  "name": { "en": "Mbezi Health Centre" },
+  "geometry": {
+            "type": "Point",
+            "coordinates": [39.2155451,-6.7269984]
+    }
+  "updatedAt": "2019-11-25T12:48:43.342Z",
+  "createdAt": "2019-11-25T11:35:35.519Z"
+  }],
+  "total": 26,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 3,
+  "lastModified": "2019-11-25T12:48:43.342Z"
+}
+```
 
 # Acknowledgements
 
