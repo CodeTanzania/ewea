@@ -1582,9 +1582,12 @@
 			"name": "Event",
 			"item": [
 				{
-					"name": "Create Event",
+					"name": "Retrieve Event",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -1595,7 +1598,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"richardaggrey7@gmail.com\",\n    \"password\": \"123456789\"\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1603,7 +1606,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/signin",
+							"raw": "http://localhost:5000/v1/events/5d535a0a62b47901d3294ff8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1611,7 +1614,28 @@
 							"port": "5000",
 							"path": [
 								"v1",
-								"signin"
+								"events",
+								"5d535a0a62b47901d3294ff8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"events"
 							]
 						}
 					},
