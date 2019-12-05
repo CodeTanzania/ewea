@@ -14,6 +14,7 @@ const {
   seedDistricts,
   seedWards,
   seedSubWards,
+  seedHospitals,
 } = require('./seedGeo');
 
 const ensureConnection = next => {
@@ -42,6 +43,7 @@ const seed = next => {
     districts: then => seedDistricts(then),
     wards: then => seedWards(then),
     subwards: then => seedSubWards(then),
+    hospitals: then => seedHospitals(then),
     parties: then => Party.seed(then),
     events: then => Event.seed(then),
   };

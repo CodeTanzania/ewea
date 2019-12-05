@@ -1,5 +1,9 @@
 const { get } = require('lodash');
-const { readShapefile, isFeature } = require('@lykmapipo/geo-tools');
+const {
+  readShapefile,
+  readGeoJSON,
+  isFeature,
+} = require('@lykmapipo/geo-tools');
 const { Predefine } = require('../src/database');
 
 exports.seedRegions = done => {
@@ -14,7 +18,7 @@ exports.seedRegions = done => {
       return done();
     }
     // process features
-    if (isFeature(feature)) {
+    if (isFeature(feature) && next) {
       // prepare feature seed
       const region = {
         namespace: 'AdministrativeArea',
@@ -30,7 +34,7 @@ exports.seedRegions = done => {
       });
     }
     // request next chunk from stream
-    return next();
+    return next && next();
   });
 };
 
@@ -122,6 +126,44 @@ exports.seedSubWards = done => {
       };
       // seed feature
       return Predefine.seed(subward, (err, seeded) => {
+        return next(err, seeded);
+      });
+    }
+    // request next chunk from stream
+    return next && next();
+  });
+};
+
+exports.seedHospitals = done => {
+  const path = `${__dirname}/../data/criticalfacilities/Dar_es_Salaam_Hospital_Points.geojson`;
+  readGeoJSON(path, (error, { finished, feature, next }) => {
+    // handle read errors
+    if (error) {
+      return done(error);
+    }
+    // handle read finish
+    if (finished) {
+      return done();
+    }
+    // process features
+    if (isFeature(feature) && get(feature, 'properties.name') && next) {
+      // prepare feature seed
+      const hospital = {
+        namespace: 'Feature', // TODO: CriticalFacility
+        strings: {
+          name: { en: get(feature, 'properties.name') },
+        },
+        geos: { geometry: get(feature, 'geometry') },
+        properties: get(feature, 'properties'),
+        populate: {
+          'relations.type': {
+            match: { namespace: 'FeatureType', 'strings.name.en': 'Hospital' },
+            model: 'Predefine',
+          },
+        },
+      };
+      // seed feature
+      return Predefine.seed(hospital, (err, seeded) => {
         return next(err, seeded);
       });
     }
