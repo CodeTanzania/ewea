@@ -2482,7 +2482,121 @@ HTTP/1.1 200 Success
 
 ## Event
 
-> TODO
+`Event` A representation of an entity which define and track an instance(or occurrence) of an emergency(or disaster) event.
+
+### Event Schema
+
+`Event` has the following attributes:
+
+<br />
+
+|    Name     |  Type  |                                       Description                                       |
+| :---------: | :----: | :-------------------------------------------------------------------------------------: |
+|    \_id     | String |                       Unique universal identifier of this event.                        |
+|    group    | String |                            Human readable group of an event.                            |
+|    type     | String |                            Human readable type of an event.                             |
+|   number    | String |                     Human readable, unique identifier of an event.                      |
+| description | String | A brief summary about an event i.e additional details that clarify more about an event. |
+|  startedAt  |  Date  |                 Date when an event was effective occured(or reported).                  |
+|   endedAt   |  Date  |                   Date when an event was declared no longer a threat.                   |
+
+### Retrieve Event
+
+To get an event, send a `GET` request to `https://api.ewea.io/v1/events/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/events/5ddbbc871283e3131b2d41f4 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event attributes:
+
+<br/>
+
+|    Name     |  Type  |                                       Description                                       |
+| :---------: | :----: | :-------------------------------------------------------------------------------------: |
+|    \_id     | String |                       Unique universal identifier of this event.                        |
+|    group    | String |                            Human readable group of an event.                            |
+|    type     | String |                            Human readable type of an event.                             |
+|   number    | String |                     Human readable, unique identifier of an event.                      |
+| description | String | A brief summary about an event i.e additional details that clarify more about an event. |
+|  startedAt  |  Date  |                 Date when an event was effective occured(or reported).                  |
+|   endedAt   |  Date  |                   Date when an event was declared no longer a threat.                   |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "number": "EQ-2018-000033-TZA",
+  "description": "Ad et adipisci voluptatem. Consequatur excepturi fuga.",
+  "startedAt": "2019-10-17T07:53:32.831Z",
+  "endedAt": "2019-10-19T07:53:32.831Z",
+  "_id": "5d535a0a62b47901d3294ff8",
+  "updatedAt": "2019-12-05T10:03:52.524Z",
+  "createdAt": "2019-12-04T19:40:47.486Z"
+}
+```
+
+### List All Event
+
+To list all event , send a `GET` request to `https://api.ewea.io/v1/events/`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/events \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of event with the standard event attributes:
+
+<br/>
+
+|    Name     |  Type  |                                       Description                                       |
+| :---------: | :----: | :-------------------------------------------------------------------------------------: |
+|    \_id     | String |                       Unique universal identifier of this event.                        |
+|    group    | String |                            Human readable group of an event.                            |
+|    type     | String |                            Human readable type of an event.                             |
+|   number    | String |                     Human readable, unique identifier of an event.                      |
+| description | String | A brief summary about an event i.e additional details that clarify more about an event. |
+|  startedAt  |  Date  |                 Date when an event was effective occured(or reported).                  |
+|   endedAt   |  Date  |                   Date when an event was declared no longer a threat.                   |
+|  createdAt  |  Date  |                             Date when an event was created                              |
+|  updatedAt  |  Date  |                             Date when an event was updated                              |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data":[
+    {
+      "number": "EQ-2018-000033-TZA",
+      "description": "Ad et adipisci voluptatem. Consequatur excepturi fuga.",
+      "startedAt": "2019-10-17T07:53:32.831Z",
+      "endedAt": "2019-10-19T07:53:32.831Z",
+      "_id": "5d535a0a62b47901d3294ff8",
+      "updatedAt": "2019-12-05T10:03:52.524Z",
+      "createdAt": "2019-12-04T19:40:47.486Z"
+    }
+  ],
+  "total": 1,
+  "size": 1,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 1,
+  "lastModified": "2019-12-05T10:03:52.524Z",
+  "hasMore": false
+}
+```
 
 ## EventNotification
 
