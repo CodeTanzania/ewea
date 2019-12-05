@@ -1,10 +1,23 @@
 const events = [
   {
     _id: '5d535a0a62b47901d3294ff8',
-    number: 'EQ-2018-000033-TZA',
-    description: 'Ad et adipisci voluptatem. Consequatur excepturi fuga.',
+    stage: 'Event',
+    number: 'FL-2018-000033-TZA',
+    causes: 'Heavy rainfall',
+    description: 'Overflowing water from the dam',
+    places: 'Ilala, Temeke, Dar es Salaam',
+    instructions: 'Continue monitor the situation',
+    interventions: 'Affected victims were evacuated and relocated',
+    impacts: '55 people affected, 72 houses destroyed and 9 schools damaged',
+    remarks: 'Relief items should be provided to the victims',
     startedAt: '2019-10-17T07:53:32.831Z',
     endedAt: '2019-10-19T07:53:32.831Z',
+    populate: {
+      type: {
+        match: { namespace: 'EventType', 'strings.name.en': 'Flood' },
+        model: 'Predefine',
+      },
+    },
   },
 ];
 

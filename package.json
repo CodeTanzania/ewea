@@ -108,7 +108,7 @@
   },
   "dependencies": {
     "@codetanzania/emis-stakeholder": ">=2.0.0",
-    "@codetanzania/ewea-event": ">=0.1.0",
+    "@codetanzania/ewea-event": ">=0.2.0",
     "@lykmapipo/common": ">=0.28.13",
     "@lykmapipo/env": ">=0.15.1",
     "@lykmapipo/express-common": ">=0.17.15",
