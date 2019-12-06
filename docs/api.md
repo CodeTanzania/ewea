@@ -2474,7 +2474,7 @@ HTTP/1.1 200 Success
 
 ## EventAction
 
-`EventAction` groups emergency response actitvities
+`EventAction` defines an emergency response actitvity
 
 ### EventAction Schema
 
@@ -2519,8 +2519,7 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-"name": { "en": "Working with the Regional Disaster Management Committee to
-request national assistance from Prime Minister’s Office when required" },
+"name": { "en": "Disseminating warning information to the public" },
 "function": "Direction and Control"
 }'
 ```
@@ -2547,21 +2546,25 @@ The response will be a `JSON object` with the standard event group attributes:
 ```curl
 HTTP/1.1 201 Success
 {
-"_id": "5ddbbc871283e3131b2d41f4",
-"type": "Flood",
-"name": { "en": "Dead Bodies Management" },
-"abbreviation": { "en": "DBM" },
-"description": { "en": "" },
-"code": "DBM",
-"color": "#F9C5A7"
-"updatedAt": "2019-02-21T13:45:04.340Z",
-"createdAt": "2019-02-21T13:45:04.340Z"
+"_id": "5de7b7bb9a6ed7342b200f02",
+"name": { "en": "Disseminating warning information to the public" },
+"abbreviation": { "en": "DWITTP" },
+"description": {
+"en": "Disseminating warning information to the public" },
+"code": "DWITTP",
+"color": "#F4EF8D",
+"function": {
+    "_id": "5ddbbc871283e3131b2d41dc",
+    "name": { "en": "Direction and Control" },
+  },
+"updatedAt": "2019-12-04T13:42:46.937Z",
+"createdAt": "2019-12-04T13:42:20.186Z"
 }
 ```
 
 ### Retrieve EventAction
 
-To get a event frunction, send a `GET` request to `https://api.ewea.io/v1/predefines/eventactions/:id`.
+To get an event action, send a `GET` request to `https://api.ewea.io/v1/predefines/eventactions/:id`.
 
 > Example Request
 
@@ -2593,32 +2596,21 @@ The response will be a `JSON object` with the standard event action attributes:
 
 ```curl
 HTTP/1.1 200 Success
-[{
+{
 "_id": "5de7b7bb9a6ed7342b200f02",
-"name": { "en": "Working with the Regional Disaster Management Committee to
-request national assistance from Prime Minister’s Office when required" },
-"abbreviation": { "en": "WWTRDMCTRNAFPMOWR" },
+"name": { "en": "Disseminating warning information to the public" },
+"abbreviation": { "en": "DWITTP" },
 "description": {
-"en": "Working with the Regional Disaster Management Committee to request
-national assistance from Prime Minister’s Office when required" },
-"code": "WWTRDMCTRNAFPMOWR",
+"en": "Disseminating warning information to the public" },
+"code": "DWITTP",
 "color": "#F4EF8D",
 "function": {
-    "name": { "en": "Direction and Control" },
-    "abbreviation": { "en": "DAC" },
-    "description": { "en": "Directing and controlling of all emergency response
-    activities in Dar es Salaam Region, including making sure that the response
-    is governed by the applicable legal framework, and efforts and resources
-    are well coordinated and implemented." },
-    "code": "DAC",
-    "color": "#9FF9DE",
     "_id": "5ddbbc871283e3131b2d41dc",
-    "updatedAt": "2019-12-04T13:42:43.135Z",
-    "createdAt": "2019-11-25T11:35:35.518Z"
+    "name": { "en": "Direction and Control" },
   },
 "updatedAt": "2019-12-04T13:42:46.937Z",
 "createdAt": "2019-12-04T13:42:20.186Z"
-}]
+}
 ```
 
 ### Update EventAction
@@ -2643,8 +2635,7 @@ curl --request PATCH \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-"name": { "en": "Working with the Regional Disaster Management Committee to
-request national assistance from Prime Minister’s Office when required" },
+"name": { "en": "Disseminating warning information to the public" },
 "function":  { "en": "Direction and Control" }
 }'
 ```
@@ -2670,37 +2661,26 @@ The response will be a `JSON object` with the standard event action attributes:
 
 ```curl
 HTTP/1.1 200 Success
-[{
+{
 "_id": "5de7b7bb9a6ed7342b200f02",
-"name": { "en": "Working with the Regional Disaster Management Committee to
-request national assistance from Prime Minister’s Office when required" },
-"abbreviation": { "en": "WWTRDMCTRNAFPMOWR" },
+"name": { "en": "Disseminating warning information to the public" },
+"abbreviation": { "en": "DWITTP" },
 "description": {
-"en": "Working with the Regional Disaster Management Committee to request
-national assistance from Prime Minister’s Office when required" },
-"code": "WWTRDMCTRNAFPMOWR",
+"en": "Disseminating warning information to the public" },
+"code": "DWITTP",
 "color": "#F4EF8D",
 "function": {
-    "name": { "en": "Direction and Control" },
-    "abbreviation": { "en": "DAC" },
-    "description": { "en": "Directing and controlling of all emergency response
-    activities in Dar es Salaam Region, including making sure that the response
-    is governed by the applicable legal framework, and efforts and resources
-    are well coordinated and implemented." },
-    "code": "DAC",
-    "color": "#9FF9DE",
     "_id": "5ddbbc871283e3131b2d41dc",
-    "updatedAt": "2019-12-04T13:42:43.135Z",
-    "createdAt": "2019-11-25T11:35:35.518Z"
+    "name": { "en": "Direction and Control" },
   },
 "updatedAt": "2019-12-04T13:42:46.937Z",
 "createdAt": "2019-12-04T13:42:20.186Z"
-}]
+}
 ```
 
 ### Delete EventAction
 
-To delete existing event group, send a `DELETE` request to `https://api.ewea.io/v1/predefines/eventactions/:id`.
+To delete existing event action, send a `DELETE` request to `https://api.ewea.io/v1/predefines/eventactions/:id`.
 
 > Example Request
 
@@ -2732,32 +2712,21 @@ The response will be a `JSON object` with the standard event action attributes:
 
 ```curl
 HTTP/1.1 200 Success
-[{
+{
 "_id": "5de7b7bb9a6ed7342b200f02",
-"name": { "en": "Working with the Regional Disaster Management Committee to
-request national assistance from Prime Minister’s Office when required" },
-"abbreviation": { "en": "WWTRDMCTRNAFPMOWR" },
+"name": { "en": "Disseminating warning information to the public" },
+"abbreviation": { "en": "DWITTP" },
 "description": {
-"en": "Working with the Regional Disaster Management Committee to request
-national assistance from Prime Minister’s Office when required" },
-"code": "WWTRDMCTRNAFPMOWR",
+"en": "Disseminating warning information to the public" },
+"code": "DWITTP",
 "color": "#F4EF8D",
 "function": {
-    "name": { "en": "Direction and Control" },
-    "abbreviation": { "en": "DAC" },
-    "description": { "en": "Directing and controlling of all emergency response
-    activities in Dar es Salaam Region, including making sure that the response
-    is governed by the applicable legal framework, and efforts and resources
-    are well coordinated and implemented." },
-    "code": "DAC",
-    "color": "#9FF9DE",
     "_id": "5ddbbc871283e3131b2d41dc",
-    "updatedAt": "2019-12-04T13:42:43.135Z",
-    "createdAt": "2019-11-25T11:35:35.518Z"
+    "name": { "en": "Direction and Control" },
   },
 "updatedAt": "2019-12-04T13:42:46.937Z",
 "createdAt": "2019-12-04T13:42:20.186Z"
-}]
+}
 ```
 
 ### List All EventAction
@@ -2796,27 +2765,17 @@ The response will be a `JSON object` with a `data key`. The values in the `data 
 HTTP/1.1 200 Success
 {
 "data": [{
+{
 "_id": "5de7b7bb9a6ed7342b200f02",
-"name": { "en": "Working with the Regional Disaster Management Committee to
-request national assistance from Prime Minister’s Office when required" },
-"abbreviation": { "en": "WWTRDMCTRNAFPMOWR" },
+"name": { "en": "Disseminating warning information to the public" },
+"abbreviation": { "en": "DWITTP" },
 "description": {
-"en": "Working with the Regional Disaster Management Committee to request
-national assistance from Prime Minister’s Office when required" },
-"code": "WWTRDMCTRNAFPMOWR",
+"en": "Disseminating warning information to the public" },
+"code": "DWITTP",
 "color": "#F4EF8D",
 "function": {
-    "name": { "en": "Direction and Control" },
-    "abbreviation": { "en": "DAC" },
-    "description": { "en": "Directing and controlling of all emergency response
-    activities in Dar es Salaam Region, including making sure that the response
-    is governed by the applicable legal framework, and efforts and resources
-    are well coordinated and implemented." },
-    "code": "DAC",
-    "color": "#9FF9DE",
     "_id": "5ddbbc871283e3131b2d41dc",
-    "updatedAt": "2019-12-04T13:42:43.135Z",
-    "createdAt": "2019-11-25T11:35:35.518Z"
+    "name": { "en": "Direction and Control" },
   },
 "updatedAt": "2019-12-04T13:42:46.937Z",
 "createdAt": "2019-12-04T13:42:20.186Z"
