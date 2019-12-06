@@ -2,14 +2,14 @@ const levels = [
   {
     namespace: 'AdministrativeLevel',
     strings: {
-      name: { en: 'City' },
+      name: { en: 'Region' },
     },
     numbers: { level: 1 },
   },
   {
     namespace: 'AdministrativeLevel',
     strings: {
-      name: { en: 'Municipality' },
+      name: { en: 'District' },
     },
     numbers: { level: 2 },
   },
