@@ -1,4 +1,5 @@
 const administrativeLevels = require('./administrativelevels');
+const eventActions = require('./eventactions');
 const eventCertainties = require('./eventcertainties');
 const eventFunctions = require('./eventfunctions');
 const eventGroups = require('./eventgroups');
@@ -22,6 +23,7 @@ const predefines = [
   ...administrativeLevels,
   ...partyGroups,
   ...partyRoles,
+  ...eventActions,
 ];
 
 module.exports = predefines;
