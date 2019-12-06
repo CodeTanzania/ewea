@@ -8,7 +8,7 @@ const { Predefine } = require('../src/database');
 
 exports.seedRegions = done => {
   const path = `${__dirname}/../data/administrativeareas/Dar_Region.shp`;
-  readShapefile(path, (error, { finished, feature, next }) => {
+  readShapefile({ path }, (error, { finished, feature, next }) => {
     // handle read errors
     if (error) {
       return done(error);
@@ -40,7 +40,7 @@ exports.seedRegions = done => {
 
 exports.seedDistricts = done => {
   const path = `${__dirname}/../data/administrativeareas/Dar_District_Polygon.shp`;
-  readShapefile(path, (error, { finished, feature, next }) => {
+  readShapefile({ path }, (error, { finished, feature, next }) => {
     // handle read errors
     if (error) {
       return done(error);
@@ -72,7 +72,7 @@ exports.seedDistricts = done => {
 
 exports.seedWards = done => {
   const path = `${__dirname}/../data/administrativeareas/Dar_Wards_Polygon.shp`;
-  readShapefile(path, (error, { finished, feature, next }) => {
+  readShapefile({ path }, (error, { finished, feature, next }) => {
     // handle read errors
     if (error) {
       return done(error);
@@ -104,7 +104,7 @@ exports.seedWards = done => {
 
 exports.seedSubWards = done => {
   const path = `${__dirname}/../data/administrativeareas/Dar_Subwards_Polygon.shp`;
-  readShapefile(path, (error, { finished, feature, next }) => {
+  readShapefile({ path }, (error, { finished, feature, next }) => {
     // handle read errors
     if (error) {
       return done(error);
@@ -136,7 +136,7 @@ exports.seedSubWards = done => {
 
 exports.seedHospitals = done => {
   const path = `${__dirname}/../data/criticalfacilities/Dar_es_Salaam_Hospital_Points.geojson`;
-  readGeoJSON(path, (error, { finished, feature, next }) => {
+  readGeoJSON({ path }, (error, { finished, feature, next }) => {
     // handle read errors
     if (error) {
       return done(error);
