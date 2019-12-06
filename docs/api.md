@@ -2490,15 +2490,102 @@ HTTP/1.1 200 Success
 
 <br />
 
-|    Name     |  Type  |                                       Description                                       |
-| :---------: | :----: | :-------------------------------------------------------------------------------------: |
-|    \_id     | String |                       Unique universal identifier of this event.                        |
-|    group    | String |                            Human readable group of an event.                            |
-|    type     | String |                            Human readable type of an event.                             |
-|   number    | String |                     Human readable, unique identifier of an event.                      |
-| description | String | A brief summary about an event i.e additional details that clarify more about an event. |
-|  startedAt  |  Date  |                 Date when an event was effective occured(or reported).                  |
-|   endedAt   |  Date  |                   Date when an event was declared no longer a threat.                   |
+|     Name      |  Type  |                                       Description                                       |
+| :-----------: | :----: | :-------------------------------------------------------------------------------------: |
+|     \_id      | String |                       Unique universal identifier of this event.                        |
+|     group     | String |                            Human readable group of an event.                            |
+|     type      | Object |                            Human readable type of an event.                             |
+|  certainity   | String |                   Human translatable readable certainty of an event.                    |
+|   severity    | String |                    Human translatable readable severity of an event                     |
+|     stage     | String |                        Human readable evolving step of an event.                        |
+|    number     | String |                     Human readable, unique identifier of an event.                      |
+|    address    | String |            A human readable description of location where an event happened.            |
+|   location    | Point  |     A geo-point specifying longitude and latitude pair of the address of an event.      |
+|    causes     | String |               A brief human readable summary about cause(s) of an event.                |
+|  description  | String | A brief summary about an event i.e additional details that clarify more about an event. |
+|    places     | String |            Human readable text describing the affected area(s) of an event.             |
+|     areas     | Array  |                      Affected administrative area(s) of an event.                       |
+| instructions  | String |        A brief human readable, caution(s) to be taken by responders on an event.        |
+| interventions | String |                       A brief human readable effect(s) an event.                        |
+|    impacts    | String |                       A brief human readable effect(s) an event.                        |
+|    remarks    | String |           A brief human readable comments and recommendations about an event.           |
+|   startedAt   |  Date  |                 Date when an event was effective occured(or reported).                  |
+|    endedAt    |  Date  |                   Date when an event was declared no longer a threat.                   |
+
+### Create Event
+
+To create a new event, send a `POST` request to `https://api.ewea.io/v1/events`. The following attributes are supported:
+
+<br />
+
+|     Name      |  Type  |                                       Description                                       | Required |
+| :-----------: | :----: | :-------------------------------------------------------------------------------------: | :------: |
+|     group     | String |                            Human readable group of an event.                            |   true   |
+|     type      | String |                            Human readable type of an event.                             |   true   |
+|  certainity   | String |                   Human translatable readable certainty of an event.                    |   true   |
+|   severity    | String |                    Human translatable readable severity of an event                     |   true   |
+|     stage     | String |                        Human readable evolving step of an event.                        |   true   |
+|    number     | String |                     Human readable, unique identifier of an event.                      |   true   |
+|    address    | String |            A human readable description of location where an event happened.            |  false   |
+|   location    | Point  |     A geo-point specifying longitude and latitude pair of the address of an event.      |  false   |
+|    causes     | String |               A brief human readable summary about cause(s) of an event.                |   true   |
+|  description  | String | A brief summary about an event i.e additional details that clarify more about an event. |   true   |
+|    places     | String |            Human readable text describing the affected area(s) of an event.             |   true   |
+|     areas     | Array  |                      Affected administrative area(s) of an event.                       |   true   |
+| instructions  | String |        A brief human readable, caution(s) to be taken by responders on an event.        |  false   |
+| interventions | String |                       A brief human readable effect(s) an event.                        |  false   |
+|    impacts    | String |                       A brief human readable effect(s) an event.                        |  false   |
+|    remarks    | String |           A brief human readable comments and recommendations about an event.           |  false   |
+|   startedAt   |  Date  |                 Date when an event was effective occured(or reported).                  |  false   |
+|    endedAt    |  Date  |                   Date when an event was declared no longer a threat.                   |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/events \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "type": "5de93ad82bc376633fe1ec5b",
+    "stage": "Event",
+    "number": "FL-2018-000038-TZA",
+    "causes": "Heavy rainfall",
+    "description": "strong pressure gradient force from the ocean"
+  }'
+```
+
+The response will be a `JSON object` with the standard party attributes:
+
+|    Name     |  Type  |                                             Description                                             |
+| :---------: | :----: | :-------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                             Unique universal identifier of this event.                              |
+|    type     | String |                                  Human readable type of an event.                                   |
+|    stage    | String |                              Human readable evolving step of an event.                              |
+|   number    | String |                           Human readable, unique identifier of an event.                            |
+|   causes    | String |                     A brief human readable summary about cause(s) of an event.                      |
+| description | String |       A brief summary about an event i.e additional details that clarify more about an event.       |
+|  startedAt  |  Date  |                       Date when an event was effective occured(or reported).                        |
+|  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when party was created. |
+|  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when party was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "type": "5de93ad82bc376633fe1ec5b",
+  "stage": "Event",
+  "number": "FL-2018-000037-TZA",
+  "causes": "Heavy rainfall",
+  "description": "strong pressure gradient force from the ocean",
+  "startedAt": "2019-12-06T10:59:26.224Z",
+  "_id": "5dea348e15ce9664879eafb3",
+  "updatedAt": "2019-12-06T10:59:26.226Z",
+  "createdAt": "2019-12-06T10:59:26.226Z"
+}
+```
 
 ### Retrieve Event
 
@@ -2517,28 +2604,217 @@ The response will be a `JSON object` with the standard event attributes:
 
 <br/>
 
-|    Name     |  Type  |                                       Description                                       |
-| :---------: | :----: | :-------------------------------------------------------------------------------------: |
-|    \_id     | String |                       Unique universal identifier of this event.                        |
-|    group    | String |                            Human readable group of an event.                            |
-|    type     | String |                            Human readable type of an event.                             |
-|   number    | String |                     Human readable, unique identifier of an event.                      |
-| description | String | A brief summary about an event i.e additional details that clarify more about an event. |
-|  startedAt  |  Date  |                 Date when an event was effective occured(or reported).                  |
-|   endedAt   |  Date  |                   Date when an event was declared no longer a threat.                   |
+|     Name      |  Type  |                                       Description                                       |
+| :-----------: | :----: | :-------------------------------------------------------------------------------------: |
+|     \_id      | String |                       Unique universal identifier of this event.                        |
+|     group     | String |                            Human readable group of an event.                            |
+|     type      | Object |                            Human readable type of an event.                             |
+|  certainity   | String |                   Human translatable readable certainty of an event.                    |
+|   severity    | String |                    Human translatable readable severity of an event                     |
+|     stage     | String |                        Human readable evolving step of an event.                        |
+|    number     | String |                     Human readable, unique identifier of an event.                      |
+|    address    | String |            A human readable description of location where an event happened.            |
+|   location    | Point  |     A geo-point specifying longitude and latitude pair of the address of an event.      |
+|    causes     | String |               A brief human readable summary about cause(s) of an event.                |
+|  description  | String | A brief summary about an event i.e additional details that clarify more about an event. |
+|    places     | String |            Human readable text describing the affected area(s) of an event.             |
+|     areas     | Array  |                      Affected administrative area(s) of an event.                       |
+| instructions  | String |        A brief human readable, caution(s) to be taken by responders on an event.        |
+| interventions | String |                       A brief human readable effect(s) an event.                        |
+|    impacts    | String |                       A brief human readable effect(s) an event.                        |
+|    remarks    | String |           A brief human readable comments and recommendations about an event.           |
+|   startedAt   |  Date  |                 Date when an event was effective occured(or reported).                  |
+|    endedAt    |  Date  |                   Date when an event was declared no longer a threat.                   |
+|   createdAt   |  Date  |                             Date when an event was created                              |
+|   updatedAt   |  Date  |                             Date when an event was updated                              |
 
 > Example Response
 
 ```curl
 HTTP/1.1 200 Success
 {
-  "number": "EQ-2018-000033-TZA",
-  "description": "Ad et adipisci voluptatem. Consequatur excepturi fuga.",
+  "type": {
+    "strings": {
+      "name": {
+        "en": "Flood"
+      },
+      "code": "F",
+      "color": "#FCC2CB"
+      },
+      "_id": "5de93ad82bc376633fe1ec5b"
+  },
+  "stage": "Event",
+  "number": "FL-2018-000033-TZA",
+  "causes": "Heavy rainfall",
+  "description": "Overflowing water from the dam",
+  "places": "Ilala, Temeke, Dar es Salaam",
+  "instructions": "Continue monitor the situation",
+  "interventions": "Affected victims were evacuated and relocated",
+  "impacts": "55 people affected, 72 houses destroyed and 9 schools damaged",
+  "remarks": "Relief items should be provided to the victims",
   "startedAt": "2019-10-17T07:53:32.831Z",
   "endedAt": "2019-10-19T07:53:32.831Z",
   "_id": "5d535a0a62b47901d3294ff8",
-  "updatedAt": "2019-12-05T10:03:52.524Z",
-  "createdAt": "2019-12-04T19:40:47.486Z"
+  "updatedAt": "2019-12-05T17:14:48.206Z",
+  "createdAt": "2019-12-05T17:14:00.659Z"
+}
+```
+
+### Update Event
+
+To update existing event, send a `PATCH` request to `https://api.ewea.io/v1/events/:id`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                                       Description                                       |
+| :---------: | :----: | :-------------------------------------------------------------------------------------: |
+| description | String | A brief summary about an event i.e additional details that clarify more about an event. |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/events/5d535a0a62b47901d3294ff8 \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+    "description": "Overflow of water from the dam"
+  }'
+```
+
+The response will be a `JSON object` with the standard events attributes:
+
+<br/>
+
+|     Name      |  Type  |                                       Description                                       |
+| :-----------: | :----: | :-------------------------------------------------------------------------------------: |
+|     \_id      | String |                       Unique universal identifier of this event.                        |
+|     group     | String |                            Human readable group of an event.                            |
+|     type      | Object |                            Human readable type of an event.                             |
+|  certainity   | String |                   Human translatable readable certainty of an event.                    |
+|   severity    | String |                    Human translatable readable severity of an event                     |
+|     stage     | String |                        Human readable evolving step of an event.                        |
+|    number     | String |                     Human readable, unique identifier of an event.                      |
+|    address    | String |            A human readable description of location where an event happened.            |
+|   location    | Point  |     A geo-point specifying longitude and latitude pair of the address of an event.      |
+|    causes     | String |               A brief human readable summary about cause(s) of an event.                |
+|  description  | String | A brief summary about an event i.e additional details that clarify more about an event. |
+|    places     | String |            Human readable text describing the affected area(s) of an event.             |
+|     areas     | Array  |                      Affected administrative area(s) of an event.                       |
+| instructions  | String |        A brief human readable, caution(s) to be taken by responders on an event.        |
+| interventions | String |                       A brief human readable effect(s) an event.                        |
+|    impacts    | String |                       A brief human readable effect(s) an event.                        |
+|    remarks    | String |           A brief human readable comments and recommendations about an event.           |
+|   startedAt   |  Date  |                 Date when an event was effective occured(or reported).                  |
+|    endedAt    |  Date  |                   Date when an event was declared no longer a threat.                   |
+|   createdAt   |  Date  |                             Date when an event was created                              |
+|   updatedAt   |  Date  |                             Date when an event was updated                              |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "type": {
+    "strings": {
+      "name": {
+        "en": "Flood"
+      },
+      "code": "F",
+      "color": "#FCC2CB"
+    },
+    "_id": "5de93ad82bc376633fe1ec5b"
+    },
+    "stage": "Event",
+    "number": "FL-2018-000033-TZA",
+    "causes": "Heavy rainfall",
+    "description": "Overflow of water from the dam",
+    "places": "Ilala, Temeke, Dar es Salaam",
+    "instructions": "Continue monitor the situation",
+    "interventions": "Affected victims were evacuated and relocated",
+    "impacts": "55 people affected, 72 houses destroyed and 9 schools damaged",
+    "remarks": "Relief items should be provided to the victims",
+    "startedAt": "2019-10-17T07:53:32.831Z",
+    "endedAt": "2019-10-19T07:53:32.831Z",
+    "_id": "5d535a0a62b47901d3294ff8",
+    "updatedAt": "2019-12-06T11:38:54.042Z",
+    "createdAt": "2019-12-05T17:14:00.659Z"
+}
+```
+
+### Delete Event
+
+To delete existing event, send a `DELETE` request to `https://api.ewea.io/v1/events/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/events/5d535a0a62b47901d3294ff8 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard party attributes:
+
+<br/>
+
+|     Name      |  Type  |                                       Description                                       |
+| :-----------: | :----: | :-------------------------------------------------------------------------------------: |
+|     \_id      | String |                       Unique universal identifier of this event.                        |
+|     group     | String |                            Human readable group of an event.                            |
+|     type      | Object |                            Human readable type of an event.                             |
+|  certainity   | String |                   Human translatable readable certainty of an event.                    |
+|   severity    | String |                    Human translatable readable severity of an event                     |
+|     stage     | String |                        Human readable evolving step of an event.                        |
+|    number     | String |                     Human readable, unique identifier of an event.                      |
+|    address    | String |            A human readable description of location where an event happened.            |
+|   location    | Point  |     A geo-point specifying longitude and latitude pair of the address of an event.      |
+|    causes     | String |               A brief human readable summary about cause(s) of an event.                |
+|  description  | String | A brief summary about an event i.e additional details that clarify more about an event. |
+|    places     | String |            Human readable text describing the affected area(s) of an event.             |
+|     areas     | Array  |                      Affected administrative area(s) of an event.                       |
+| instructions  | String |        A brief human readable, caution(s) to be taken by responders on an event.        |
+| interventions | String |                       A brief human readable effect(s) an event.                        |
+|    impacts    | String |                       A brief human readable effect(s) an event.                        |
+|    remarks    | String |           A brief human readable comments and recommendations about an event.           |
+|   startedAt   |  Date  |                 Date when an event was effective occured(or reported).                  |
+|    endedAt    |  Date  |                   Date when an event was declared no longer a threat.                   |
+|   createdAt   |  Date  |                             Date when an event was created                              |
+|   updatedAt   |  Date  |                             Date when an event was updated                              |
+|   deletedAt   |  Date  |                             Date when an event was deleted                              |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "type": {
+    "strings": {
+      "name": {
+        "en": "Flood"
+      },
+      "code": "F",
+      "color": "#FCC2CB"
+    },
+    "_id": "5de93ad82bc376633fe1ec5b"
+  },
+  "stage": "Event",
+  "number": "FL-2018-000033-TZA",
+  "causes": "Heavy rainfall",
+  "description": "Overflow of water from the dam",
+  "places": "Ilala, Temeke, Dar es Salaam",
+  "instructions": "Continue monitor the situation",
+  "interventions": "Affected victims were evacuated and relocated",
+  "impacts": "55 people affected, 72 houses destroyed and 9 schools damaged",
+  "remarks": "Relief items should be provided to the victims",
+  "startedAt": "2019-10-17T07:53:32.831Z",
+  "endedAt": "2019-10-19T07:53:32.831Z",
+  "_id": "5d535a0a62b47901d3294ff8",
+  "updatedAt": "2019-12-06T11:45:23.474Z",
+  "createdAt": "2019-12-05T17:14:00.659Z",
+  "deletedAt": "2019-12-06T11:45:23.446Z"
 }
 ```
 
@@ -2559,43 +2835,72 @@ The response will be a `JSON object` with a `data key`. The values in the `data 
 
 <br/>
 
-|    Name     |  Type  |                                       Description                                       |
-| :---------: | :----: | :-------------------------------------------------------------------------------------: |
-|    \_id     | String |                       Unique universal identifier of this event.                        |
-|    group    | String |                            Human readable group of an event.                            |
-|    type     | String |                            Human readable type of an event.                             |
-|   number    | String |                     Human readable, unique identifier of an event.                      |
-| description | String | A brief summary about an event i.e additional details that clarify more about an event. |
-|  startedAt  |  Date  |                 Date when an event was effective occured(or reported).                  |
-|   endedAt   |  Date  |                   Date when an event was declared no longer a threat.                   |
-|  createdAt  |  Date  |                             Date when an event was created                              |
-|  updatedAt  |  Date  |                             Date when an event was updated                              |
+|     Name      |  Type  |                                       Description                                       |
+| :-----------: | :----: | :-------------------------------------------------------------------------------------: |
+|     \_id      | String |                       Unique universal identifier of this event.                        |
+|     group     | String |                            Human readable group of an event.                            |
+|     type      | Object |                            Human readable type of an event.                             |
+|  certainity   | String |                   Human translatable readable certainty of an event.                    |
+|   severity    | String |                    Human translatable readable severity of an event                     |
+|     stage     | String |                        Human readable evolving step of an event.                        |
+|    number     | String |                     Human readable, unique identifier of an event.                      |
+|    address    | String |            A human readable description of location where an event happened.            |
+|   location    | Point  |     A geo-point specifying longitude and latitude pair of the address of an event.      |
+|    causes     | String |               A brief human readable summary about cause(s) of an event.                |
+|  description  | String | A brief summary about an event i.e additional details that clarify more about an event. |
+|    places     | String |            Human readable text describing the affected area(s) of an event.             |
+|     areas     | Array  |                      Affected administrative area(s) of an event.                       |
+| instructions  | String |        A brief human readable, caution(s) to be taken by responders on an event.        |
+| interventions | String |                       A brief human readable effect(s) an event.                        |
+|    impacts    | String |                       A brief human readable effect(s) an event.                        |
+|    remarks    | String |           A brief human readable comments and recommendations about an event.           |
+|   startedAt   |  Date  |                 Date when an event was effective occured(or reported).                  |
+|    endedAt    |  Date  |                   Date when an event was declared no longer a threat.                   |
+|   createdAt   |  Date  |                             Date when an event was created                              |
+|   updatedAt   |  Date  |                             Date when an event was updated                              |
 
 > Example Response:
 
 ```curl
 HTTP/1.1 200 Success
+
 {
-  "data":[
-    {
-      "number": "EQ-2018-000033-TZA",
-      "description": "Ad et adipisci voluptatem. Consequatur excepturi fuga.",
+  "data": [{
+    "type": {
+      "strings": {
+        "name": {
+          "en": "Flood"
+        },
+        "code": "F",
+        "color": "#FCC2CB"
+      },
+      "_id": "5de93ad82bc376633fe1ec5b"
+      },
+      "stage": "Event",
+      "number": "FL-2018-000033-TZA",
+      "causes": "Heavy rainfall",
+      "description": "Overflowing water from the dam",
+      "places": "Ilala, Temeke, Dar es Salaam",
+      "instructions": "Continue monitor the situation",
+      "interventions": "Affected victims were evacuated and relocated",
+      "impacts": "55 people affected, 72 houses destroyed and 9 schools damaged",
+      "remarks": "Relief items should be provided to the victims",
       "startedAt": "2019-10-17T07:53:32.831Z",
       "endedAt": "2019-10-19T07:53:32.831Z",
       "_id": "5d535a0a62b47901d3294ff8",
-      "updatedAt": "2019-12-05T10:03:52.524Z",
-      "createdAt": "2019-12-04T19:40:47.486Z"
-    }
-  ],
-  "total": 1,
-  "size": 1,
-  "limit": 10,
-  "skip": 0,
-  "page": 1,
-  "pages": 1,
-  "lastModified": "2019-12-05T10:03:52.524Z",
-  "hasMore": false
+      "updatedAt": "2019-12-05T17:14:48.206Z",
+      "createdAt": "2019-12-05T17:14:00.659Z"
+    }],
+    "total": 1,
+    "size": 1,
+    "limit": 10,
+    "skip": 0,
+    "page": 1,
+    "pages": 1,
+    "lastModified": "2019-12-05T17:14:48.206Z",
+    "hasMore": false
 }
+
 ```
 
 ## EventNotification
