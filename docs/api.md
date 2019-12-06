@@ -2474,7 +2474,321 @@ HTTP/1.1 200 Success
 
 ## EventAction
 
-> TODO
+`EventAction` defines an emergency response actitvity
+
+### EventAction Schema
+
+`EventAction` have the following attributes:
+
+<br />
+
+|     Name     |  Type  |                                                  Description                                                   |
+| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event action.                                |
+|     name     | Object |                             Human-translatable-readable name for the event action.                             |
+|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+| description  | Object |                         Human-translatable-readable description for the event action.                          |
+|     code     | String |                             Unique human-readable given code of this event action.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+|   function   | String |          Human-translatable-readable name of event function to which the action is categorized into.           |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+
+### Create EventAction
+
+To create a new event action, send a `POST` request to `https://api.ewea.io/v1/predefines/eventactions`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                                         Description                                         | Required |
+| :---------: | :----: | :-----------------------------------------------------------------------------------------: | :------: |
+|    code     | String |                   Unique human-readable given code of this event action.                    |  false   |
+|    type     | String |       Human readable type of a event that the action can be triggered to take place.        |   true   |
+|    name     | Object |                   Human-translatable-readable name for the event action.                    |   true   |
+| description | Object |                Human-translatable-readable description for the event action.                |  false   |
+|    color    | String |      A color code(in hexadecimal format) used to differentiate event action visually.       |  false   |
+|  function   | String | Human-translatable-readable name of event function to which the action is categorized into. |   true   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/eventactions \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+"name": { "en": "Disseminating warning information to the public" },
+"function": "Direction and Control"
+}'
+```
+
+The response will be a `JSON object` with the standard event group attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                  Description                                                   |
+| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event action.                                |
+|     name     | Object |                             Human-translatable-readable name for the event action.                             |
+|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+| description  | Object |                         Human-translatable-readable description for the event action.                          |
+|     code     | String |                             Unique human-readable given code of this event action.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+|   function   | String |           Human-translatable-readable name of event function to which the action is categorized into           |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+"_id": "5de7b7bb9a6ed7342b200f02",
+"name": { "en": "Disseminating warning information to the public" },
+"abbreviation": { "en": "DWITTP" },
+"description": {
+"en": "Disseminating warning information to the public" },
+"code": "DWITTP",
+"color": "#F4EF8D",
+"function": {
+    "_id": "5ddbbc871283e3131b2d41dc",
+    "name": { "en": "Direction and Control" },
+  },
+"updatedAt": "2019-12-04T13:42:46.937Z",
+"createdAt": "2019-12-04T13:42:20.186Z"
+}
+```
+
+### Retrieve EventAction
+
+To get an event action, send a `GET` request to `https://api.ewea.io/v1/predefines/eventactions/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventactions/5de7b7bb9a6ed7342b200f02 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event action attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                  Description                                                   |
+| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event action.                                |
+|     name     | Object |                             Human-translatable-readable name for the event action.                             |
+|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+| description  | Object |                         Human-translatable-readable description for the event action.                          |
+|     code     | String |                             Unique human-readable given code of this event action.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+|   function   | String |           Human-translatable-readable name of event function to which the action is categorized into           |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+"_id": "5de7b7bb9a6ed7342b200f02",
+"name": { "en": "Disseminating warning information to the public" },
+"abbreviation": { "en": "DWITTP" },
+"description": {
+"en": "Disseminating warning information to the public" },
+"code": "DWITTP",
+"color": "#F4EF8D",
+"function": {
+    "_id": "5ddbbc871283e3131b2d41dc",
+    "name": { "en": "Direction and Control" },
+  },
+"updatedAt": "2019-12-04T13:42:46.937Z",
+"createdAt": "2019-12-04T13:42:20.186Z"
+}
+```
+
+### Update EventAction
+
+To update existing event action, send a `PATCH` request to `https://api.ewea.io/v1/predefines/eventactions/:id`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                                         Description                                         | Required |
+| :---------: | :----: | :-----------------------------------------------------------------------------------------: | :------: |
+|    type     | String |       Human readable type of a event that the action can be triggered to take place.        |   true   |
+|    name     | Object |                   Human-translatable-readable name for the event action.                    |   true   |
+| description | Object |                Human-translatable-readable description for the event action.                |  false   |
+|  function   | String | Human-translatable-readable name of event function to which the action is categorized into. |   true   |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/eventactions/5de7b7bb9a6ed7342b200f02 \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+"name": { "en": "Disseminating warning information to the public" },
+"function":  { "en": "Direction and Control" }
+}'
+```
+
+The response will be a `JSON object` with the standard event action attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                  Description                                                   |
+| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event action.                                |
+|     name     | Object |                             Human-translatable-readable name for the event action.                             |
+|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+| description  | Object |                         Human-translatable-readable description for the event action.                          |
+|     code     | String |                             Unique human-readable given code of this event action.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+|   function   | String |           Human-translatable-readable name of event function to which the action is categorized into           |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+"_id": "5de7b7bb9a6ed7342b200f02",
+"name": { "en": "Disseminating warning information to the public" },
+"abbreviation": { "en": "DWITTP" },
+"description": {
+"en": "Disseminating warning information to the public" },
+"code": "DWITTP",
+"color": "#F4EF8D",
+"function": {
+    "_id": "5ddbbc871283e3131b2d41dc",
+    "name": { "en": "Direction and Control" },
+  },
+"updatedAt": "2019-12-04T13:42:46.937Z",
+"createdAt": "2019-12-04T13:42:20.186Z"
+}
+```
+
+### Delete EventAction
+
+To delete existing event action, send a `DELETE` request to `https://api.ewea.io/v1/predefines/eventactions/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/eventactions/5de7b7bb9a6ed7342b200f02 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event action attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                  Description                                                   |
+| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event action.                                |
+|     name     | Object |                             Human-translatable-readable name for the event action.                             |
+|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+| description  | Object |                         Human-translatable-readable description for the event action.                          |
+|     code     | String |                             Unique human-readable given code of this event action.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+|   function   | String |           Human-translatable-readable name of event function to which the action is categorized into           |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+"_id": "5de7b7bb9a6ed7342b200f02",
+"name": { "en": "Disseminating warning information to the public" },
+"abbreviation": { "en": "DWITTP" },
+"description": {
+"en": "Disseminating warning information to the public" },
+"code": "DWITTP",
+"color": "#F4EF8D",
+"function": {
+    "_id": "5ddbbc871283e3131b2d41dc",
+    "name": { "en": "Direction and Control" },
+  },
+"updatedAt": "2019-12-04T13:42:46.937Z",
+"createdAt": "2019-12-04T13:42:20.186Z"
+}
+```
+
+### List All EventAction
+
+To list all event actions, send a `GET` request to `https://api.ewea.io/v1/predefines/`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventactions \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of eventaction with the standard event action attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                  Description                                                   |
+| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this event action.                                |
+|     name     | Object |                             Human-translatable-readable name for the event action.                             |
+|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+| description  | Object |                         Human-translatable-readable description for the event action.                          |
+|     code     | String |                             Unique human-readable given code of this event action.                             |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+|   function   | String |           Human-translatable-readable name of event function to which the action is categorized into           |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+"data": [{
+{
+"_id": "5de7b7bb9a6ed7342b200f02",
+"name": { "en": "Disseminating warning information to the public" },
+"abbreviation": { "en": "DWITTP" },
+"description": {
+"en": "Disseminating warning information to the public" },
+"code": "DWITTP",
+"color": "#F4EF8D",
+"function": {
+    "_id": "5ddbbc871283e3131b2d41dc",
+    "name": { "en": "Direction and Control" },
+  },
+"updatedAt": "2019-12-04T13:42:46.937Z",
+"createdAt": "2019-12-04T13:42:20.186Z"
+}],
+"total": 26,
+"size": 10,
+"limit": 10,
+"skip": 0,
+"page": 1,
+"pages": 3,
+"lastModified": "2019-11-25T12:48:43.342Z"
+}
+```
 
 ## EventCatalogue
 
