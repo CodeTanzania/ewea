@@ -2182,7 +2182,7 @@ HTTP/1.1 200 Success
 
 ## EventFunction
 
-`EventFunction` groups emergency response actitvities
+`EventFunction` groups emergency response activities
 
 ### EventFunction Schema
 
@@ -2474,7 +2474,7 @@ HTTP/1.1 200 Success
 
 ## EventAction
 
-`EventAction` defines an emergency response actitvity
+`EventAction` defines an emergency response activity
 
 ### EventAction Schema
 
