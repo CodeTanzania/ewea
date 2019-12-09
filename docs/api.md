@@ -3761,6 +3761,18 @@ HTTP/1.1 200 Success
 }
 ```
 
+## EventIndicator
+
+> TODO
+
+## EventQuestion
+
+> TODO
+
+## Unit
+
+> TODO
+
 # Acknowledgements
 
 © 2019, EWEA. Released under the <a href="https://github.com/CodeTanzania/ewea/blob/develop/LICENSE" target="_blank">MIT License</a>.
