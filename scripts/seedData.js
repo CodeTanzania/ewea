@@ -2,7 +2,6 @@ const { parallel, waterfall } = require('async');
 const { warn, debug } = require('@lykmapipo/logger');
 const { listPermissions } = require('@lykmapipo/predefine');
 const {
-  connect,
   syncIndexes,
   Predefine,
   Permission,
@@ -18,22 +17,7 @@ const {
   seedHospitals,
 } = require('./seedGeo');
 
-const ensureConnection = next => {
-  debug('Start Seeding Data');
-  return connect(error => next(error));
-};
-
-const ensureIndexes = next => {
-  debug('Start Syncing Indexes');
-  return syncIndexes((error, results) => {
-    if (error) {
-      warn('Fail Syncing Indexes', error);
-    } else {
-      debug('Finish Syncing Indexes', results);
-    }
-    next();
-  });
-};
+debug('Start Seeding Data');
 
 const seed = next => {
   const seeds = {
@@ -52,7 +36,7 @@ const seed = next => {
   return parallel(seeds, next);
 };
 
-const tasks = [ensureConnection, ensureIndexes, seed];
+const tasks = [syncIndexes, seed];
 
 waterfall(tasks, error => {
   if (error) {
