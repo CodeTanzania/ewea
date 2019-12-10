@@ -282,21 +282,6 @@ const actions = [
     namespace: 'EventAction',
     strings: {
       name: {
-        en:
-          'Receiving information on emergency situations from different sources.',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Communication and Warning' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
         en: 'Recording of the event and data keeping.',
       },
     },
@@ -328,21 +313,6 @@ const actions = [
       name: {
         en:
           'Providing equipment and personnel for supporting the dissemination of warnings to the public.',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Communication and Warning' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
-        en:
-          'Disseminating the official released warning information and instructions to the public through a network of volunteers.',
       },
     },
     populate: {
@@ -548,67 +518,7 @@ const actions = [
     strings: {
       name: {
         en:
-          'Developing the evacuation plan with primary and alternative evacuation routes on map and activation of such a plan.',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Evacuation' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
-        en:
-          'Releasing evacuation information to the public, emphasizing on the need to evacuate.',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Evacuation' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
-        en:
-          'Estimating the number of people to be evacuated and identifying means to transport them.',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Evacuation' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
-        en:
           'Assisting in evacuating the most vulnerable groups of the population, such as the elder, children, pregnant women and people with disabilities.',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Evacuation' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
-        en:
-          'Identifying potential challenges (e.g. narrow bridges) of using the selected routes.',
       },
     },
     populate: {
@@ -827,49 +737,6 @@ const actions = [
     strings: {
       name: {
         en: 'Coordinating immunization and quarantine when required.',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Health and Medical Services' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
-        en: 'Providing life support services.',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Health and Medical Services' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
-        en: 'Providing first aid services to the affected people.',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Health and Medical Services' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
-        en:
-          'Directing government and partners’ (e.g. private hospitals) efforts to perform triage and provide treatment, stabilization and medical care to the affected population.',
       },
     },
     populate: {
@@ -1141,36 +1008,6 @@ const actions = [
     strings: {
       name: {
         en: 'Providing water, sanitaion and hygiene services',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Shelter and Mass Care' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
-        en:
-          'Maintaining key information about the disaster affected people (e.g. names, ages and sex)',
-      },
-    },
-    populate: {
-      'relations.function': {
-        match: { 'strings.name.en': 'Shelter and Mass Care' },
-        model: 'Predefine',
-      },
-    },
-  },
-  {
-    namespace: 'EventAction',
-    strings: {
-      name: {
-        en:
-          'Providing health and medical services to the disaster victims and injured ones',
       },
     },
     populate: {

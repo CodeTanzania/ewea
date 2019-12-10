@@ -8,6 +8,7 @@ const {
   Permission,
   Party,
   Event,
+  EventChangeLog,
 } = require('../src/database');
 const {
   seedRegions,
@@ -46,6 +47,7 @@ const seed = next => {
     hospitals: then => seedHospitals(then),
     parties: then => Party.seed(then),
     events: then => Event.seed(then),
+    changelogs: then => EventChangeLog.seed(then),
   };
   return parallel(seeds, next);
 };

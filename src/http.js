@@ -1,5 +1,11 @@
+const { waterfall } = require('async');
 const { debug } = require('@lykmapipo/logger');
-const { app, get, mount, start } = require('@lykmapipo/express-common');
+const {
+  app,
+  get,
+  mount,
+  start: startHttp,
+} = require('@lykmapipo/express-common');
 const { apiVersion } = require('@lykmapipo/env');
 const { jsonSchema } = require('@lykmapipo/mongoose-common');
 const { predefineRouter } = require('@lykmapipo/predefine');
@@ -8,7 +14,10 @@ const {
   authenticationRouter,
   partyRouter,
 } = require('@codetanzania/emis-stakeholder');
-const { eventRouter } = require('@codetanzania/ewea-event');
+const {
+  eventRouter,
+  eventChangeLogRouter,
+} = require('@codetanzania/ewea-event');
 
 const { connect } = require('./database');
 
@@ -23,8 +32,13 @@ mount(
   predefineRouter,
   permissionRouter,
   partyRouter,
-  eventRouter
+  eventRouter,
+  eventChangeLogRouter
 );
 debug('Finish Mounting Http Routers');
+
+const start = done => {
+  return waterfall([next => connect(next), next => startHttp(next)], done);
+};
 
 module.exports = { app, start, connect };
