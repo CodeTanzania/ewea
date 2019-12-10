@@ -350,27 +350,27 @@ It may be a self managed entity or division within another entity(party) in case
 
 <br />
 
-|      Name       |  Type  |                                             Description                                             |
-| :-------------: | :----: | :-------------------------------------------------------------------------------------------------: |
-|      \_id       | String |                             Unique universal identifier of this party.                              |
-|      party      | String |  Top party(i.e company, organization etc) under which a party is derived(or member, part of etc).   |
-|      type       | String |                                   Human readable type of a party.                                   |
-|      group      | String |                                  Human readable group of a party.                                   |
-|      name       | Object |                                   Human readable name of a party.                                   |
-|  abbreviation   | String |                             Human readable short form of a party name.                              |
-|     locale      | string |              Defines the party's language, region and any special variant preferences.              |
-|      email      | String |                           Primary email address used to contact a party.                            |
-|     mobile      | String |                        Primary mobile phone number used to contact a party.                         |
-|    landline     | String |               Primary main-line(or fixed-line) phone number used to contact a party.                |
-|       fax       | String |                             Primary fax number used to contact a party.                             |
-|     website     | String |                              Primary website url(or link) of a party.                               |
-| physicalAddress | String |                              Primary physical address of party office.                              |
-|  postalAddress  | String |                               Primary postal address of party office.                               |
-|     centre      | Object |               A geo-location coordinates of a party main office or area of operation.               |
-|      area       | String |                 Geographical location of a party main office or area of operation.                  |
-|      role       | String |                                Assignable or given role to a party.                                 |
-|    createdAt    | String | A time value given in ISO8601 combined date and time format that represents when party was created. |
-|    updatedAt    | String | A time value given in ISO8601 combined date and time format that represents when party was updated. |
+|                    Name                    |  Type  |                                             Description                                             |
+| :----------------------------------------: | :----: | :-------------------------------------------------------------------------------------------------: |
+|                    \_id                    | String |                             Unique universal identifier of this party.                              |
+|                   party                    | String |  Top party(i.e company, organization etc) under which a party is derived(or member, part of etc).   |
+|                    type                    | String |                                   Human readable type of a party.                                   |
+|    [group](#core-resources-partygroup)     | String |                                  Human readable group of a party.                                   |
+|                    name                    | Object |                                   Human readable name of a party.                                   |
+|                abbreviation                | String |                             Human readable short form of a party name.                              |
+|                   locale                   | String |              Defines the party's language, region and any special variant preferences.              |
+|                   email                    | String |                           Primary email address used to contact a party.                            |
+|                   mobile                   | String |                        Primary mobile phone number used to contact a party.                         |
+|                  landline                  | String |               Primary main-line(or fixed-line) phone number used to contact a party.                |
+|                    fax                     | String |                             Primary fax number used to contact a party.                             |
+|                  website                   | String |                              Primary website url(or link) of a party.                               |
+|              physicalAddress               | String |                              Primary physical address of party office.                              |
+|               postalAddress                | String |                               Primary postal address of party office.                               |
+|                   centre                   | Object |               A geo-location coordinates of a party main office or area of operation.               |
+| [area](#core-resources-administrativearea) | String |                 Geographical location of a party main office or area of operation.                  |
+|     [role](#core-resources-partyrole)      | String |                                Assignable or given role to a party.                                 |
+|                 createdAt                  | String | A time value given in ISO8601 combined date and time format that represents when party was created. |
+|                 updatedAt                  | String | A time value given in ISO8601 combined date and time format that represents when party was updated. |
 
 ### Create Party
 
@@ -378,24 +378,24 @@ To create a new event group, send a `POST` request to `https://api.ewea.io/v1/pa
 
 <br />
 
-|      Name       |  Type  |                                           Description                                            | Required |
-| :-------------: | :----: | :----------------------------------------------------------------------------------------------: | :------: |
-|      party      | String | Top party(i.e company, organization etc) under which a party is derived(or member, part of etc). |  false   |
-|      type       | String |                                 Human readable type of a party.                                  |  false   |
-|      group      | String |                                 Human readable group of a party.                                 |  false   |
-|      name       | Object |                                 Human readable name of a party.                                  |   true   |
-|  abbreviation   | String |                            Human readable short form of a party name.                            |  false   |
-|     locale      | string |            Defines the party's language, region and any special variant preferences.             |  false   |
-|      email      | String |                          Primary email address used to contact a party.                          |   true   |
-|     mobile      | String |                       Primary mobile phone number used to contact a party.                       |   true   |
-|    landline     | String |              Primary main-line(or fixed-line) phone number used to contact a party.              |  false   |
-|       fax       | String |                           Primary fax number used to contact a party.                            |  false   |
-|     website     | String |                             Primary website url(or link) of a party.                             |  false   |
-| physicalAddress | String |                            Primary physical address of party office.                             |  false   |
-|  postalAddress  | String |                             Primary postal address of party office.                              |  false   |
-|     centre      | Object |             A geo-location coordinates of a party main office or area of operation.              |  false   |
-|      area       | String |                Geographical location of a party main office or area of operation.                |  false   |
-|      role       | String |                               Assignable or given role to a party.                               |  false   |
+|                    Name                    |  Type  |                                           Description                                            | Required |
+| :----------------------------------------: | :----: | :----------------------------------------------------------------------------------------------: | :------: |
+|                   party                    | String | Top party(i.e company, organization etc) under which a party is derived(or member, part of etc). |  false   |
+|                    type                    | String |                                 Human readable type of a party.                                  |  false   |
+|    [group](#core-resources-partygroup)     | String |                                 Human readable group of a party.                                 |  false   |
+|                    name                    | Object |                                 Human readable name of a party.                                  |   true   |
+|                abbreviation                | String |                            Human readable short form of a party name.                            |  false   |
+|                   locale                   | String |            Defines the party's language, region and any special variant preferences.             |  false   |
+|                   email                    | String |                          Primary email address used to contact a party.                          |   true   |
+|                   mobile                   | String |                       Primary mobile phone number used to contact a party.                       |   true   |
+|                  landline                  | String |              Primary main-line(or fixed-line) phone number used to contact a party.              |  false   |
+|                    fax                     | String |                           Primary fax number used to contact a party.                            |  false   |
+|                  website                   | String |                             Primary website url(or link) of a party.                             |  false   |
+|              physicalAddress               | String |                            Primary physical address of party office.                             |  false   |
+|               postalAddress                | String |                             Primary postal address of party office.                              |  false   |
+|                   centre                   | Object |             A geo-location coordinates of a party main office or area of operation.              |  false   |
+| [area](#core-resources-administrativearea) | String |                Geographical location of a party main office or area of operation.                |  false   |
+|     [role](#core-resources-partyrole)      | String |                               Assignable or given role to a party.                               |  false   |
 
 > Example Request
 
@@ -414,18 +414,27 @@ curl --request POST \
 
 The response will be a `JSON object` with the standard party attributes:
 
-|     Name     |  Type  |                                                Description                                                 |
-| :----------: | :----: | :--------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                                 Unique universal identifier of this party.                                 |
-|     type     | String |                                      Human readable type of a party.                                       |
-|     name     | Object |                                      Human readable name of a party.                                       |
-| abbreviation | String |                                 Human readable short form of a party name.                                 |
-|    locale    | string |                 Defines the party's language, region and any special variant preferences.                  |
-|    email     | String |                               Primary email address used to contact a party.                               |
-|    mobile    | String |                            Primary mobile phone number used to contact a party.                            |
-|  createdAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
-|  updatedAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
-|   lockedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
+|                    Name                    |  Type  |                                                Description                                                 |
+| :----------------------------------------: | :----: | :--------------------------------------------------------------------------------------------------------: |
+|                    \_id                    | String |                                 Unique universal identifier of this party.                                 |
+|                    type                    | String |                                      Human readable type of a party.                                       |
+|                    name                    | Object |                                      Human readable name of a party.                                       |
+|    [group](#core-resources-partygroup)     | String |                                      Human readable group of a party.                                      |
+|                abbreviation                | String |                                 Human readable short form of a party name.                                 |
+|                   locale                   | String |                 Defines the party's language, region and any special variant preferences.                  |
+|                   email                    | String |                               Primary email address used to contact a party.                               |
+|                   mobile                   | String |                            Primary mobile phone number used to contact a party.                            |
+|                  landline                  | String |                   Primary main-line(or fixed-line) phone number used to contact a party.                   |
+|                    fax                     | String |                                Primary fax number used to contact a party.                                 |
+|                  website                   | String |                                  Primary website url(or link) of a party.                                  |
+|              physicalAddress               | String |                                 Primary physical address of party office.                                  |
+|               postalAddress                | String |                                  Primary postal address of party office.                                   |
+|                   centre                   | Object |                  A geo-location coordinates of a party main office or area of operation.                   |
+| [area](#core-resources-administrativearea) | String |                     Geographical location of a party main office or area of operation.                     |
+|     [role](#core-resources-partyrole)      | String |                                    Assignable or given role to a party.                                    |
+|                 createdAt                  | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
+|                 updatedAt                  | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
+|                  lockedAt                  | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
 
 > Example Response
 
@@ -462,31 +471,40 @@ The response will be a `JSON object` with the standard party attributes:
 
 <br/>
 
-|     Name     |  Type  |                                                Description                                                 |
-| :----------: | :----: | :--------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                                 Unique universal identifier of this party.                                 |
-|     name     | Object |                                      Human readable name of a party.                                       |
-|     type     | String |                                      Human readable type of a party.                                       |
-| abbreviation | String |                                 Human readable short form of a party name.                                 |
-|    locale    | string |                 Defines the party's language, region and any special variant preferences.                  |
-|    email     | String |                               Primary email address used to contact a party.                               |
-|    mobile    | String |                            Primary mobile phone number used to contact a party.                            |
-|  createdAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
-|  updatedAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
-|   lockedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
+|                    Name                    |  Type  |                                                Description                                                 |
+| :----------------------------------------: | :----: | :--------------------------------------------------------------------------------------------------------: |
+|                    \_id                    | String |                                 Unique universal identifier of this party.                                 |
+|                    name                    | Object |                                      Human readable name of a party.                                       |
+|                    type                    | String |                                      Human readable type of a party.                                       |
+|    [group](#core-resources-partygroup)     | String |                                      Human readable group of a party.                                      |
+|                abbreviation                | String |                                 Human readable short form of a party name.                                 |
+|                   locale                   | String |                 Defines the party's language, region and any special variant preferences.                  |
+|                   email                    | String |                               Primary email address used to contact a party.                               |
+|                   mobile                   | String |                            Primary mobile phone number used to contact a party.                            |
+|                  landline                  | String |                   Primary main-line(or fixed-line) phone number used to contact a party.                   |
+|                    fax                     | String |                                Primary fax number used to contact a party.                                 |
+|                  website                   | String |                                  Primary website url(or link) of a party.                                  |
+|              physicalAddress               | String |                                 Primary physical address of party office.                                  |
+|               postalAddress                | String |                                  Primary postal address of party office.                                   |
+|                   centre                   | Object |                  A geo-location coordinates of a party main office or area of operation.                   |
+| [area](#core-resources-administrativearea) | String |                     Geographical location of a party main office or area of operation.                     |
+|     [role](#core-resources-partyrole)      | String |                                    Assignable or given role to a party.                                    |
+|                 createdAt                  | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
+|                 updatedAt                  | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
+|                  lockedAt                  | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
 
 > Example Response
 
 ```curl
 HTTP/1.1 200 Success
 {
+  "_id": "5ddfadfd8fadd0276378b0d6",
   "type": "Focal Person",
   "name": "John Doe",
   "abbreviation": "JD",
   "locale": "en",
   "email": "john.doe@example.com",
   "mobile": "255789321212",
-  "_id": "5ddfadfd8fadd0276378b0d6",
   "updatedAt": "2019-11-28T11:22:37.254Z",
   "createdAt": "2019-11-28T11:22:37.199Z",
   "lockedAt": null
@@ -520,31 +538,40 @@ The response will be a `JSON object` with the standard party attributes:
 
 <br/>
 
-|     Name     |  Type  |                                                Description                                                 |
-| :----------: | :----: | :--------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                                 Unique universal identifier of this party.                                 |
-|     name     | Object |                                      Human readable name of a party.                                       |
-|     type     | String |                                      Human readable type of a party.                                       |
-| abbreviation | String |                                 Human readable short form of a party name.                                 |
-|    locale    | string |                 Defines the party's language, region and any special variant preferences.                  |
-|    email     | String |                               Primary email address used to contact a party.                               |
-|    mobile    | String |                            Primary mobile phone number used to contact a party.                            |
-|  createdAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
-|  updatedAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
-|   lockedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
+|                    Name                    |  Type  |                                                Description                                                 |
+| :----------------------------------------: | :----: | :--------------------------------------------------------------------------------------------------------: |
+|                    \_id                    | String |                                 Unique universal identifier of this party.                                 |
+|                    name                    | Object |                                      Human readable name of a party.                                       |
+|                    type                    | String |                                      Human readable type of a party.                                       |
+|    [group](#core-resources-partygroup)     | String |                                      Human readable group of a party.                                      |
+|                abbreviation                | String |                                 Human readable short form of a party name.                                 |
+|                   locale                   | String |                 Defines the party's language, region and any special variant preferences.                  |
+|                   email                    | String |                               Primary email address used to contact a party.                               |
+|                   mobile                   | String |                            Primary mobile phone number used to contact a party.                            |
+|                  landline                  | String |                   Primary main-line(or fixed-line) phone number used to contact a party.                   |
+|                    fax                     | String |                                Primary fax number used to contact a party.                                 |
+|                  website                   | String |                                  Primary website url(or link) of a party.                                  |
+|              physicalAddress               | String |                                 Primary physical address of party office.                                  |
+|               postalAddress                | String |                                  Primary postal address of party office.                                   |
+|                   centre                   | Object |                  A geo-location coordinates of a party main office or area of operation.                   |
+| [area](#core-resources-administrativearea) | String |                     Geographical location of a party main office or area of operation.                     |
+|     [role](#core-resources-partyrole)      | String |                                    Assignable or given role to a party.                                    |
+|                 createdAt                  | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
+|                 updatedAt                  | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
+|                  lockedAt                  | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
 
 > Example Response
 
 ```curl
 HTTP/1.1 200 Success
 {
+  "_id": "5ddfadfd8fadd0276378b0d6",
   "type": "Focal Person",
   "name": "John Dae",
   "abbreviation": "JD",
   "locale": "en",
   "email": "john.doe@example.com",
   "mobile": "255789321212",
-  "_id": "5ddfadfd8fadd0276378b0d6",
   "updatedAt": "2019-11-28T12:00:38.597Z",
   "createdAt": "2019-11-28T11:22:37.199Z",
   "lockedAt": null
@@ -568,32 +595,41 @@ The response will be a `JSON object` with the standard party attributes:
 
 <br/>
 
-|     Name     |  Type  |                                                 Description                                                 |
-| :----------: | :----: | :---------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                                 Unique universal identifier of this party.                                  |
-|     name     | Object |                                       Human readable name of a party.                                       |
-|     type     | String |                                       Human readable type of a party.                                       |
-| abbreviation | String |                                 Human readable short form of a party name.                                  |
-|    locale    | string |                  Defines the party's language, region and any special variant preferences.                  |
-|    email     | String |                               Primary email address used to contact a party.                                |
-|    mobile    | String |                            Primary mobile phone number used to contact a party.                             |
-|  createdAt   | String |     A time value given in ISO8601 combined date and time format that represents when party was created.     |
-|  updatedAt   | String |     A time value given in ISO8601 combined date and time format that represents when party was updated.     |
-|   lockedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was locked.  |
-|  deletedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was deleted. |
+|                    Name                    |  Type  |                                                 Description                                                 |
+| :----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
+|                    \_id                    | String |                                 Unique universal identifier of this party.                                  |
+|                    name                    | Object |                                       Human readable name of a party.                                       |
+|                    type                    | String |                                       Human readable type of a party.                                       |
+|    [group](#core-resources-partygroup)     | String |                                      Human readable group of a party.                                       |
+|                abbreviation                | String |                                 Human readable short form of a party name.                                  |
+|                   locale                   | String |                  Defines the party's language, region and any special variant preferences.                  |
+|                   email                    | String |                               Primary email address used to contact a party.                                |
+|                   mobile                   | String |                            Primary mobile phone number used to contact a party.                             |
+|                  landline                  | String |                   Primary main-line(or fixed-line) phone number used to contact a party.                    |
+|                    fax                     | String |                                 Primary fax number used to contact a party.                                 |
+|                  website                   | String |                                  Primary website url(or link) of a party.                                   |
+|              physicalAddress               | String |                                  Primary physical address of party office.                                  |
+|               postalAddress                | String |                                   Primary postal address of party office.                                   |
+|                   centre                   | Object |                   A geo-location coordinates of a party main office or area of operation.                   |
+| [area](#core-resources-administrativearea) | String |                     Geographical location of a party main office or area of operation.                      |
+|     [role](#core-resources-partyrole)      | String |                                    Assignable or given role to a party.                                     |
+|                 createdAt                  | String |     A time value given in ISO8601 combined date and time format that represents when party was created.     |
+|                 updatedAt                  | String |     A time value given in ISO8601 combined date and time format that represents when party was updated.     |
+|                  lockedAt                  | String | A time value given in ISO8601 combined date and time format that represents when party account was locked.  |
+|                 deletedAt                  | String | A time value given in ISO8601 combined date and time format that represents when party account was deleted. |
 
 > Example Response
 
 ```curl
 HTTP/1.1 200 Success
 {
+    "_id": "5ddfadfd8fadd0276378b0d6",
     "type": "Focal Person",
     "name": "John Dae",
     "abbreviation": "JD",
     "locale": "en",
     "email": "john.doe@example.com",
     "mobile": "255789321212",
-    "_id": "5ddfadfd8fadd0276378b0d6",
     "updatedAt": "2019-11-28T12:07:33.736Z",
     "createdAt": "2019-11-28T11:22:37.199Z",
     "lockedAt": null,
@@ -618,18 +654,27 @@ The response will be a `JSON object` with a `data key`. The values in the `data 
 
 <br/>
 
-|     Name     |  Type  |                                                Description                                                 |
-| :----------: | :----: | :--------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                                 Unique universal identifier of this party.                                 |
-|     name     | Object |                                      Human readable name of a party.                                       |
-|     type     | String |                                      Human readable type of a party.                                       |
-| abbreviation | String |                                 Human readable short form of a party name.                                 |
-|    locale    | string |                 Defines the party's language, region and any special variant preferences.                  |
-|    email     | String |                               Primary email address used to contact a party.                               |
-|    mobile    | String |                            Primary mobile phone number used to contact a party.                            |
-|  createdAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
-|  updatedAt   | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
-|   lockedAt   | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
+|                    Name                    |  Type  |                                                Description                                                 |
+| :----------------------------------------: | :----: | :--------------------------------------------------------------------------------------------------------: |
+|                    \_id                    | String |                                 Unique universal identifier of this party.                                 |
+|                    name                    | Object |                                      Human readable name of a party.                                       |
+|                    type                    | String |                                      Human readable type of a party.                                       |
+|    [group](#core-resources-partygroup)     | String |                                      Human readable group of a party.                                      |
+|                abbreviation                | String |                                 Human readable short form of a party name.                                 |
+|                   locale                   | String |                 Defines the party's language, region and any special variant preferences.                  |
+|                   email                    | String |                               Primary email address used to contact a party.                               |
+|                   mobile                   | String |                            Primary mobile phone number used to contact a party.                            |
+|                  landline                  | String |                   Primary main-line(or fixed-line) phone number used to contact a party.                   |
+|                    fax                     | String |                                Primary fax number used to contact a party.                                 |
+|                  website                   | String |                                  Primary website url(or link) of a party.                                  |
+|              physicalAddress               | String |                                 Primary physical address of party office.                                  |
+|               postalAddress                | String |                                  Primary postal address of party office.                                   |
+|                   centre                   | Object |                  A geo-location coordinates of a party main office or area of operation.                   |
+| [area](#core-resources-administrativearea) | String |                     Geographical location of a party main office or area of operation.                     |
+|     [role](#core-resources-partyrole)      | String |                                    Assignable or given role to a party.                                    |
+|                 createdAt                  | String |    A time value given in ISO8601 combined date and time format that represents when party was created.     |
+|                 updatedAt                  | String |    A time value given in ISO8601 combined date and time format that represents when party was updated.     |
+|                  lockedAt                  | String | A time value given in ISO8601 combined date and time format that represents when party account was locked. |
 
 > Example Response:
 
@@ -637,13 +682,13 @@ The response will be a `JSON object` with a `data key`. The values in the `data 
 HTTP/1.1 200 Success
 {
   "data": [{
+    "_id": "5ddfadfd8fadd0276378b0d6",
     "type": "Focal Person",
     "name": "John Dae",
     "abbreviation": "JD",
     "locale": "en",
     "email": "john.doe@example.com",
     "mobile": "255789321212",
-    "_id": "5ddfadfd8fadd0276378b0d6",
     "updatedAt": "2019-11-28T12:00:38.597Z",
     "createdAt": "2019-11-28T11:22:37.199Z",
     "lockedAt": null

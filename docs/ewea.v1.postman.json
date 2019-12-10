@@ -30,15 +30,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/signin",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/signinÏ",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
-								"signin"
+								"signinÏ"
 							]
 						}
 					},
@@ -67,11 +65,10 @@
 							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"mobile\": \"255789321212\"\n}"
 						},
 						"url": {
-							"raw": "localhost:5000/v1/parties",
+							"raw": "{{BASE_URL}}/v1/parties",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"parties"
@@ -87,15 +84,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/parties/5de67e5b36c38aa77e78ba09",
+							"raw": "{{BASE_URL}}/v1/parties/5def65a88f71fe2a6f3d3bd4",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"parties",
-								"5de67e5b36c38aa77e78ba09"
+								"5def65a88f71fe2a6f3d3bd4"
 							]
 						}
 					},
@@ -117,15 +113,14 @@
 							"raw": "{ \"name\" : \"John Dae\" }"
 						},
 						"url": {
-							"raw": "localhost:5000/v1/parties/5de67e5b36c38aa77e78ba09",
+							"raw": "{{BASE_URL}}/v1/parties/5def65a88f71fe2a6f3d3bd4",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"parties",
-								"5de67e5b36c38aa77e78ba09"
+								"5def65a88f71fe2a6f3d3bd4"
 							]
 						}
 					},
@@ -147,15 +142,14 @@
 							"raw": "{ \"name\" : \"John Dae\" }"
 						},
 						"url": {
-							"raw": "localhost:5000/v1/parties/5de67e5b36c38aa77e78ba09",
+							"raw": "{{BASE_URL}}/v1/parties/5def65a88f71fe2a6f3d3bd4",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"parties",
-								"5de67e5b36c38aa77e78ba09"
+								"5def65a88f71fe2a6f3d3bd4"
 							]
 						}
 					},
@@ -167,15 +161,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/parties/5de67e5b36c38aa77e78ba09",
+							"raw": "{{BASE_URL}}/v1/parties/5def65a88f71fe2a6f3d3bd4",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"parties",
-								"5de67e5b36c38aa77e78ba09"
+								"5def65a88f71fe2a6f3d3bd4"
 							]
 						}
 					},
@@ -187,12 +180,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/parties",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/parties",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"parties"
@@ -230,11 +221,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partyroles",
+							"raw": "{{BASE_URL}}/v1/predefines/partyroles",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -250,11 +240,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
+							"raw": "{{BASE_URL}}/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -287,11 +276,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
+							"raw": "{{BASE_URL}}/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -324,11 +312,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
+							"raw": "{{BASE_URL}}/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -345,11 +332,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
+							"raw": "{{BASE_URL}}/v1/predefines/partyroles/5de6795836c38aa77e78b9fa",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -366,11 +352,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partyroles",
+							"raw": "{{BASE_URL}}/v1/predefines/partyroles",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -408,11 +393,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partygroups",
+							"raw": "{{BASE_URL}}/v1/predefines/partygroups",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -428,11 +412,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
+							"raw": "{{BASE_URL}}/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -465,11 +448,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
+							"raw": "{{BASE_URL}}/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -502,11 +484,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
+							"raw": "{{BASE_URL}}/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -523,11 +504,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
+							"raw": "{{BASE_URL}}/v1/predefines/partygroups/5de76fac36c38aa77e78ba14",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -544,11 +524,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/predefines/partygroups",
+							"raw": "{{BASE_URL}}/v1/predefines/partygroups",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -586,12 +565,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventgroups/",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventgroups/",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -608,12 +585,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -646,12 +621,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -684,12 +657,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -706,12 +677,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventgroups/5de672d536c38aa77e78b9e8",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -728,12 +697,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventgroups",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventgroups",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -771,12 +738,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventtypes",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventtypes",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -792,12 +757,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -830,12 +793,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -868,12 +829,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -890,12 +849,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventtypes/5de6771336c38aa77e78b9f4",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -912,12 +869,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventtypes",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventtypes",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -955,11 +910,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventseverities",
+							"raw": "{{BASE_URL}}/v1/predefines/eventseverities",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -975,11 +929,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
+							"raw": "{{BASE_URL}}/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1012,11 +965,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
+							"raw": "{{BASE_URL}}/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1049,11 +1001,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
+							"raw": "{{BASE_URL}}/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1086,11 +1037,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
+							"raw": "{{BASE_URL}}/v1/predefines/eventseverities/5de772f036c38aa77e78ba1e",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1107,11 +1057,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventseverities",
+							"raw": "{{BASE_URL}}/v1/predefines/eventseverities",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1149,11 +1098,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventcertainties",
+							"raw": "{{BASE_URL}}/v1/predefines/eventcertainties",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1169,11 +1117,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
+							"raw": "{{BASE_URL}}/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1206,11 +1153,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
+							"raw": "{{BASE_URL}}/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1243,11 +1189,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
+							"raw": "{{BASE_URL}}/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1280,11 +1225,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
+							"raw": "{{BASE_URL}}/v1/predefines/eventcertainties/5de7785536c38aa77e78ba29",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1301,11 +1245,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/v1/predefines/eventcertainties",
+							"raw": "{{BASE_URL}}/v1/predefines/eventcertainties",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1365,12 +1308,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventfunctions",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventfunctions",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1386,12 +1327,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1424,12 +1363,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1462,12 +1399,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1484,12 +1419,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventfunctions/5de77a1f36c38aa77e78ba2f",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1506,12 +1439,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventfunctions",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventfunctions",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1533,12 +1464,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventactions",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventactions",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1560,12 +1489,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/eventcatalogues",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/eventcatalogues",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1603,12 +1530,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/events",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/events",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"events"
@@ -1642,12 +1567,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/events/5d535a0a62b47901d3294ff8",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/events/5d535a0a62b47901d3294ff8",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"events",
@@ -1679,12 +1602,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/events/5d535a0a62b47901d3294ff8",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/events/5d535a0a62b47901d3294ff8",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"events",
@@ -1716,12 +1637,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/events/5d535a0a62b47901d3294ff8",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/events/5d535a0a62b47901d3294ff8",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"events",
@@ -1737,12 +1656,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/events/5d535a0a62b47901d3294ff8",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/events/5d535a0a62b47901d3294ff8",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"events",
@@ -1758,12 +1675,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/events",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/events",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"events"
@@ -1810,12 +1725,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/administrativelevels",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1831,12 +1744,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1869,12 +1780,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1907,12 +1816,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1929,12 +1836,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels/5de67b8436c38aa77e78ba01",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
@@ -1951,12 +1856,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/predefines/administrativelevels",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "5000",
 							"path": [
 								"v1",
 								"predefines",
