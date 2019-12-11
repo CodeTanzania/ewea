@@ -1,5 +1,6 @@
 const templates = [
   {
+    _id: '5d535a0a62b47901d3294ff8',
     namespace: 'NotificationTemplate',
     strings: {
       name: {
@@ -14,8 +15,8 @@ const templates = [
         sw:
           'Ilani ya {event} imetolewa kwa {areas}. Kwa taarifa zaidi piga {phone}.',
       },
-      booleans: { default: true },
     },
+    booleans: { default: true },
   },
 ];
 
