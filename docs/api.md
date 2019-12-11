@@ -743,9 +743,11 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-    "description": { "en": "ICT officer" },
-    "name": { "en": "ICT officer" },
-    "color": "#86C7E8"
+  "strings": {
+      "name": { "en": "ICT officer" },
+      "description": { "en": "ICT officer" },
+      "color": "#86C7E8"
+    }
   }'
 ```
 
@@ -768,9 +770,11 @@ The response will be a `JSON object` with the standard party role attributes:
 HTTP/1.1 201 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
- "description": { "en": "ICT officer" },
- "name": { "en": "ICT officer" },
-  "color": "#86C7EE"
+  "strings": {
+    "name": { "en": "ICT officer" }
+    "description": { "en": "ICT officer" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -808,9 +812,11 @@ The response will be a `JSON object` with the standard party role attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
-  "description": { "en": "ICT officer" },
-  "name": { "en": "ICT officer" },
-  "color": "#86C7EE"
+  "strings": {
+    "description": { "en": "ICT officer" },
+    "name": { "en": "ICT officer" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -836,8 +842,10 @@ curl --request PATCH \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-    "description": { "en": "ICT officer" },
-     "name": { "en": "ICT officer" },
+    "strings": {
+      "name": { "en": "ICT officer" },
+      "description": { "en": "ICT officer" }
+    }
   }'
 ```
 
@@ -860,9 +868,11 @@ The response will be a `JSON object` with the standard party role attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
- "description": { "en": "ICT officer" },
-  "name": { "en": "ICT officer" },
-  "color": "#86C7EE"
+  "strings":{
+    "name": { "en": "ICT officer" },
+    "description": { "en": "ICT officer" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:30:04.340Z",
   "createdAt": "2019-02-21T13:30:04.340Z"
 }
@@ -893,6 +903,7 @@ The response will be a `JSON object` with the standard party role attributes:
 |    color    | String |               A color code(in hexadecimal format) used to differentiate party roles visually.                |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was updated. |
+|  deletedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party role was deleted. |
 
 > Example Response
 
@@ -900,11 +911,14 @@ The response will be a `JSON object` with the standard party role attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
-  "description": { "en": "ICT officer" },
-  "name": { "en": "ICT officer" },
-  "color": "#86C7EE"
+  "strings":{
+    "name": { "en": "ICT officer" },
+    "description": { "en": "ICT officer" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:30:04.340Z",
   "createdAt": "2019-02-21T13:30:04.340Z"
+  "createdAt": "2019-02-21T15:30:04.340Z"
 }
 ```
 
@@ -941,9 +955,11 @@ HTTP/1.1 200 Success
 {
   "data": [{
     "_id": "5c6ea7dae1dc700018aac95b",
-     "description": { "en": "ICT officer" },
+    "strings":{
      "name": { "en": "ICT officer" },
-    "color": "#86C7EE"
+     "description": { "en": "ICT officer" },
+     "color": "#86C7EE"
+    },
     "updatedAt": "2019-02-21T13:30:04.340Z",
     "createdAt": "2019-02-21T13:30:04.340Z"
   }],
@@ -998,9 +1014,11 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-    "description": { "en": "Group of Agencies belonging to the government" },
-    "name": { "en": "Government Agencies" },
-    "color": "#86C7E8"
+  "strings": {
+      "name": { "en": "Government Agencies" },
+      "description": { "en": "Group of Agencies belonging to the government" },
+      "color": "#86C7E8"
+    }
   }'
 ```
 
@@ -1023,9 +1041,11 @@ The response will be a `JSON object` with the standard party group attributes:
 HTTP/1.1 201 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
- "description": { "en": "Group of Agencies belonging to the government" },
- "name": { "en": "Government Agencies" },
-  "color": "#86C7EE"
+  "strings":{
+    "description": { "en": "Group of Agencies belonging to the government" },
+    "name": { "en": "Government Agencies" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -1063,9 +1083,11 @@ The response will be a `JSON object` with the standard party group attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
-  "description": { "en": "Group of Agencies belonging to the government" },
-  "name": { "en": "Government Agencies" },
-  "color": "#86C7EE"
+  "strings": {
+    "name": { "en": "Government Agencies" },
+    "description": { "en": "Group of Agencies belonging to the government" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -1091,8 +1113,10 @@ curl --request PATCH \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-    "description": { "en": "Group of Agencies belonging to the government" },
-     "name": { "en": "Government Agencies" },
+  "strings": {
+      "name": { "en": "Government Agencies" }
+      "description": { "en": "Group of Agencies belonging to the government" },
+    }
   }'
 ```
 
@@ -1115,8 +1139,10 @@ The response will be a `JSON object` with the standard party group attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
- "description": { "en": "Group of Agencies belonging to the government" },
-  "name": { "en": "Government Agencies" },
+  "strings":{
+    "name": { "en": "Government Agencies" }
+    "description": { "en": "Group of Agencies belonging to the government" },
+  },
   "color": "#86C7EE"
   "updatedAt": "2019-02-21T13:30:04.340Z",
   "createdAt": "2019-02-21T13:30:04.340Z"
@@ -1148,6 +1174,7 @@ The response will be a `JSON object` with the standard party group attributes:
 |    color    | String |               A color code(in hexadecimal format) used to differentiate party groups visually.                |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was updated. |
+|  deletedAt  | String | A time value given in ISO8601 combined date and time format that represents when the party group was deleted. |
 
 > Example Response
 
@@ -1155,11 +1182,14 @@ The response will be a `JSON object` with the standard party group attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
-  "description": { "en": "Group of Agencies belonging to the government" },
-  "name": { "en": "Government Agencies" },
+  "strings":{
+    "name": { "en": "Government Agencies" }
+    "description": { "en": "Group of Agencies belonging to the government" },
+  },
   "color": "#86C7EE"
   "updatedAt": "2019-02-21T13:30:04.340Z",
-  "createdAt": "2019-02-21T13:30:04.340Z"
+  "createdAt": "2019-02-21T13:30:04.340Z",
+  "deletedAt": "2019-02-21T15:30:04.340Z"
 }
 ```
 
@@ -1196,8 +1226,10 @@ HTTP/1.1 200 Success
 {
   "data": [{
     "_id": "5c6ea7dae1dc700018aac95b",
+    "strings":{
+     "name": { "en": "Government Agencies" }
      "description": { "en": "Group of Agencies belonging to the government" },
-     "name": { "en": "Government Agencies" },
+    }
     "color": "#86C7EE"
     "updatedAt": "2019-02-21T13:30:04.340Z",
     "createdAt": "2019-02-21T13:30:04.340Z"
@@ -1253,9 +1285,11 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-    "code": "H",
-    "name": { "en": "Hydrological" },
-    "color": "#86C7E8"
+  "strings": {
+      "name": { "en": "Hydrological" },
+      "code": "H",
+      "color": "#86C7E8"
+    }
   }'
 ```
 
@@ -1278,9 +1312,11 @@ The response will be a `JSON object` with the standard event group attributes:
 HTTP/1.1 201 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
-  "code": "H",
-  "name": { "en": "Hydrological" },
-  "color": "#86C7EE"
+  "strings": {
+    "code": "H",
+    "name": { "en": "Hydrological" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -1318,9 +1354,11 @@ The response will be a `JSON object` with the standard event group attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
-  "code": "H",
-  "name": { "en": "Hydrological" },
-  "color": "#86C7EE"
+  "strings": {
+    "name": { "en": "Hydrological" },
+    "code": "H",
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -1345,7 +1383,9 @@ curl --request PATCH \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-    "name": { "en": "Hydrological" },
+    "strings": {
+      "name": { "en": "Hydrological" },
+    }
   }'
 ```
 
@@ -1368,9 +1408,11 @@ The response will be a `JSON object` with the standard event group attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
-  "code": "H",
-  "name": { "en": "Hydrological" },
-  "color": "#86C7EE"
+  "strings": {
+    "code": "H",
+    "name": { "en": "Hydrological" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:30:04.340Z",
   "createdAt": "2019-02-21T13:30:04.340Z"
 }
@@ -1401,6 +1443,7 @@ The response will be a `JSON object` with the standard event group attributes:
 |   color   | String |               A color code(in hexadecimal format) used to differentiate event groups visually.                |
 | createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was created. |
 | updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was updated. |
+| deletedAt | String | A time value given in ISO8601 combined date and time format that represents when the event group was deleted. |
 
 > Example Response
 
@@ -1412,7 +1455,8 @@ HTTP/1.1 200 Success
   "name": { "en": "Hydrological" },
   "color": "#86C7EE"
   "updatedAt": "2019-02-21T13:30:04.340Z",
-  "createdAt": "2019-02-21T13:30:04.340Z"
+  "createdAt": "2019-02-21T13:30:04.340Z",
+  "deletedAt": "2019-02-21T15:30:04.340Z"
 }
 ```
 
@@ -1505,9 +1549,11 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-    "code": "SW",
-    "name": { "en": "Strong Winds" },
-    "color": "#86C7E8"
+  "strings": {
+      "code": "SW",
+      "name": { "en": "Strong Winds" },
+      "color": "#86C7E8"
+    }
   }'
 ```
 
@@ -1530,9 +1576,11 @@ The response will be a `JSON object` with the standard event type attributes:
 HTTP/1.1 201 Success
 {
   "_id": "5c6ea7dae1dc700018aac95a",
-  "code": "SW",
-  "name": { "en": "Strong Winds" },
-  "color": "#86C7E8"
+  "strings": {
+    "name": { "en": "Strong Winds" },
+    "code": "SW",
+    "color": "#86C7E8"
+  },
   "updatedAt": "2019-02-21T13:30:04.340Z",
   "createdAt": "2019-02-21T13:30:04.340Z"
 }
@@ -1570,9 +1618,11 @@ The response will be a `JSON object` with the standard event type attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95a",
-  "code": "SW",
-  "name": { "en": "Strong Winds" },
-  "color": "#86C7E8"
+  "strings": {
+    "code": "SW",
+    "name": { "en": "Strong Winds" },
+    "color": "#86C7E8"
+  },
   "updatedAt": "2019-02-21T13:30:04.340Z",
   "createdAt": "2019-02-21T13:30:04.340Z"
 }
@@ -1584,8 +1634,8 @@ To update existing event type, send a `PATCH` request to `https://api.ewea.io/v1
 
 <br/>
 
-| Name |  Type  |                     Description                      | Required |
-| :--: | :----: | :--------------------------------------------------: | :------: |
+| Name |  Type  |                     Description                      |
+| :--: | :----: | :--------------------------------------------------: |
 | name | Object | Human-translatable-readable name for the event type. |
 
 > Example Request
@@ -1597,7 +1647,7 @@ curl --request PATCH \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-    "name": { "en": "Strong Winds" },
+  "strings": { "name": { "en": "Strong Winds" }}
   }'
 ```
 
@@ -1620,9 +1670,11 @@ The response will be a `JSON object` with the standard event type attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95a",
-  "code": "SW",
-  "name": { "en": "Strong Winds" },
-  "color": "#86C7E8"
+  "strings": {
+    "code": "SW",
+    "name": { "en": "Strong Winds" },
+    "color": "#86C7E8"
+  },
   "updatedAt": "2019-02-21T13:30:04.340Z",
   "createdAt": "2019-02-21T13:30:04.340Z"
 }
@@ -1653,6 +1705,7 @@ The response will be a `JSON object` with the standard event type attributes:
 |   color   | String |               A color code(in hexadecimal format) used to differentiate event types visually.                |
 | createdAt | String | A time value given in ISO8601 combined date and time format that represents when the event type was created. |
 | updatedAt | String | A time value given in ISO8601 combined date and time format that represents when the event type was updated. |
+| deletedAt | String | A time value given in ISO8601 combined date and time format that represents when the event type was deleted. |
 
 > Example Response
 
@@ -1660,11 +1713,14 @@ The response will be a `JSON object` with the standard event type attributes:
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95a",
-  "code": "SW",
-  "name": { "en": "Strong Winds" },
-  "color": "#86C7E8"
+  "strings":{
+    "code": "SW",
+    "name": { "en": "Strong Winds" },
+    "color": "#86C7E8"
+  },
   "updatedAt": "2019-02-21T13:30:04.340Z",
-  "createdAt": "2019-02-21T13:30:04.340Z"
+  "createdAt": "2019-02-21T13:30:04.340Z",
+  "deletedAt": "2019-02-21T15:30:04.340Z"
 }
 ```
 
@@ -1701,9 +1757,11 @@ HTTP/1.1 200 Success
 {
   "data": [{
     "_id": "5c6ea7dae1dc700018aac95a",
-    "code": "SW",
-    "name": { "en": "Strong Winds" },
-    "color": "#86C7E8"
+    "strings": {
+      "code": "SW",
+      "name": { "en": "Strong Winds" },
+      "color": "#86C7E8"
+    },
     "updatedAt": "2019-02-21T13:30:04.340Z",
     "createdAt": "2019-02-21T13:30:04.340Z"
   }],
@@ -1757,9 +1815,11 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Be arer <apiKey>' \
 --data '{
-    "description": { "en": "Extraordinary threat to life or property" },
-    "name": { "en": "Extreme" },
-    "color": "#86C7E8"
+    "strings": {
+      "name": { "en": "Extreme" },
+      "description": { "en": "Extraordinary threat to life or property" },
+      "color": "#86C7E8"
+    }
   }'
 ```
 
@@ -1782,9 +1842,11 @@ The response will be a `JSON object` with the standard event severity attributes
 HTTP/1.1 201 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
- "description": { "en": "Extraordinary threat to life or property" },
- "name": { "en": "Extreme" },
-  "color": "#86C7EE"
+  "strings": {
+    "name": { "en": "Extreme" },
+    "description": { "en": "Extraordinary threat to life or property" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -1822,9 +1884,11 @@ The response will be a `JSON object` with the standard event severity attributes
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
-  "description": { "en": "Extraordinary threat to life or property" },
-  "name": { "en": "Extreme" },
-  "color": "#86C7EE"
+  "strings": {
+    "description": { "en": "Extraordinary threat to life or property" },
+    "name": { "en": "Extreme" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -1850,8 +1914,10 @@ curl --request PATCH \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-    "description": { "en": "Extraordinary threat to life or property" },
-     "name": { "en": "Extreme" },
+    "strings": {
+      "description": { "en": "Extraordinary threat to life or property" },
+      "name": { "en": "Extreme" }
+    }
   }'
 ```
 
@@ -1874,9 +1940,11 @@ The response will be a `JSON object` with the standard event severity attributes
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
- "description": { "en": "Extraordinary threat to life or property" },
-  "name": { "en": "Extreme" },
-  "color": "#86C7EE"
+  "strings": {
+    "name": { "en": "Extreme" },
+    "description": { "en": "Extraordinary threat to life or property" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:30:04.340Z",
   "createdAt": "2019-02-21T13:30:04.340Z"
 }
@@ -1907,6 +1975,7 @@ The response will be a `JSON object` with the standard event severity attributes
 |    color    | String |               A color code(in hexadecimal format) used to differentiate event severities visually.               |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was updated. |
+|  deletedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event severity was deleted. |
 
 > Example Response
 
@@ -1914,11 +1983,14 @@ The response will be a `JSON object` with the standard event severity attributes
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
-  "description": { "en": "Extraordinary threat to life or property" },
-  "name": { "en": "Extreme" },
-  "color": "#86C7EE"
+  "strings": {
+    "name": { "en": "Extreme" },
+    "description": { "en": "Extraordinary threat to life or property" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:30:04.340Z",
   "createdAt": "2019-02-21T13:30:04.340Z"
+  "deletedAt": "2019-02-21T14:30:04.340Z"
 }
 ```
 
@@ -1955,9 +2027,11 @@ HTTP/1.1 200 Success
 {
   "data": [{
     "_id": "5c6ea7dae1dc700018aac95b",
-     "description": { "en": "Extraordinary threat to life or property" },
-     "name": { "en": "Extreme" },
-    "color": "#86C7EE"
+    "strings": {
+      "name": { "en": "Extreme" },
+      "description": { "en": "Extraordinary threat to life or property" },
+      "color": "#86C7EE"
+    },
     "updatedAt": "2019-02-21T13:30:04.340Z",
     "createdAt": "2019-02-21T13:30:04.340Z"
   }],
@@ -2011,9 +2085,11 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Be arer <apiKey>' \
 --data '{
-    "description": { "en": "Determined to have occured or to be ongoing" },
+  "strings": {
     "name": { "en": "Observed" },
+    "description": { "en": "Determined to have occured or to be ongoing" },
     "color": "#86C7E8"
+  }
   }'
 ```
 
@@ -2036,9 +2112,11 @@ The response will be a `JSON object` with the standard event certainty attribute
 HTTP/1.1 201 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
- "description": { "en": "Determined to have occured or to be ongoing" },
- "name": { "en": "Observed" },
-  "color": "#86C7EE"
+  "strings": {
+    "description": { "en": "Determined to have occured or to be ongoing" },
+    "name": { "en": "Observed" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -2104,8 +2182,10 @@ curl --request PATCH \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
+  "strings": {
     "description": { "en": "Determined to have occured or to be ongoing" },
-     "name": { "en": "Observed" },
+    "name": { "en": "Observed" },
+  }
   }'
 ```
 
@@ -2128,9 +2208,11 @@ The response will be a `JSON object` with the standard event certainty attribute
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
- "description": { "en": "Determined to have occured or to be ongoing" },
-  "name": { "en": "Observed" },
-  "color": "#86C7EE"
+  "strings": {
+    "name": { "en": "Observed" },
+    "description": { "en": "Determined to have occured or to be ongoing" },
+    "color": "#86C7EE"
+  }
   "updatedAt": "2019-02-21T13:30:04.340Z",
   "createdAt": "2019-02-21T13:30:04.340Z"
 }
@@ -2161,6 +2243,7 @@ The response will be a `JSON object` with the standard event certainty attribute
 |    color    | String |               A color code(in hexadecimal format) used to differentiate event certainties visually.               |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was updated. |
+|  deletedAt  | String | A time value given in ISO8601 combined date and time format that represents when the event certainty was deleted. |
 
 > Example Response
 
@@ -2168,11 +2251,14 @@ The response will be a `JSON object` with the standard event certainty attribute
 HTTP/1.1 200 Success
 {
   "_id": "5c6ea7dae1dc700018aac95b",
-  "description": { "en": "Determined to have occured or to be ongoing" },
-  "name": { "en": "Observed" },
-  "color": "#86C7EE"
+  "strings": {
+    "name": { "en": "Observed" },
+    "description": { "en": "Determined to have occured or to be ongoing" },
+    "color": "#86C7EE"
+  },
   "updatedAt": "2019-02-21T13:30:04.340Z",
-  "createdAt": "2019-02-21T13:30:04.340Z"
+  "createdAt": "2019-02-21T13:30:04.340Z",
+  "deletedAt": "2019-02-21T14:30:04.340Z"
 }
 ```
 
@@ -2209,9 +2295,11 @@ HTTP/1.1 200 Success
 {
   "data": [{
     "_id": "5c6ea7dae1dc700018aac95b",
-     "description": { "en": "Determined to have occured or to be ongoing" },
-     "name": { "en": "Observed" },
-    "color": "#86C7EE"
+    "strings": {
+      "name": { "en": "Observed" },
+      "description": { "en": "Determined to have occured or to be ongoing" },
+      "color": "#86C7EE"
+    },
     "updatedAt": "2019-02-21T13:30:04.340Z",
     "createdAt": "2019-02-21T13:30:04.340Z"
   }],
@@ -2271,9 +2359,11 @@ curl --request POST \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
     "type": "Flood"
-    "code": "DBM",
-    "name": { "en": "Dead Bodies Management" },
-    "color": "#F9C5A7"
+    "strings": {
+      "code": "DBM",
+      "name": { "en": "Dead Bodies Management" },
+      "color": "#F9C5A7"
+    }
   }'
 ```
 
@@ -2300,11 +2390,13 @@ HTTP/1.1 201 Success
 {
   "_id": "5ddbbc871283e3131b2d41f4",
   "type": "Flood",
-  "name": { "en": "Dead Bodies Management" },
-  "abbreviation": { "en": "DBM" },
-  "description": { "en": "" },
-  "code": "DBM",
-  "color": "#F9C5A7"
+  "strings": {
+    "name": { "en": "Dead Bodies Management" },
+    "abbreviation": { "en": "DBM" },
+    "description": { "en": "" },
+    "code": "DBM",
+    "color": "#F9C5A7"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -2346,11 +2438,13 @@ HTTP/1.1 200 Success
 {
   "_id": "5ddbbc871283e3131b2d41f4",
   "type": "Flood",
-  "code": "DBM",
-  "name": { "en": "Dead Bodies Management" },
-  "description": { "en": "" },
-  "abbreviation": { "en": "DBM" },
-  "color": "#F9C5A7"
+  "strings": {
+    "code": "DBM",
+    "name": { "en": "Dead Bodies Management" },
+    "description": { "en": "" },
+    "abbreviation": { "en": "DBM" },
+    "color": "#F9C5A7"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -2378,8 +2472,10 @@ curl --request PATCH \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
     "type": "Flood",
-    "name": { "en": "Dead Bodies Management" },
-    "description": { "en": "" },
+    "strings": {
+      "name": { "en": "Dead Bodies Management" },
+      "description": { "en": "" }
+    }
   }'
 ```
 
@@ -2405,12 +2501,14 @@ The response will be a `JSON object` with the standard event function attributes
 HTTP/1.1 200 Success
 {
   "_id": "5ddbbc871283e3131b2d41f4",
-  "code": "DBM",
   "type": "Flood",
-  "name": { "en": "Dead Bodies Management" },
-  "abbreviation": { "en": "DBM" },
-  "description": { "en": "" },
-  "color": "#F9C5A7"
+  "strings": {
+    "code": "DBM",
+    "name": { "en": "Dead Bodies Management" },
+    "abbreviation": { "en": "DBM" },
+    "description": { "en": "" },
+    "color": "#F9C5A7"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -2444,6 +2542,7 @@ The response will be a `JSON object` with the standard event function attributes
 |    color     | String |               A color code(in hexadecimal format) used to differentiate event functions visually.                |
 |  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was created. |
 |  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was updated. |
+|  deletedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event function was deleted. |
 
 > Example Response
 
@@ -2451,14 +2550,17 @@ The response will be a `JSON object` with the standard event function attributes
 HTTP/1.1 200 Success
 {
   "_id": "5ddbbc871283e3131b2d41f4",
-  "code": "DBM",
   "type": "Flood",
-  "name": { "en": "Dead Bodies Management" },
-  "abbreviation": { "en": "DBM" },
-  "description": { "en": "" },
-  "color": "#F9C5A7"
+  "strings": {
+    "code": "DBM",
+    "name": { "en": "Dead Bodies Management" },
+    "abbreviation": { "en": "DBM" },
+    "description": { "en": "" },
+    "color": "#F9C5A7"
+  },
   "updatedAt": "2019-02-21T13:45:04.340Z",
-  "createdAt": "2019-02-21T13:45:04.340Z"
+  "createdAt": "2019-02-21T13:45:04.340Z",
+  "deletedAt": "2019-02-21T14:45:04.340Z"
 }
 ```
 
@@ -2499,11 +2601,13 @@ HTTP/1.1 200 Success
   "data": [{
   "_id": "5ddbbc871283e3131b2d41f4",
   "type": "Flood",
-  "name": { "en": "Dead Bodies Management" },
-  "abbreviation": { "en": "DBM" },
-  "description": { "en": "" },
-  "code": "DBM",
-  "color": "#F9C5A7"
+  "strings": {
+    "name": { "en": "Dead Bodies Management" },
+    "abbreviation": { "en": "DBM" },
+    "description": { "en": "" },
+    "code": "DBM",
+    "color": "#F9C5A7"
+  },
   "updatedAt": "2019-11-25T12:48:43.342Z",
   "createdAt": "2019-11-25T11:35:35.519Z"
   }],
@@ -2527,18 +2631,18 @@ HTTP/1.1 200 Success
 
 <br />
 
-|     Name     |  Type  |                                                  Description                                                   |
-| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                               Unique universal identifier of this event action.                                |
-|     name     | Object |                             Human-translatable-readable name for the event action.                             |
-|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
-| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
-| description  | Object |                         Human-translatable-readable description for the event action.                          |
-|     code     | String |                             Unique human-readable given code of this event action.                             |
-|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
-|   function   | String |          Human-translatable-readable name of event function to which the action is categorized into.           |
-|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
-|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+|                   Name                    |  Type  |                                                  Description                                                   |
+| :---------------------------------------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|                   \_id                    | String |                               Unique universal identifier of this event action.                                |
+|                   name                    | Object |                             Human-translatable-readable name for the event action.                             |
+|     [type](#core-resources-eventtype)     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+|               abbreviation                | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+|                description                | Object |                         Human-translatable-readable description for the event action.                          |
+|                   code                    | String |                             Unique human-readable given code of this event action.                             |
+|                   color                   | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+| [function](#core-resources-eventfunction) | String |          Human-translatable-readable name of event function to which the action is categorized into.           |
+|                 createdAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|                 updatedAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
 
 ### Create EventAction
 
@@ -2546,14 +2650,14 @@ To create a new event action, send a `POST` request to `https://api.ewea.io/v1/p
 
 <br/>
 
-|    Name     |  Type  |                                         Description                                         | Required |
-| :---------: | :----: | :-----------------------------------------------------------------------------------------: | :------: |
-|    code     | String |                   Unique human-readable given code of this event action.                    |  false   |
-|    type     | String |       Human readable type of a event that the action can be triggered to take place.        |   true   |
-|    name     | Object |                   Human-translatable-readable name for the event action.                    |   true   |
-| description | Object |                Human-translatable-readable description for the event action.                |  false   |
-|    color    | String |      A color code(in hexadecimal format) used to differentiate event action visually.       |  false   |
-|  function   | String | Human-translatable-readable name of event function to which the action is categorized into. |   true   |
+|                   Name                    |  Type  |                                         Description                                         | Required |
+| :---------------------------------------: | :----: | :-----------------------------------------------------------------------------------------: | :------: |
+|                   code                    | String |                   Unique human-readable given code of this event action.                    |  false   |
+|     [type](#core-resources-eventtype)     | String |       Human readable type of a event that the action can be triggered to take place.        |   true   |
+|                   name                    | Object |                   Human-translatable-readable name for the event action.                    |   true   |
+|                description                | Object |                Human-translatable-readable description for the event action.                |  false   |
+|                   color                   | String |      A color code(in hexadecimal format) used to differentiate event action visually.       |  false   |
+| [function](#core-resources-eventfunction) | String | Human-translatable-readable name of event function to which the action is categorized into. |   true   |
 
 > Example Request
 
@@ -2564,8 +2668,10 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-"name": { "en": "Disseminating warning information to the public" },
-"function": "Direction and Control"
+  "strings": {
+    "name": { "en": "Disseminating warning information to the public" }
+  },
+  "function": "Direction and Control"
 }'
 ```
 
@@ -2573,18 +2679,18 @@ The response will be a `JSON object` with the standard event group attributes:
 
 <br/>
 
-|     Name     |  Type  |                                                  Description                                                   |
-| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                               Unique universal identifier of this event action.                                |
-|     name     | Object |                             Human-translatable-readable name for the event action.                             |
-|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
-| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
-| description  | Object |                         Human-translatable-readable description for the event action.                          |
-|     code     | String |                             Unique human-readable given code of this event action.                             |
-|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
-|   function   | String |           Human-translatable-readable name of event function to which the action is categorized into           |
-|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
-|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+|                   Name                    |  Type  |                                                  Description                                                   |
+| :---------------------------------------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|                   \_id                    | String |                               Unique universal identifier of this event action.                                |
+|                   name                    | Object |                             Human-translatable-readable name for the event action.                             |
+|     [type](#core-resources-eventtype)     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+|               abbreviation                | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+|                description                | Object |                         Human-translatable-readable description for the event action.                          |
+|                   code                    | String |                             Unique human-readable given code of this event action.                             |
+|                   color                   | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+| [function](#core-resources-eventfunction) | String |           Human-translatable-readable name of event function to which the action is categorized into           |
+|                 createdAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|                 updatedAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
 
 > Example Response
 
@@ -2592,12 +2698,13 @@ The response will be a `JSON object` with the standard event group attributes:
 HTTP/1.1 201 Success
 {
 "_id": "5de7b7bb9a6ed7342b200f02",
-"name": { "en": "Disseminating warning information to the public" },
-"abbreviation": { "en": "DWITTP" },
-"description": {
-"en": "Disseminating warning information to the public" },
-"code": "DWITTP",
-"color": "#F4EF8D",
+"strings": {
+  "name": { "en": "Disseminating warning information to the public" },
+  "abbreviation": { "en": "DWITTP" },
+  "description": { "en": "Disseminating warning information to the public" },
+  "code": "DWITTP",
+  "color": "#F4EF8D",
+},
 "function": {
     "_id": "5ddbbc871283e3131b2d41dc",
     "name": { "en": "Direction and Control" },
@@ -2624,18 +2731,18 @@ The response will be a `JSON object` with the standard event action attributes:
 
 <br/>
 
-|     Name     |  Type  |                                                  Description                                                   |
-| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                               Unique universal identifier of this event action.                                |
-|     name     | Object |                             Human-translatable-readable name for the event action.                             |
-|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
-| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
-| description  | Object |                         Human-translatable-readable description for the event action.                          |
-|     code     | String |                             Unique human-readable given code of this event action.                             |
-|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
-|   function   | String |           Human-translatable-readable name of event function to which the action is categorized into           |
-|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
-|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+|                   Name                    |  Type  |                                                  Description                                                   |
+| :---------------------------------------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|                   \_id                    | String |                               Unique universal identifier of this event action.                                |
+|                   name                    | Object |                             Human-translatable-readable name for the event action.                             |
+|     [type](#core-resources-eventtype)     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+|               abbreviation                | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+|                description                | Object |                         Human-translatable-readable description for the event action.                          |
+|                   code                    | String |                             Unique human-readable given code of this event action.                             |
+|                   color                   | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+| [function](#core-resources-eventfunction) | String |           Human-translatable-readable name of event function to which the action is categorized into           |
+|                 createdAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|                 updatedAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
 
 > Example Response
 
@@ -2643,12 +2750,13 @@ The response will be a `JSON object` with the standard event action attributes:
 HTTP/1.1 200 Success
 {
 "_id": "5de7b7bb9a6ed7342b200f02",
-"name": { "en": "Disseminating warning information to the public" },
-"abbreviation": { "en": "DWITTP" },
-"description": {
-"en": "Disseminating warning information to the public" },
-"code": "DWITTP",
-"color": "#F4EF8D",
+"strings": {
+  "name": { "en": "Disseminating warning information to the public" },
+  "abbreviation": { "en": "DWITTP" },
+  "description": { "en": "Disseminating warning information to the public" },
+  "code": "DWITTP",
+  "color": "#F4EF8D"
+},
 "function": {
     "_id": "5ddbbc871283e3131b2d41dc",
     "name": { "en": "Direction and Control" },
@@ -2664,12 +2772,12 @@ To update existing event action, send a `PATCH` request to `https://api.ewea.io/
 
 <br/>
 
-|    Name     |  Type  |                                         Description                                         | Required |
-| :---------: | :----: | :-----------------------------------------------------------------------------------------: | :------: |
-|    type     | String |       Human readable type of a event that the action can be triggered to take place.        |   true   |
-|    name     | Object |                   Human-translatable-readable name for the event action.                    |   true   |
-| description | Object |                Human-translatable-readable description for the event action.                |  false   |
-|  function   | String | Human-translatable-readable name of event function to which the action is categorized into. |   true   |
+|                   Name                    |  Type  |                                         Description                                         | Required |
+| :---------------------------------------: | :----: | :-----------------------------------------------------------------------------------------: | :------: |
+|     [type](#core-resources-eventtype)     | String |       Human readable type of a event that the action can be triggered to take place.        |   true   |
+|                   name                    | Object |                   Human-translatable-readable name for the event action.                    |   true   |
+|                description                | Object |                Human-translatable-readable description for the event action.                |  false   |
+| [function](#core-resources-eventfunction) | String | Human-translatable-readable name of event function to which the action is categorized into. |   true   |
 
 > Example Request
 
@@ -2680,8 +2788,10 @@ curl --request PATCH \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-"name": { "en": "Disseminating warning information to the public" },
-"function":  { "en": "Direction and Control" }
+  "strings":{
+    "name": { "en": "Disseminating warning information to the public" }
+  },
+  "function":  { "en": "Direction and Control" }
 }'
 ```
 
@@ -2689,18 +2799,18 @@ The response will be a `JSON object` with the standard event action attributes:
 
 <br/>
 
-|     Name     |  Type  |                                                  Description                                                   |
-| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                               Unique universal identifier of this event action.                                |
-|     name     | Object |                             Human-translatable-readable name for the event action.                             |
-|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
-| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
-| description  | Object |                         Human-translatable-readable description for the event action.                          |
-|     code     | String |                             Unique human-readable given code of this event action.                             |
-|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
-|   function   | String |           Human-translatable-readable name of event function to which the action is categorized into           |
-|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
-|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+|                   Name                    |  Type  |                                                  Description                                                   |
+| :---------------------------------------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|                   \_id                    | String |                               Unique universal identifier of this event action.                                |
+|                   name                    | Object |                             Human-translatable-readable name for the event action.                             |
+|     [type](#core-resources-eventtype)     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+|               abbreviation                | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+|                description                | Object |                         Human-translatable-readable description for the event action.                          |
+|                   code                    | String |                             Unique human-readable given code of this event action.                             |
+|                   color                   | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+| [function](#core-resources-eventfunction) | String |           Human-translatable-readable name of event function to which the action is categorized into           |
+|                 createdAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|                 updatedAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
 
 > Example Response
 
@@ -2708,16 +2818,17 @@ The response will be a `JSON object` with the standard event action attributes:
 HTTP/1.1 200 Success
 {
 "_id": "5de7b7bb9a6ed7342b200f02",
-"name": { "en": "Disseminating warning information to the public" },
-"abbreviation": { "en": "DWITTP" },
-"description": {
-"en": "Disseminating warning information to the public" },
-"code": "DWITTP",
-"color": "#F4EF8D",
+"strings": {
+  "name": { "en": "Disseminating warning information to the public" },
+  "abbreviation": { "en": "DWITTP" },
+  "description": { "en": "Disseminating warning information to the public" },
+  "code": "DWITTP",
+  "color": "#F4EF8D"
+},
 "function": {
     "_id": "5ddbbc871283e3131b2d41dc",
     "name": { "en": "Direction and Control" },
-  },
+},
 "updatedAt": "2019-12-04T13:42:46.937Z",
 "createdAt": "2019-12-04T13:42:20.186Z"
 }
@@ -2740,18 +2851,19 @@ The response will be a `JSON object` with the standard event action attributes:
 
 <br/>
 
-|     Name     |  Type  |                                                  Description                                                   |
-| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                               Unique universal identifier of this event action.                                |
-|     name     | Object |                             Human-translatable-readable name for the event action.                             |
-|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
-| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
-| description  | Object |                         Human-translatable-readable description for the event action.                          |
-|     code     | String |                             Unique human-readable given code of this event action.                             |
-|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
-|   function   | String |           Human-translatable-readable name of event function to which the action is categorized into           |
-|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
-|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+|                   Name                    |  Type  |                                                  Description                                                   |
+| :---------------------------------------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|                   \_id                    | String |                               Unique universal identifier of this event action.                                |
+|                   name                    | Object |                             Human-translatable-readable name for the event action.                             |
+|     [type](#core-resources-eventtype)     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+|               abbreviation                | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+|                description                | Object |                         Human-translatable-readable description for the event action.                          |
+|                   code                    | String |                             Unique human-readable given code of this event action.                             |
+|                   color                   | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+| [function](#core-resources-eventfunction) | String |           Human-translatable-readable name of event function to which the action is categorized into           |
+|                 createdAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|                 updatedAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+|                 deletedAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was deleted. |
 
 > Example Response
 
@@ -2759,18 +2871,20 @@ The response will be a `JSON object` with the standard event action attributes:
 HTTP/1.1 200 Success
 {
 "_id": "5de7b7bb9a6ed7342b200f02",
-"name": { "en": "Disseminating warning information to the public" },
-"abbreviation": { "en": "DWITTP" },
-"description": {
-"en": "Disseminating warning information to the public" },
-"code": "DWITTP",
-"color": "#F4EF8D",
+"strings": {
+  "name": { "en": "Disseminating warning information to the public" },
+  "abbreviation": { "en": "DWITTP" },
+  "description": { "en": "Disseminating warning information to the public" },
+  "code": "DWITTP",
+  "color": "#F4EF8D"
+},
 "function": {
     "_id": "5ddbbc871283e3131b2d41dc",
     "name": { "en": "Direction and Control" },
-  },
+},
 "updatedAt": "2019-12-04T13:42:46.937Z",
-"createdAt": "2019-12-04T13:42:20.186Z"
+"createdAt": "2019-12-04T13:42:20.186Z",
+"createdAt": "2019-12-04T15:42:20.186Z"
 }
 ```
 
@@ -2791,18 +2905,18 @@ The response will be a `JSON object` with a `data key`. The values in the `data 
 
 <br/>
 
-|     Name     |  Type  |                                                  Description                                                   |
-| :----------: | :----: | :------------------------------------------------------------------------------------------------------------: |
-|     \_id     | String |                               Unique universal identifier of this event action.                                |
-|     name     | Object |                             Human-translatable-readable name for the event action.                             |
-|     type     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
-| abbreviation | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
-| description  | Object |                         Human-translatable-readable description for the event action.                          |
-|     code     | String |                             Unique human-readable given code of this event action.                             |
-|    color     | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
-|   function   | String |           Human-translatable-readable name of event function to which the action is categorized into           |
-|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
-|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
+|                   Name                    |  Type  |                                                  Description                                                   |
+| :---------------------------------------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|                   \_id                    | String |                               Unique universal identifier of this event action.                                |
+|                   name                    | Object |                             Human-translatable-readable name for the event action.                             |
+|     [type](#core-resources-eventtype)     | String |                 Human readable type of a event that the action can be triggered to take place.                 |
+|               abbreviation                | Object |                   Human-translatable-readable abbreviation for the name of the event action.                   |
+|                description                | Object |                         Human-translatable-readable description for the event action.                          |
+|                   code                    | String |                             Unique human-readable given code of this event action.                             |
+|                   color                   | String |               A color code(in hexadecimal format) used to differentiate event actions visually.                |
+| [function](#core-resources-eventfunction) | String |           Human-translatable-readable name of event function to which the action is categorized into           |
+|                 createdAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was created. |
+|                 updatedAt                 | String | A time value given in ISO8601 combined date and time format that represents when the event action was updated. |
 
 > Example Response:
 
@@ -2812,12 +2926,13 @@ HTTP/1.1 200 Success
 "data": [{
 {
 "_id": "5de7b7bb9a6ed7342b200f02",
-"name": { "en": "Disseminating warning information to the public" },
-"abbreviation": { "en": "DWITTP" },
-"description": {
-"en": "Disseminating warning information to the public" },
-"code": "DWITTP",
-"color": "#F4EF8D",
+"strings": {
+  "name": { "en": "Disseminating warning information to the public" },
+  "abbreviation": { "en": "DWITTP" },
+  "description": { "en": "Disseminating warning information to the public" },
+  "code": "DWITTP",
+  "color": "#F4EF8D"
+},
 "function": {
     "_id": "5ddbbc871283e3131b2d41dc",
     "name": { "en": "Direction and Control" },
@@ -3291,10 +3406,12 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-    "name": { "en": "City" },
-    "description": { "en": "The name of the metropolitan area itself" },
+    "strings": {
+      "name": { "en": "City" },
+      "description": { "en": "The name of the metropolitan area itself" },
+      "color": "#F9C5A7"
+    }
     "level": 1
-    "color": "#F9C5A7"
   }'
 ```
 
@@ -3318,10 +3435,12 @@ The response will be a `JSON object` with the standard administrative level attr
 HTTP/1.1 201 Success
 {
   "_id": "5dabbc871283e3131b2d41f2",
-  "name": { "en": "City" },
-  "description": { "en": "The name of the metropolitan area itself" },
+  "strings": {
+    "name": { "en": "City" },
+    "description": { "en": "The name of the metropolitan area itself" },
+    "color": "#F9C5A7"
+  },
   "level": 1
-  "color": "#F9C5A7"
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -3360,10 +3479,12 @@ The response will be a `JSON object` with the standard administrative level attr
 HTTP/1.1 200 Success
 {
   "_id": "5dabbc871283e3131b2d41f2",
-  "name": { "en": "City" },
-  "description": { "en": "The name of the metropolitan area itself" },
-  "level": 1
-  "color": "#F9C5A7"
+  "strings": {
+    "name": { "en": "City" },
+    "description": { "en": "The name of the metropolitan area itself" },
+    "color": "#F9C5A7"
+  },
+  "level": 1,
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -3390,8 +3511,10 @@ curl --request PATCH \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <apiKey>' \
 --data '{
-  "name": { "en": "City" },
-  "description": { "en": "" },
+  "strings": {
+    "name": { "en": "City" },
+    "description": { "en": "" }
+  },
   "level": 0
   }'
 ```
@@ -3416,10 +3539,12 @@ The response will be a `JSON object` with the standard administrative level attr
 HTTP/1.1 200 Success
 {
   "_id": "5dabbc871283e3131b2d41f2",
-  "name": { "en": "City" },
-  "description": { "en": "The name of the metropolitan area itself" },
+  "strings": {
+    "name": { "en": "City" },
+    "description": { "en": "The name of the metropolitan area itself" },
+    "color": "#F9C5A7"
+  },
   "level": 0
-  "color": "#F9C5A7"
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -3451,6 +3576,7 @@ The response will be a `JSON object` with the standard administrative level attr
 |    level    | Number |                                                 Administrative level.                                                  |
 |  createdAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was created. |
 |  updatedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was updated. |
+|  deletedAt  | String | A time value given in ISO8601 combined date and time format that represents when the administrative level was deleted. |
 
 > Example Response
 
@@ -3458,10 +3584,12 @@ The response will be a `JSON object` with the standard administrative level attr
 HTTP/1.1 200 Success
 {
   "_id": "5dabbc871283e3131b2d41f2",
-  "name": { "en": "City" },
-  "description": { "en": "" },
+  "strings": {
+    "name": { "en": "City" },
+    "description": { "en": "" },
+    "color": "#F9C5A7"
+  },
   "level": 1
-  "color": "#F9C5A7"
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
 }
@@ -3501,10 +3629,12 @@ HTTP/1.1 200 Success
 {
   "data": [{
   "_id": "5dabbc871283e3131b2d41f2",
-  "name": { "en": "City" },
-  "description": { "en": "The name of the metropolitan area itself" },
+  "strings": {
+    "name": { "en": "City" },
+    "description": { "en": "The name of the metropolitan area itself" },
+    "color": "#F9C5A7"
+  },
   "level": 1
-  "color": "#F9C5A7"
   "updatedAt": "2019-02-21T13:45:04.340Z",
   "createdAt": "2019-02-21T13:45:04.340Z"
   }],

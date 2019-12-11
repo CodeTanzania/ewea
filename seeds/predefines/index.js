@@ -10,6 +10,7 @@ const eventUrgencies = require('./eventurgencies');
 const featureTypes = require('./featuretypes');
 const partyGroups = require('./partygroups');
 const partyRoles = require('./partyroles');
+const notificationTemplates = require('./notificationtemplates');
 
 const predefines = [
   ...eventFunctions,
@@ -24,6 +25,7 @@ const predefines = [
   ...partyGroups,
   ...partyRoles,
   ...eventActions,
+  ...notificationTemplates,
 ];
 
 module.exports = predefines;
