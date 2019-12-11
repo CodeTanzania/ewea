@@ -4,12 +4,12 @@ const templates = [
     namespace: 'NotificationTemplate',
     strings: {
       name: {
-        en:
-          'A {event} alert has been issued for {areas}. For more information call {phone}.',
-        sw:
-          'Ilani ya {event} imetolewa kwa {areas}. Kwa taarifa zaidi piga {phone}.',
+        // title
+        en: '{event} - Notification',
+        sw: 'Ilani ya {event}',
       },
       description: {
+        // template
         en:
           'A {event} alert has been issued for {areas}. For more information call {phone}.',
         sw:
