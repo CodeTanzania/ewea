@@ -1,3 +1,4 @@
+require('@codetanzania/ewea-common');
 const { error, debug } = require('@lykmapipo/logger');
 const { start } = require('./http');
 

@@ -1,3 +1,4 @@
+require('@codetanzania/ewea-common');
 const { parallel, waterfall } = require('async');
 const { warn, debug } = require('@lykmapipo/logger');
 const { listPermissions } = require('@lykmapipo/predefine');
@@ -19,6 +20,13 @@ const {
 
 debug('Start Seeding Data');
 
+const seedEvents = done => {
+  return waterfall(
+    [next => Event.seed(next), (events, next) => EventChangeLog.seed(next)],
+    done
+  );
+};
+
 const seed = next => {
   const seeds = {
     allPermissions: then => Permission.seed(then),
@@ -30,8 +38,7 @@ const seed = next => {
     subwards: then => seedSubWards(then),
     hospitals: then => seedHospitals(then),
     parties: then => Party.seed(then),
-    events: then => Event.seed(then),
-    changelogs: then => EventChangeLog.seed(then),
+    changelogs: then => seedEvents(then),
   };
   return parallel(seeds, next);
 };

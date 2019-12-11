@@ -1,3 +1,4 @@
+require('@codetanzania/ewea-common');
 const { waterfall } = require('async');
 const { debug } = require('@lykmapipo/logger');
 const {

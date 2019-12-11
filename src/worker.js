@@ -1,3 +1,4 @@
+require('@codetanzania/ewea-common');
 const { error, debug } = require('@lykmapipo/logger');
 const { start, listen } = require('@lykmapipo/postman');
 const { connect } = require('./database');
