@@ -1,3 +1,4 @@
+require('@codetanzania/ewea-common');
 const { warn, debug } = require('@lykmapipo/logger');
 const { syncIndexes } = require('../src/database');
 
