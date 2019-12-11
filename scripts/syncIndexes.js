@@ -1,19 +1,9 @@
-const { waterfall } = require('async');
 const { warn, debug } = require('@lykmapipo/logger');
-const { connect, syncIndexes } = require('../src/database');
+const { syncIndexes } = require('../src/database');
 
-const ensureConnection = next => {
-  debug('Start Syncing Indexes');
-  return connect(error => next(error));
-};
+debug('Start Syncing Indexes');
 
-const ensureIndexes = next => {
-  return syncIndexes(next);
-};
-
-const tasks = [ensureConnection, ensureIndexes];
-
-waterfall(tasks, (error, results) => {
+syncIndexes((error, results) => {
   if (error) {
     warn('Fail Syncing Indexes', error);
   } else {
