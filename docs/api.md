@@ -319,13 +319,13 @@ HTTP/1.1 200 Success
 {
   "success":true,
   "party": {
+    "_id": "5ddfadfd8fadd0276378b0d6",
     "type": "Focal Person",
     "name": "John Doe",
     "abbreviation": "JD",
     "locale": "en",
     "email": "john.doe@example.com",
     "mobile": "255789321212",
-    "_id": "5ddfadfd8fadd0276378b0d6",
     "updatedAt": "2019-11-28T11:22:37.254Z",
     "createdAt": "2019-11-28T11:22:37.199Z",
     "lockedAt": null
@@ -441,13 +441,13 @@ The response will be a `JSON object` with the standard party attributes:
 ```curl
 HTTP/1.1 201 Success
 {
+    "_id": "5ddfadfd8fadd0276378b0d6",
     "type": "Focal Person",
     "name": "John Doe",
     "abbreviation": "JD",
     "locale": "en",
     "email": "john.doe@example.com",
     "mobile": "255789321212",
-    "_id": "5ddfadfd8fadd0276378b0d6",
     "updatedAt": "2019-11-28T11:22:37.254Z",
     "createdAt": "2019-11-28T11:22:37.199Z",
     "lockedAt": null
@@ -3650,7 +3650,295 @@ HTTP/1.1 200 Success
 
 ## AdministrativeArea
 
-> TODO
+`AdministrativeArea` is a portion of a country or other region delineated for the purpose of administration. Also can be referred to region, subnational entity, constituent unit or country subdivision
+
+### AdministrativeArea Schema
+
+`AdministrativeArea` has the following attributes:
+
+<br />
+
+|     Name     |  Type  |                                                      Description                                                      |
+| :----------: | :----: | :-------------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                Unique universal identifier of the administrative area.                                |
+|     name     | Object |                             Human-translatable-readable name for the administrative area.                             |
+| abbreviation | Object |                                 Human readable short form of the administrative area.                                 |
+| description  | Object |                         Human-translatable-readable description for the administrative area.                          |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate administrative areas visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was updated. |
+
+### Create AdministrativeArea
+
+To create a new feature, send a `POST` request to `https://api.ewea.io/v1/predefines/administrativeareas`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                             Description                             | Required |
+| :---------: | :----: | :-----------------------------------------------------------------: | :------: |
+|    name     | Object |    Human-translatable-readable name for the administrative area     |   true   |
+| description | Object | Human-translatable-readable description for the administrative area |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/adminstrativeareas \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "strings": {
+    "name": { "en": "Kawe"},
+    "description": { "en": "Kawe Ward" }
+  }
+}'
+```
+
+The response will be a `JSON object` with the standard administrative area attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                      Description                                                      |
+| :----------: | :----: | :-------------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                Unique universal identifier of the administrative area.                                |
+|     name     | Object |                             Human-translatable-readable name for the administrative area.                             |
+| abbreviation | Object |                                 Human readable short form of the administrative area.                                 |
+| description  | Object |                         Human-translatable-readable description for the administrative area.                          |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate administrative areas visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5df2001053baadbcbfd979be",
+  "strings": {
+    "name": { "en": "Kawe","sw": "Kawe"},
+    "abbreviation": { "en": "K", "sw": "K"},
+    "description": {
+      "en": "Kawe Ward",
+      "sw": "Kawe Ward"
+    },
+    "code": "K",
+    "color": "#F9C5A7"
+  }
+  "updatedAt": "2019-12-12T08:53:36.747Z",
+  "createdAt": "2019-12-12T08:53:36.747Z"
+}
+```
+
+### Retrieve AdministrativeArea
+
+To get a administrative areas, send a `GET` request to `https://api.ewea.io/v1/predefines/administrativeareas/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/administrativeareas/5df2001053baadbcbfd979be \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard administrative areas attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                      Description                                                      |
+| :----------: | :----: | :-------------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                Unique universal identifier of the administrative area.                                |
+|     name     | Object |                             Human-translatable-readable name for the administrative area.                             |
+| abbreviation | Object |                                 Human readable short form of the administrative area.                                 |
+| description  | Object |                         Human-translatable-readable description for the administrative area.                          |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate administrative areas visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5df2001053baadbcbfd979be",
+  "strings": {
+    "name": { "en": "Kawe","sw": "Kawe"},
+    "abbreviation": { "en": "K", "sw": "K"},
+    "description": {
+      "en": "Kawe Ward",
+      "sw": "Kawe Ward"
+    },
+    "code": "K",
+    "color": "#F9C5A7"
+  }
+  "updatedAt": "2019-12-12T08:53:36.747Z",
+  "createdAt": "2019-12-12T08:53:36.747Z"
+}
+```
+
+### Update AdministrativeArea
+
+To update existing administrative area, send a `PATCH` request to `https://api.ewea.io/v1/predefines/administrativeareas/:id`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                             Description                              | Required |
+| :---------: | :----: | :------------------------------------------------------------------: | :------: |
+|    name     | Object |    Human-translatable-readable name for the administrative area.     |   true   |
+| description | Object | Human-translatable-readable description for the administrative area. |  false   |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/administrativeareas/5df2001053baadbcbfd979be \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "strings": {
+    "name": { "en": "Kawe" },
+    "description": { "en": "Kawe Sub Ward" },
+  }
+}'
+```
+
+The response will be a `JSON object` with the standard administrative areas attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                      Description                                                      |
+| :----------: | :----: | :-------------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                Unique universal identifier of the administrative area.                                |
+|     name     | Object |                             Human-translatable-readable name for the administrative area.                             |
+| abbreviation | Object |                                 Human readable short form of the administrative area.                                 |
+| description  | Object |                         Human-translatable-readable description for the administrative area.                          |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate administrative areas visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5df2001053baadbcbfd979be",
+  "strings": {
+    "name": { "en": "Kawe","sw": "Kawe"},
+    "abbreviation": { "en": "K", "sw": "K"},
+    "description": { "en": "Kawe", "sw": "Kawe Sub Ward" },
+    "code": "K",
+    "color": "#F9C5A7"
+  }
+  "updatedAt": "2019-12-12T08:53:36.747Z",
+  "createdAt": "2019-12-12T08:53:36.747Z"
+}
+```
+
+### Delete AdministrativeArea
+
+To delete existing administrative area, send a `DELETE` request to `https://api.ewea.io/v1/predefines/administrativeareas/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/administrativeareas/5df2001053baadbcbfd979be \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard administrative area attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                      Description                                                      |
+| :----------: | :----: | :-------------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                Unique universal identifier of the administrative area.                                |
+|     name     | Object |                             Human-translatable-readable name for the administrative area.                             |
+| abbreviation | Object |                                 Human readable short form of the administrative area.                                 |
+| description  | Object |                         Human-translatable-readable description for the administrative area.                          |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate administrative areas visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was updated. |
+|  deletedAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was deleted. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5df2001053baadbcbfd979be",
+  "strings": {
+    "name": { "en": "Kawe","sw": "Kawe"},
+    "abbreviation": { "en": "K", "sw": "K"},
+    "description": { "en": "Kawe Sub Ward", "sw": "Kawe Sub Ward" },
+    "code": "K",
+    "color": "#F9C5A7"
+  }
+  "updatedAt": "2019-12-12T08:53:36.747Z",
+  "createdAt": "2019-12-12T08:53:36.747Z",
+  "deletedAt": "2019-12-12T09:53:36.747Z",
+}
+```
+
+### List All AdministrativeAreas
+
+To list all administrative areas, send a `GET` request to `https://api.ewea.io/v1/predefines/administrativeareas`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/administrativeareas \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of admnistrative areas with the standard administrative areas attributes:
+
+<br/>
+
+|     Name     |  Type  |                                                      Description                                                      |
+| :----------: | :----: | :-------------------------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                                Unique universal identifier of the administrative area.                                |
+|     name     | Object |                             Human-translatable-readable name for the administrative area.                             |
+| abbreviation | Object |                                 Human readable short form of the administrative area.                                 |
+| description  | Object |                         Human-translatable-readable description for the administrative area.                          |
+|    color     | String |               A color code(in hexadecimal format) used to differentiate administrative areas visually.                |
+|  createdAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was created. |
+|  updatedAt   | String | A time value given in ISO8601 combined date and time format that represents when the administrative area was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+    "_id": "5c6ea7dae1dc700018aac95b",
+    "strings": {
+      "name": { "en": "Tandale", "sw": "Tandale" },
+      "abbreviation": { "en": "T", "sw": "T" },
+      "description": { "en": "Tandale", "sw": "Tandale" },
+      "code": "T",
+      "color": "#E0CCFF"
+    },
+    "color": "#86C7EE"
+    "updatedAt": "2019-12-21T13:30:04.340Z",
+    "createdAt": "2019-12-21T13:30:04.340Z"
+  }],
+  "total": 458,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 46,
+  "lastModified": "2019-12-12T10:19:40.211Z",
+  "hasMore": true
+}
+```
 
 ## FeatureType
 
