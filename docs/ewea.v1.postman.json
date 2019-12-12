@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"richardaggrey7@gmail.com\",\n    \"password\": \"123456789\"\n}",
+							"raw": "{\n    \"username\": \"test@emis.com\",\n    \"password\": \"123456789\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -30,13 +30,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/v1/signinÏ",
+							"raw": "{{BASE_URL}}/v1/signin",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
-								"signinÏ"
+								"signin"
 							]
 						}
 					},
@@ -1485,9 +1485,28 @@
 			"item": [
 				{
 					"name": "Create EventCatalogue",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"description\": {\n            \"en\": \"ICT officer\"\n        },\n        \"name\": {\n            \"en\": \"ICT officer\"\n        },\n        \"color\": \"#86C7E8\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{BASE_URL}}/v1/predefines/eventcatalogues",
 							"host": [
@@ -1701,6 +1720,178 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "AdministrativeLevel",
+			"item": [
+				{
+					"name": "Create AdministrativeLevel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"District\"\n        },\n        \"description\": {\n            \"en\": \"The name of the metropolitan area itself\"\n        },\n        \"level\": 1,\n        \"color\": \"#F9C5A7\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve AdministrativeLevel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels/5df2001053baadbcbfd979be",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels",
+								"5df2001053baadbcbfd979be"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update AdministrativeLevel",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"District\"\n        },\n        \"description\": {\n            \"en\": \"District Area\"\n        },\n        \"level\": 0\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels/5df2001053baadbcbfd979be",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels",
+								"5df2001053baadbcbfd979be"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update AdministrativeLevel",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"District\"\n        },\n        \"description\": {\n            \"en\": \"District Area\"\n        },\n        \"level\": 0\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels/5df2001053baadbcbfd979be",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels",
+								"5df2001053baadbcbfd979be"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete AdministrativeLevel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels/5df2001053baadbcbfd979be",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels",
+								"5df2001053baadbcbfd979be"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All AdministrativeLevel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"administrativelevels"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "AdministrativeArea",
 			"item": [
 				{
@@ -1717,7 +1908,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"District\"\n        },\n        \"description\": {\n            \"en\": \"The name of the metropolitan area itself\"\n        },\n        \"level\": 1,\n        \"color\": \"#F9C5A7\"\n    }\n}",
+							"raw": "{\n    \"strings\": {\n        \"name\": {\n            \"en\": \"Kawe\"\n        },\n        \"description\": {\n            \"en\": \"Kawe district\"\n        },\n        \"color\": \"#F9C5A7\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1856,14 +2047,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/predefines/administrativelevels",
+							"raw": "{{BASE_URL}}/v1/predefines/administrativeareas",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
 								"predefines",
-								"administrativelevels"
+								"administrativeareas"
 							]
 						}
 					},
