@@ -3045,8 +3045,7 @@ HTTP/1.1 200 Success
 "groups": [{
   "_id": "5de7b7b79a6ed7342b200dd9",
   "name": { "en": "Telephone Companies" },
-},
-],
+}],
 "roles": [{
   "_id": "5de7b7b79a6ed7342b200ddc",
   "name": { "en": "Regional Admnistrative Secretary" },
@@ -3110,8 +3109,7 @@ HTTP/1.1 200 Success
 "groups": [{
   "_id": "5de7b7b79a6ed7342b200dd9",
   "name": { "en": "Telephone Companies" },
-},
-],
+}],
 "roles": [{
   "_id": "5de7b7b79a6ed7342b200ddc",
   "name": { "en": "Regional Admnistrative Secretary" },
@@ -3194,8 +3192,7 @@ HTTP/1.1 200 Success
 "groups": [{
   "_id": "5de7b7b79a6ed7342b200dd9",
   "name": { "en": "Telephone Companies" },
-},
-],
+}],
 "roles": [{
   "_id": "5de7b7b79a6ed7342b200ddc",
   "name": { "en": "Regional Admnistrative Secretary" },
@@ -3260,8 +3257,7 @@ HTTP/1.1 200 Success
 "groups": [{
   "_id": "5de7b7b79a6ed7342b200dd9",
   "name": { "en": "Telephone Companies" },
-},
-],
+}],
 "roles": [{
   "_id": "5de7b7b79a6ed7342b200ddc",
   "name": { "en": "Regional Admnistrative Secretary" },
@@ -3327,8 +3323,7 @@ HTTP/1.1 200 Success
 "groups": [{
   "_id": "5de7b7b79a6ed7342b200dd9",
   "name": { "en": "Telephone Companies" },
-},
-],
+}],
 "roles": [{
   "_id": "5de7b7b79a6ed7342b200ddc",
   "name": { "en": "Regional Admnistrative Secretary" },
