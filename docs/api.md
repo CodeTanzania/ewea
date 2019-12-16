@@ -2952,7 +2952,7 @@ HTTP/1.1 200 Success
 
 ## EventCatalogue
 
-`EventCatalogue` maps an emergency response activity to the responsible [party](#core-resources-party), [role](#core-resources-partyrole) or [group](#core-resources-partygroup)
+`EventCatalogue` maps an emergency response activity to the responsible [PARTY](#core-resources-party), [ROLE](#core-resources-partyrole) or [GROUP](#core-resources-partygroup)
 
 ### EventCatalogue Schema
 
@@ -3031,7 +3031,7 @@ HTTP/1.1 200 Success
 {
 "_id": "5de7b7bb9a6ed7342b200f02",
 "type": {
-  "_id": "5de7b7bb9a6ed7342b200f02"
+  "_id": "5de7b7bb9a6ed7342b200f02",
   "strings": { "name": { "en": "Floods" }},
 }
 "function": {
@@ -3265,6 +3265,7 @@ HTTP/1.1 200 Success
 "focals": [],
 "updatedAt": "2019-12-16T13:42:46.937Z",
 "createdAt": "2019-12-16T13:42:20.186Z",
+"deletedAt": "2019-12-16T13:42:20.186Z",
 }
 ```
 
@@ -3304,6 +3305,7 @@ The response will be a`JSON object` with a`data key`.The values in the`data key`
 ```curl
 HTTP/1.1 200 Success
 {
+"data": [{
 "_id": "5de7b7bb9a6ed7342b200f02",
 "type": {
   "_id": "5de7b7bb9a6ed7342b200f02"
@@ -3330,7 +3332,15 @@ HTTP/1.1 200 Success
 "focals": [],
 "updatedAt": "2019-12-16T13:42:46.937Z",
 "createdAt": "2019-12-16T13:42:20.186Z",
-}
+}],
+"total": 198,
+"size": 10,
+"limit": 10,
+"skip": 0,
+"page": 10,
+"pages": 20,
+"lastModified": "2019-12-05T17:14:48.206Z",
+"hasMore": true
 ```
 
 ## Event
