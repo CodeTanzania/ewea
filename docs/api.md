@@ -2963,16 +2963,16 @@ HTTP/1.1 200 Success
 |                    Name                     |  Type  |                                                 Description                                                 |
 | :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
 |                    \_id                     | String |                              Unique universal identifier of this event action.                              |
-|      [type](#core-resources-eventtype)      | String |                   The type of a event in which the action can be triggered to take place.                   |
-| [area](#core-resources-administrativelevel) | String |                        The administrative area(s) where the action should take place                        |
-|  [function](#core-resources-eventfunction)  | String |                              The group to which the specified action belongs.                               |
-|    [action](#core-resources-eventaction)    | String |                                   The activity that has to be carried out                                   |
-|    [groups](#core-resources-partygroup)     | String |                          The group(s) of parties that will carry out the activity                           |
-|     [roles](#core-resources-partyrole)      | String |                          The role(s) of a parties that will carry out the activity                          |
-|      [agencies](#core-resources-party)      | String |                            The agency(s) that will be carrying out the activity.                            |
-|       [focals](#core-resources-party)       | String |                         The focal person(s) that will be carrying out the activity                          |
-|                  createdAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
-|                  updatedAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
 
 ### Create EventCatalogue
 
@@ -2982,14 +2982,14 @@ To create a new event catalogue, send a`POST` request to`https://api.ewea.io/v1/
 
 |                    Name                     |  Type  |                               Description                               | Required |
 | :-----------------------------------------: | :----: | :---------------------------------------------------------------------: | :------: |
-|      [type](#core-resources-eventtype)      | String | The type of a event in which the action can be triggered to take place. |   true   |
-| [area](#core-resources-administrativelevel) | String |      The administrative area(s) where the action should take place      |  false   |
-|  [function](#core-resources-eventfunction)  | String |            The group to which the specified action belongs.             |   true   |
-|    [action](#core-resources-eventaction)    | String |                 The activity that has to be carried out                 |   true   |
-|    [groups](#core-resources-partygroup)     | String |        The group(s) of parties that will carry out the activity         |  false   |
-|     [roles](#core-resources-partyrole)      | String |        The role(s) of a parties that will carry out the activity        |  false   |
-|      [agencies](#core-resources-party)      | String |          The agency(s) that will be carrying out the activity.          |  false   |
-|       [focals](#core-resources-party)       | String |       The focal person(s) that will be carrying out the activity        |  false   |
+|      [type](#core-resources-eventtype)      | Object | The type of a event in which the action can be triggered to take place. |   true   |
+| [area](#core-resources-administrativelevel) | Array  |      The administrative area(s) where the action should take place      |  false   |
+|  [function](#core-resources-eventfunction)  | Object |            The group to which the specified action belongs.             |   true   |
+|    [action](#core-resources-eventaction)    | Object |                 The activity that has to be carried out                 |   true   |
+|    [groups](#core-resources-partygroup)     | Array  |        The group(s) of parties that will carry out the activity         |  false   |
+|     [roles](#core-resources-partyrole)      | Array  |        The role(s) of a parties that will carry out the activity        |  false   |
+|      [agencies](#core-resources-party)      | Array  |          The agency(s) that will be carrying out the activity.          |  false   |
+|       [focals](#core-resources-party)       | Array  |       The focal person(s) that will be carrying out the activity        |  false   |
 
 > Example Request
 
@@ -3013,16 +3013,16 @@ The response will be a`JSON object` with the standard event group attributes:
 |                    Name                     |  Type  |                                                 Description                                                 |
 | :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
 |                    \_id                     | String |                              Unique universal identifier of this event action.                              |
-|      [type](#core-resources-eventtype)      | String |                   The type of a event in which the action can be triggered to take place.                   |
-| [area](#core-resources-administrativelevel) | String |                        The administrative area(s) where the action should take place                        |
-|  [function](#core-resources-eventfunction)  | String |                              The group to which the specified action belongs.                               |
-|    [action](#core-resources-eventaction)    | String |                                   The activity that has to be carried out                                   |
-|    [groups](#core-resources-partygroup)     | String |                          The group(s) of parties that will carry out the activity                           |
-|     [roles](#core-resources-partyrole)      | String |                          The role(s) of a parties that will carry out the activity                          |
-|      [agencies](#core-resources-party)      | String |                            The agency(s) that will be carrying out the activity.                            |
-|       [focals](#core-resources-party)       | String |                         The focal person(s) that will be carrying out the activity                          |
-|                  createdAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
-|                  updatedAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
 
 > Example Response
 
@@ -3078,16 +3078,16 @@ The response will be a`JSON object` with the standard event catalogue attributes
 |                    Name                     |  Type  |                                                 Description                                                 |
 | :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
 |                    \_id                     | String |                              Unique universal identifier of this event action.                              |
-|      [type](#core-resources-eventtype)      | String |                   The type of a event in which the action can be triggered to take place.                   |
-| [area](#core-resources-administrativelevel) | String |                        The administrative area(s) where the action should take place                        |
-|  [function](#core-resources-eventfunction)  | String |                              The group to which the specified action belongs.                               |
-|    [action](#core-resources-eventaction)    | String |                                   The activity that has to be carried out                                   |
-|    [groups](#core-resources-partygroup)     | String |                          The group(s) of parties that will carry out the activity                           |
-|     [roles](#core-resources-partyrole)      | String |                          The role(s) of a parties that will carry out the activity                          |
-|      [agencies](#core-resources-party)      | String |                            The agency(s) that will be carrying out the activity.                            |
-|       [focals](#core-resources-party)       | String |                         The focal person(s) that will be carrying out the activity                          |
-|                  createdAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
-|                  updatedAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
 
 > Example Response
 
@@ -3129,12 +3129,16 @@ To update existing event catalogue, send a`PATCH` request to`https://api.ewea.io
 
 <br />
 
-|                     Name                      |  Type  |                                           Description                                           | Required |
-| :-------------------------------------------: | :----: | :---------------------------------------------------------------------------------------------: | :------: |
-|     [type](#core - resources - eventtype)     | String |         Human readable type of a event that the action can be triggered to take place.          |   true   |
-|                     name                      | Object |                  Human - translatable - readable name for the event catalogue.                  |   true   |
-|                  description                  | Object |              Human - translatable - readable description for the event catalogue.               |  false   |
-| [function](#core - resources - eventfunction) | String | Human - translatable - readable name of event function to which the action is categorized into. |   true   |
+|                    Name                     |  Type  |                               Description                               | Required |
+| :-----------------------------------------: | :----: | :---------------------------------------------------------------------: | :------: |
+|      [type](#core-resources-eventtype)      | Object | The type of a event in which the action can be triggered to take place. |   true   |
+| [area](#core-resources-administrativelevel) | Array  |      The administrative area(s) where the action should take place      |  false   |
+|  [function](#core-resources-eventfunction)  | Object |            The group to which the specified action belongs.             |   true   |
+|    [action](#core-resources-eventaction)    | Object |                 The activity that has to be carried out                 |   true   |
+|    [groups](#core-resources-partygroup)     | Array  |        The group(s) of parties that will carry out the activity         |  false   |
+|     [roles](#core-resources-partyrole)      | Array  |        The role(s) of a parties that will carry out the activity        |  false   |
+|      [agencies](#core-resources-party)      | Array  |          The agency(s) that will be carrying out the activity.          |  false   |
+|       [focals](#core-resources-party)       | Array  |       The focal person(s) that will be carrying out the activity        |  false   |
 
 > Example Request
 
@@ -3158,16 +3162,16 @@ The response will be a`JSON object` with the standard event catalogue attributes
 |                    Name                     |  Type  |                                                 Description                                                 |
 | :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
 |                    \_id                     | String |                              Unique universal identifier of this event action.                              |
-|      [type](#core-resources-eventtype)      | String |                   The type of a event in which the action can be triggered to take place.                   |
-| [area](#core-resources-administrativelevel) | String |                        The administrative area(s) where the action should take place                        |
-|  [function](#core-resources-eventfunction)  | String |                              The group to which the specified action belongs.                               |
-|    [action](#core-resources-eventaction)    | String |                                   The activity that has to be carried out                                   |
-|    [groups](#core-resources-partygroup)     | String |                          The group(s) of parties that will carry out the activity                           |
-|     [roles](#core-resources-partyrole)      | String |                          The role(s) of a parties that will carry out the activity                          |
-|      [agencies](#core-resources-party)      | String |                            The agency(s) that will be carrying out the activity.                            |
-|       [focals](#core-resources-party)       | String |                         The focal person(s) that will be carrying out the activity                          |
-|                  createdAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
-|                  updatedAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
 
 > Example Response
 
@@ -3223,17 +3227,17 @@ The response will be a`JSON object` with the standard event catalogue attributes
 |                    Name                     |  Type  |                                                 Description                                                 |
 | :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
 |                    \_id                     | String |                              Unique universal identifier of this event action.                              |
-|      [type](#core-resources-eventtype)      | String |                   The type of a event in which the action can be triggered to take place.                   |
-| [area](#core-resources-administrativelevel) | String |                        The administrative area(s) where the action should take place                        |
-|  [function](#core-resources-eventfunction)  | String |                              The group to which the specified action belongs.                               |
-|    [action](#core-resources-eventaction)    | String |                                   The activity that has to be carried out                                   |
-|    [groups](#core-resources-partygroup)     | String |                          The group(s) of parties that will carry out the activity                           |
-|     [roles](#core-resources-partyrole)      | String |                          The role(s) of a parties that will carry out the activity                          |
-|      [agencies](#core-resources-party)      | String |                            The agency(s) that will be carrying out the activity.                            |
-|       [focals](#core-resources-party)       | String |                         The focal person(s) that will be carrying out the activity                          |
-|                  createdAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
-|                  updatedAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
-|                  deletedAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was deleted. |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+|                  deletedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was deleted. |
 
 > Example Response
 
@@ -3290,16 +3294,16 @@ The response will be a`JSON object` with a`data key`.The values in the`data key`
 |                    Name                     |  Type  |                                                 Description                                                 |
 | :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
 |                    \_id                     | String |                              Unique universal identifier of this event action.                              |
-|      [type](#core-resources-eventtype)      | String |                   The type of a event in which the action can be triggered to take place.                   |
-| [area](#core-resources-administrativelevel) | String |                        The administrative area(s) where the action should take place                        |
-|  [function](#core-resources-eventfunction)  | String |                              The group to which the specified action belongs.                               |
-|    [action](#core-resources-eventaction)    | String |                                   The activity that has to be carried out                                   |
-|    [groups](#core-resources-partygroup)     | String |                          The group(s) of parties that will carry out the activity                           |
-|     [roles](#core-resources-partyrole)      | String |                          The role(s) of a parties that will carry out the activity                          |
-|      [agencies](#core-resources-party)      | String |                            The agency(s) that will be carrying out the activity.                            |
-|       [focals](#core-resources-party)       | String |                         The focal person(s) that will be carrying out the activity                          |
-|                  createdAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
-|                  updatedAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
 
 > Example Response:
 
