@@ -2952,7 +2952,396 @@ HTTP/1.1 200 Success
 
 ## EventCatalogue
 
-> TODO
+`EventCatalogue` maps an emergency response activity to the responsible [PARTY](#core-resources-party), [ROLE](#core-resources-partyrole) or [GROUP](#core-resources-partygroup)
+
+### EventCatalogue Schema
+
+`EventCatalogue` have the following attributes:
+
+<br />
+
+|                    Name                     |  Type  |                                                 Description                                                 |
+| :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                              Unique universal identifier of this event action.                              |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+
+### Create EventCatalogue
+
+To create a new event catalogue, send a`POST` request to`https://api.ewea.io/v1/predefines/eventcatalogues`.The following attributes are supported:
+
+<br />
+
+|                    Name                     |  Type  |                               Description                               | Required |
+| :-----------------------------------------: | :----: | :---------------------------------------------------------------------: | :------: |
+|      [type](#core-resources-eventtype)      | Object | The type of a event in which the action can be triggered to take place. |   true   |
+| [area](#core-resources-administrativelevel) | Array  |      The administrative area(s) where the action should take place      |  false   |
+|  [function](#core-resources-eventfunction)  | Object |            The group to which the specified action belongs.             |   true   |
+|    [action](#core-resources-eventaction)    | Object |                 The activity that has to be carried out                 |   true   |
+|    [groups](#core-resources-partygroup)     | Array  |        The group(s) of parties that will carry out the activity         |  false   |
+|     [roles](#core-resources-partyrole)      | Array  |        The role(s) of a parties that will carry out the activity        |  false   |
+|      [agencies](#core-resources-party)      | Array  |          The agency(s) that will be carrying out the activity.          |  false   |
+|       [focals](#core-resources-party)       | Array  |       The focal person(s) that will be carrying out the activity        |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/eventcatalogues \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+"type": { "Floods" },
+"function": { "Communication and Warning" },
+"action": { "Disseminating warning information to the public" },
+}
+```
+
+The response will be a`JSON object` with the standard event group attributes:
+
+<br />
+
+|                    Name                     |  Type  |                                                 Description                                                 |
+| :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                              Unique universal identifier of this event action.                              |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+"_id": "5de7b7bb9a6ed7342b200f02",
+"type": {
+  "_id": "5de7b7bb9a6ed7342b200f02",
+  "strings": { "name": { "en": "Floods" }},
+}
+"function": {
+  "_id": "5ddbbc871283e3131b2d41dc",
+  "name": { "en": "Communication and Warning" },
+},
+"action": {
+  "_id": "5ddbbc871283e3131b2d41dc",
+  "name": { "en": "Disseminating warning information to the public" },
+},
+"groups": [{
+  "_id": "5de7b7b79a6ed7342b200dd9",
+  "name": { "en": "Telephone Companies" },
+}],
+"roles": [{
+  "_id": "5de7b7b79a6ed7342b200ddc",
+  "name": { "en": "Regional Admnistrative Secretary" },
+}],
+"agencies": [],
+"focals": [],
+"updatedAt": "2019-12-16T13:42:46.937Z",
+"createdAt": "2019-12-16T13:42:20.186Z",
+}
+```
+
+### Retrieve EventCatalogue
+
+To get an event catalogue, send a`GET` request to`https://api.ewea.io/v1/predefines/eventcatalogues/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventcatalogues/5de7b7bb9a6ed7342b200f02 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a`JSON object` with the standard event catalogue attributes:
+
+<br />
+
+|                    Name                     |  Type  |                                                 Description                                                 |
+| :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                              Unique universal identifier of this event action.                              |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+"_id": "5de7b7bb9a6ed7342b200f02",
+"type": {
+  "_id": "5de7b7bb9a6ed7342b200f02"
+  "strings": { "name": { "en": "Floods" }},
+}
+"function": {
+  "_id": "5ddbbc871283e3131b2d41dc",
+  "name": { "en": "Communication and Warning" },
+},
+"action": {
+  "_id": "5ddbbc871283e3131b2d41dc",
+  "name": { "en": "Disseminating warning information to the public" },
+},
+"groups": [{
+  "_id": "5de7b7b79a6ed7342b200dd9",
+  "name": { "en": "Telephone Companies" },
+}],
+"roles": [{
+  "_id": "5de7b7b79a6ed7342b200ddc",
+  "name": { "en": "Regional Admnistrative Secretary" },
+}],
+"agencies": [],
+"focals": [],
+"updatedAt": "2019-12-16T13:42:46.937Z",
+"createdAt": "2019-12-16T13:42:20.186Z",
+}
+```
+
+### Update EventCatalogue
+
+To update existing event catalogue, send a`PATCH` request to`https://api.ewea.io/v1/predefines/eventcatalogues/:id`.The following attributes are supported:
+
+<br />
+
+|                    Name                     |  Type  |                               Description                               | Required |
+| :-----------------------------------------: | :----: | :---------------------------------------------------------------------: | :------: |
+|      [type](#core-resources-eventtype)      | Object | The type of a event in which the action can be triggered to take place. |   true   |
+| [area](#core-resources-administrativelevel) | Array  |      The administrative area(s) where the action should take place      |  false   |
+|  [function](#core-resources-eventfunction)  | Object |            The group to which the specified action belongs.             |   true   |
+|    [action](#core-resources-eventaction)    | Object |                 The activity that has to be carried out                 |   true   |
+|    [groups](#core-resources-partygroup)     | Array  |        The group(s) of parties that will carry out the activity         |  false   |
+|     [roles](#core-resources-partyrole)      | Array  |        The role(s) of a parties that will carry out the activity        |  false   |
+|      [agencies](#core-resources-party)      | Array  |          The agency(s) that will be carrying out the activity.          |  false   |
+|       [focals](#core-resources-party)       | Array  |       The focal person(s) that will be carrying out the activity        |  false   |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/eventcatalogues/5de7b7bb9a6ed7342b200f02 \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "type": { "Floods" },
+  "function": { "Communication and Warning" },
+  "action": { "Disseminating warning information to the public" },
+}'
+```
+
+The response will be a`JSON object` with the standard event catalogue attributes:
+
+<br />
+
+|                    Name                     |  Type  |                                                 Description                                                 |
+| :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                              Unique universal identifier of this event action.                              |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+"_id": "5de7b7bb9a6ed7342b200f02",
+"type": {
+  "_id": "5de7b7bb9a6ed7342b200f02"
+  "strings": { "name": { "en": "Floods" }},
+}
+"function": {
+  "_id": "5ddbbc871283e3131b2d41dc",
+  "name": { "en": "Communication and Warning" },
+},
+"action": {
+  "_id": "5ddbbc871283e3131b2d41dc",
+  "name": { "en": "Disseminating warning information to the public" },
+},
+"groups": [{
+  "_id": "5de7b7b79a6ed7342b200dd9",
+  "name": { "en": "Telephone Companies" },
+}],
+"roles": [{
+  "_id": "5de7b7b79a6ed7342b200ddc",
+  "name": { "en": "Regional Admnistrative Secretary" },
+}],
+"agencies": [],
+"focals": [],
+"updatedAt": "2019-12-16T13:42:46.937Z",
+"createdAt": "2019-12-16T13:42:20.186Z",
+}
+```
+
+### Delete EventCatalogue
+
+To delete existing event catalogue, send a`DELETE` request to`https://api.ewea.io/v1/predefines/eventcatalogues/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/eventcatalogues/5de7b7bb9a6ed7342b200f02 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a`JSON object` with the standard event catalogue attributes:
+
+<br />
+
+|                    Name                     |  Type  |                                                 Description                                                 |
+| :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                              Unique universal identifier of this event action.                              |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+|                  deletedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was deleted. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+"_id": "5de7b7bb9a6ed7342b200f02",
+"type": {
+  "_id": "5de7b7bb9a6ed7342b200f02"
+  "strings": { "name": { "en": "Floods" }},
+}
+"function": {
+  "_id": "5ddbbc871283e3131b2d41dc",
+  "name": { "en": "Communication and Warning" },
+},
+"action": {
+  "_id": "5ddbbc871283e3131b2d41dc",
+  "name": { "en": "Disseminating warning information to the public" },
+},
+"groups": [{
+  "_id": "5de7b7b79a6ed7342b200dd9",
+  "name": { "en": "Telephone Companies" },
+}],
+"roles": [{
+  "_id": "5de7b7b79a6ed7342b200ddc",
+  "name": { "en": "Regional Admnistrative Secretary" },
+}],
+"agencies": [],
+"focals": [],
+"updatedAt": "2019-12-16T13:42:46.937Z",
+"createdAt": "2019-12-16T13:42:20.186Z",
+"deletedAt": "2019-12-16T13:42:20.186Z",
+}
+```
+
+### List All EventCatalogue
+
+To list all event catalogues, send a`GET` request to`https://api.ewea.io/v1/predefines/`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventcatalogues \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a`JSON object` with a`data key`.The values in the`data key` are set of eventcatalogue with the standard event catalogue attributes:
+
+<br />
+
+|                    Name                     |  Type  |                                                 Description                                                 |
+| :-----------------------------------------: | :----: | :---------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                              Unique universal identifier of this event action.                              |
+|      [type](#core-resources-eventtype)      | Object |                   The type of a event in which the action can be triggered to take place.                   |
+| [area](#core-resources-administrativelevel) | Array  |                        The administrative area(s) where the action should take place                        |
+|  [function](#core-resources-eventfunction)  | Object |                              The group to which the specified action belongs.                               |
+|    [action](#core-resources-eventaction)    | Object |                                   The activity that has to be carried out                                   |
+|    [groups](#core-resources-partygroup)     | Array  |                          The group(s) of parties that will carry out the activity                           |
+|     [roles](#core-resources-partyrole)      | Array  |                          The role(s) of a parties that will carry out the activity                          |
+|      [agencies](#core-resources-party)      | Array  |                            The agency(s) that will be carrying out the activity.                            |
+|       [focals](#core-resources-party)       | Array  |                         The focal person(s) that will be carrying out the activity                          |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+"data": [{
+"_id": "5de7b7bb9a6ed7342b200f02",
+"type": {
+  "_id": "5de7b7bb9a6ed7342b200f02"
+  "strings": { "name": { "en": "Floods" }},
+}
+"function": {
+  "_id": "5ddbbc871283e3131b2d41dc",
+  "name": { "en": "Communication and Warning" },
+},
+"action": {
+  "_id": "5ddbbc871283e3131b2d41dc",
+  "name": { "en": "Disseminating warning information to the public" },
+},
+"groups": [{
+  "_id": "5de7b7b79a6ed7342b200dd9",
+  "name": { "en": "Telephone Companies" },
+}],
+"roles": [{
+  "_id": "5de7b7b79a6ed7342b200ddc",
+  "name": { "en": "Regional Admnistrative Secretary" },
+}],
+"agencies": [],
+"focals": [],
+"updatedAt": "2019-12-16T13:42:46.937Z",
+"createdAt": "2019-12-16T13:42:20.186Z",
+}],
+"total": 198,
+"size": 10,
+"limit": 10,
+"skip": 0,
+"page": 10,
+"pages": 20,
+"lastModified": "2019-12-05T17:14:48.206Z",
+"hasMore": true
+```
 
 ## Event
 
