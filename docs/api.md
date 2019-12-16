@@ -3233,6 +3233,7 @@ The response will be a`JSON object` with the standard event catalogue attributes
 |       [focals](#core-resources-party)       | String |                         The focal person(s) that will be carrying out the activity                          |
 |                  createdAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was created. |
 |                  updatedAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was updated. |
+|                  deletedAt                  | String | A time value given in ISO8601 combined date and time format that represents when the catalogue was deleted. |
 
 > Example Response
 
