@@ -30,13 +30,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/v1/signin",
+							"raw": "{{BASE_URL}}/v1/predefines/featuretypes",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
-								"signin"
+								"predefines",
+								"featuretypes"
 							]
 						}
 					},
@@ -2065,7 +2066,174 @@
 		},
 		{
 			"name": "FeatureType",
-			"item": [],
+			"item": [
+				{
+					"name": "Create FeatureType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strings\": {\n      \"name\": { \"en\": \"Power plant\" }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/featuretypes",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"featuretypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve FeatureType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/featuretypes/5df8e3b67d568860013e0d99",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"featuretypes",
+								"5df8e3b67d568860013e0d99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update FeatureType",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strings\": {\n      \"name\": { \"en\": \"Power plants\" }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/featuretypes/5df8e3b67d568860013e0d99",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"featuretypes",
+								"5df8e3b67d568860013e0d99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update FeatureType",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strings\": {\n      \"name\": { \"en\": \"Power plants\" }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/featuretypes/5df8e3b67d568860013e0d99",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"featuretypes",
+								"5df8e3b67d568860013e0d99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete FeatureType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/featuretypes/5df8e3b67d568860013e0d99",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"featuretypes",
+								"5df8e3b67d568860013e0d99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All FeatureType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/featuretypes",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"featuretypes"
+							]
+						}
+					},
+					"response": []
+				}
+			],
 			"protocolProfileBehavior": {}
 		},
 		{
