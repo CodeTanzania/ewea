@@ -4331,7 +4331,266 @@ HTTP/1.1 200 Success
 
 ## FeatureType
 
-> TODO
+`FeatureType` classification of geographical feature of interest both natural and man made used in emergency(or disaster) management(or event).
+
+### FeatureType Schema
+
+`FeatureType` have the following attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                   |
+| :-------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature type.                                |
+|   name    | Object |                             Human-translatable-readable name for the feature type.                             |
+|   code    | String |                             Unique Human-readable given code of this feature type.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate feature types visually.                |
+| createdAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was created. |
+| updatedAt |  Date  |     A time value given in ISO8601 combined date and time format that represents when the type was updated.     |
+| deletedAt |  Date  |     A time value given in ISO8601 combined date and time format that represents when the type was deleted.     |
+
+### Create FeatureType
+
+To create a new feature type, send a `POST` request to `https://api.ewea.io/v1/predefines/featuretypes`. The following attributes are supported:
+
+<br/>
+
+| Name  |  Type  |                                   Description                                   | Required |
+| :---: | :----: | :-----------------------------------------------------------------------------: | :------: |
+| name  | Object |              Human-translatable-readable name for the event type.               |   true   |
+| code  | String |              Unique Human-readable given code of this event type.               |  false   |
+| color | String | A color code(in hexadecimal format) used to differentiate event types visually. |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/featuretypes \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "strings": { "name": { "en": "Power plant" }}
+  }'
+```
+
+The response will be a `JSON object` with the standard feature type attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                   |
+| :-------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature type.                                |
+|   name    | Object |                             Human-translatable-readable name for the feature type.                             |
+|   code    | String |                             Unique Human-readable given code of this feature type.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate feature types visually.                |
+| createdAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was created. |
+| updatedAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5df8e3b67d568860013e0d99",
+  "strings": {
+    "name": { "en": "Power plant" },
+    "code": "PP",
+    "color": "#B3FF7A"
+  },
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### Retrieve FeatureType
+
+To get a featuretype, send a `GET` request to `https://api.ewea.io/v1/predefines/featuretypes/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/featuretypes/5df8e3b67d568860013e0d99 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard feature type attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                   |
+| :-------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature type.                                |
+|   name    | Object |                             Human-translatable-readable name for the feature type.                             |
+|   code    | String |                             Unique Human-readable given code of this feature type.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate feature types visually.                |
+| createdAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was created. |
+| updatedAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5df8e3b67d568860013e0d99",
+  "strings": {
+    "name": { "en": "Power plant" },
+    "code": "PP",
+    "color": "#B3FF7A"
+  },
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### Update FeatureType
+
+To update existing feature type, send a `PATCH` request to `https://api.ewea.io/v1/predefines/featuretypes/:id`. The following attributes are supported:
+
+<br/>
+
+| Name |  Type  |                      Description                       |
+| :--: | :----: | :----------------------------------------------------: |
+| name | Object | Human-translatable-readable name for the feature type. |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/featuretypes/5df8e3b67d568860013e0d99 \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "strings": { "name": { "en": "Power plants" }}
+  }'
+```
+
+The response will be a `JSON object` with the standard feature type attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                   |
+| :-------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature type.                                |
+|   name    | Object |                             Human-translatable-readable name for the feature type.                             |
+|   code    | String |                             Unique Human-readable given code of this feature type.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate feature types visually.                |
+| createdAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was created. |
+| updatedAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5df8e3b67d568860013e0d99",
+  "strings": {
+    "code": "PP",
+    "name": { "en": "Power plants" },
+    "color": "#86C7E8"
+  },
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z"
+}
+```
+
+### Delete FeatureType
+
+To delete existing feature type, send a `DELETE` request to `https://api.ewea.io/v1/predefines/featuretypes/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/featuretypes/5df8e3b67d568860013e0d99 \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard feature type attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                   |
+| :-------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature type.                                |
+|   name    | Object |                             Human-translatable-readable name for the feature type.                             |
+|   code    | String |                             Unique Human-readable given code of this feature type.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate feature types visually.                |
+| createdAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was created. |
+| updatedAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was updated. |
+| deletedAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was deleted. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5df8e3b67d568860013e0d99",
+  "strings": {
+    "code": "PP",
+    "name": { "en": "Power plants" },
+    "color": "#86C7E8"
+  },
+  "updatedAt": "2019-02-21T13:30:04.340Z",
+  "createdAt": "2019-02-21T13:30:04.340Z",
+  "deletedAt": "2019-02-21T15:30:04.340Z"
+}
+```
+
+### List All FeatureType
+
+To list all feature types, send a `GET` request to `https://api.ewea.io/v1/predefines/featuretypes`.
+
+> Example **Request**
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/featuretypes \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of event type with the standard feature type attributes:
+
+<br/>
+
+|   Name    |  Type  |                                                  Description                                                   |
+| :-------: | :----: | :------------------------------------------------------------------------------------------------------------: |
+|   \_id    | String |                               Unique universal identifier of this feature type.                                |
+|   code    | String |                             Unique Human-readable given code of this feature type.                             |
+|   name    | Object |                             Human-translatable-readable name for the feature type.                             |
+|   color   | String |               A color code(in hexadecimal format) used to differentiate feature types visually.                |
+| createdAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was created. |
+| updatedAt |  Date  | A time value given in ISO8601 combined date and time format that represents when the feature type was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+    "_id": "5df8e3b67d568860013e0d99",
+    "strings": {
+      "name": { "en": "Hospital" },
+      "code": "H",
+      "color": "#EEFFB2"
+    },
+    "updatedAt": "2019-02-21T13:30:04.340Z",
+    "createdAt": "2019-02-21T13:30:04.340Z"
+  }],
+  "total": 14,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 2,
+  "lastModified": "2019-02-21T13:30:04.340Z"
+}
+```
 
 ## Feature
 
