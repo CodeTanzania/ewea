@@ -2,6 +2,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'DC',
       name: { en: 'Direction and Control' },
       description: {
         en:
@@ -12,6 +13,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'CW',
       name: { en: 'Communication and Warning' },
       description: {
         en:
@@ -22,6 +24,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'EV',
       name: { en: 'Evacuation' },
       description: {
         en:
@@ -32,6 +35,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'FF',
       name: { en: 'Firefighting' },
       description: {
         en:
@@ -42,6 +46,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'LE',
       name: { en: 'Law Enforcement' },
       description: {
         en:
@@ -52,6 +57,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'HMS',
       name: { en: 'Health and Medical Services' },
       description: {
         en:
@@ -62,6 +68,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'SR',
       name: { en: 'Search and Rescue' },
       description: {
         en:
@@ -72,6 +79,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'SMC',
       name: { en: 'Shelter and Mass Care' },
       description: {
         en:
@@ -82,6 +90,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'EPI',
       name: { en: 'Emergency Public Information' },
       description: {
         en:
@@ -92,6 +101,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'DA',
       name: { en: 'Damage Assessment' },
       description: {
         en:
@@ -102,6 +112,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'PWE',
       name: { en: 'Public Works and Engineering' },
       description: {
         en:
@@ -112,6 +123,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'UT',
       name: { en: 'Utilities' },
       description: {
         en:
@@ -122,6 +134,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'RMS',
       name: { en: 'Resources Management and Supply' },
       description: {
         en:
@@ -132,6 +145,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'TS',
       name: { en: 'Transportation' },
       description: {
         en:
@@ -142,6 +156,7 @@ const functions = [
   {
     namespace: 'EventFunction',
     strings: {
+      code: 'DBM',
       name: { en: 'Dead-Bodies Management' },
       description: {
         en:

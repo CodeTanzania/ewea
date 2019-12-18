@@ -2,6 +2,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'DC0001',
       name: {
         en:
           'Issuing operational guidelines to respond to emergencies that are consistent with the applicable legal framework',
@@ -17,6 +18,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'DC0002',
       name: {
         en: 'Convening DarMAERT to assess the emergency',
       },
@@ -31,6 +33,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'DC0003',
       name: {
         en:
           'Providing overall direction and coordination of emergency response operations',
@@ -46,6 +49,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'DC0004',
       name: {
         en:
           'Activating the Emergency Operations Center when required (fully or partially)',
@@ -61,6 +65,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'DC0005',
       name: {
         en: 'Declaring a regional emergency when deemed necessary',
       },
@@ -75,6 +80,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'DC0006',
       name: {
         en:
           'Working with the Regional Disaster Management Committee to request national assistance from Prime Minister’s Office when required',
@@ -90,6 +96,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'DC0007',
       name: {
         en: 'Terminating the response operations when appropriate',
       },
@@ -104,6 +111,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'CW0001',
       name: {
         en:
           'Receiving information on emergency situations from different sources',
@@ -119,6 +127,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'CW0002',
       name: {
         en:
           'Organizing the use of available communication systems during the emergency',
@@ -134,6 +143,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'CW0002',
       name: {
         en: 'Activating backup or alternative communication systems',
       },
@@ -148,6 +158,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'CW0004',
       name: {
         en:
           'Maintaining communications log of messages in and out of the Emergency Operations Centre',
@@ -163,6 +174,7 @@ const actions = [
   {
     namespace: 'EventAction',
     strings: {
+      code: 'CW0005',
       name: {
         en: 'Recording of the event and data keeping',
       },
