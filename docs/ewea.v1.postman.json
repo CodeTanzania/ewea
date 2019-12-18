@@ -2240,6 +2240,179 @@
 			"name": "Feature",
 			"item": [],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "EventIndicator",
+			"item": [
+				{
+					"name": "Create EventIndicator",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strings\":{\n\t\t\"name\":{ \"en\":\"Damage and Lose\"},\n\t\t\"description\":{\n\t\t\t\"en\":\"Damage and Lose\"\n\t\t}\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventindicators",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventindicators"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve EventIndicator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventindicators/5dfa41e75b0afc0fd91ca92d",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventindicators",
+								"5dfa41e75b0afc0fd91ca92d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventIndicator",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strings\":{\n\t\t\"name\":{ \"en\":\"Damage and Lose\"},\n\t\t\"description\":{\n\t\t\t\"en\":\"Damage and Loses.\"\n\t\t}\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventindicators/5dfa41e75b0afc0fd91ca92d",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventindicators",
+								"5dfa41e75b0afc0fd91ca92d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventIndicator",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strings\":{\n\t\t\"name\":{ \"en\":\"Damage and Lose\"},\n\t\t\"description\":{\n\t\t\t\"en\":\"Damage and Loses.\"\n\t\t}\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventindicators/5dfa41e75b0afc0fd91ca92d",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventindicators",
+								"5dfa41e75b0afc0fd91ca92d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete EventIndicator",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventindicators/5dfa41e75b0afc0fd91ca92d",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventindicators",
+								"5dfa41e75b0afc0fd91ca92d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All EventIndicator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventindicators/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventindicators",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
