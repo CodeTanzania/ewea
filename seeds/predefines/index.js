@@ -1,31 +1,33 @@
+const units = require('./units');
 const administrativeLevels = require('./administrativelevels');
-const eventActions = require('./eventactions');
-const eventCertainties = require('./eventcertainties');
+const featureTypes = require('./featuretypes');
 const eventIndicators = require('./eventindicators');
-const eventFunctions = require('./eventfunctions');
-const eventGroups = require('./eventgroups');
+const eventCertainties = require('./eventcertainties');
 const eventSeverities = require('./eventseverities');
 const eventStatuses = require('./eventstatuses');
-const eventTypes = require('./eventtypes');
 const eventUrgencies = require('./eventurgencies');
-const featureTypes = require('./featuretypes');
+const eventGroups = require('./eventgroups');
+const eventTypes = require('./eventtypes');
+const eventFunctions = require('./eventfunctions');
+const eventActions = require('./eventactions');
 const partyGroups = require('./partygroups');
 const partyRoles = require('./partyroles');
 const notificationTemplates = require('./notificationtemplates');
 
 const predefines = [
-  ...eventIndicators,
-  ...eventFunctions,
-  ...eventStatuses,
-  ...eventSeverities,
-  ...eventUrgencies,
-  ...eventCertainties,
-  ...eventTypes,
-  ...eventGroups,
-  ...featureTypes,
+  ...units,
   ...administrativeLevels,
+  ...featureTypes,
+  ...eventIndicators,
+  ...eventSeverities,
+  ...eventCertainties,
+  ...eventStatuses,
+  ...eventUrgencies,
+  ...eventGroups,
+  ...eventTypes,
   ...partyGroups,
   ...partyRoles,
+  ...eventFunctions,
   ...eventActions,
   ...notificationTemplates,
 ];
