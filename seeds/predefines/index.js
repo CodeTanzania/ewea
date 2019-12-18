@@ -8,6 +8,7 @@ const eventStatuses = require('./eventstatuses');
 const eventUrgencies = require('./eventurgencies');
 const eventGroups = require('./eventgroups');
 const eventTypes = require('./eventtypes');
+const eventQuestions = require('./eventquestions');
 const eventFunctions = require('./eventfunctions');
 const eventActions = require('./eventactions');
 const partyGroups = require('./partygroups');
@@ -27,6 +28,7 @@ const predefines = [
   ...eventTypes,
   ...partyGroups,
   ...partyRoles,
+  ...eventQuestions,
   ...eventFunctions,
   ...eventActions,
   ...notificationTemplates,
