@@ -4874,7 +4874,261 @@ HTTP/1.1 200 Success
 
 ## EventIndicator
 
-> TODO
+`EventIndicator` Define measure used to assess need, effects, situation and characteristics of an event.
+
+### EventIndicator Schema
+
+`EventIndicator` have the following attributes:
+
+<br />
+
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event indicator.                                |
+|    name     | Object |                             Human-translatable-readable name for the event indicator.                             |
+| description | Object |                         Human-translatable-readable description for the event indicator.                          |
+|  createdAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was created. |
+|  updatedAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was updated. |
+
+### Create EventIndicator
+
+To create a new event indicator, send a `POST` request to `https://api.ewea.io/v1/predefines/eventindicators`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                           Description                            | Required |
+| :---------: | :----: | :--------------------------------------------------------------: | :------: |
+|    name     | Object |        Human-translatable-readable name for the feature.         |   true   |
+| description | Object | Human-translatable-readable description for the event indicator. |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/eventindicators \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "strings":{
+		"name":{ "en":"Damage and Lose"},
+		"description":{ "en":"Damage and Lose"}
+	}
+}'
+```
+
+The response will be a `JSON object` with the standard event indicator attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event indicator.                                |
+|    name     | Object |                             Human-translatable-readable name for the event indicator.                             |
+| description | Object |                         Human-translatable-readable description for the event indicator.                          |
+|  createdAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was created. |
+|  updatedAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Damage and Lose" },
+    "description": { "en": "Damage and Lose" }
+  },
+  "updatedAt": "2019-12-18T15:12:39.505Z",
+  "createdAt": "2019-12-18T15:12:39.505Z"
+}
+```
+
+### Retrieve EventIndicator
+
+To get a event indicator, send a `GET` request to `https://api.ewea.io/v1/predefines/eventindicators/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventindicators/5dfa41e75b0afc0fd91ca92d \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event indicator attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event indicator.                                |
+|    name     | Object |                             Human-translatable-readable name for the event indicator.                             |
+| description | Object |                         Human-translatable-readable description for the event indicator.                          |
+|  createdAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was created. |
+|  updatedAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Damage and Lose" },
+    "description": { "en": "Damage and Lose" }
+  },
+  "updatedAt": "2019-12-18T16:12:39.505Z",
+  "createdAt": "2019-12-18T16:12:39.505Z"
+}
+```
+
+### Update EventIndicator
+
+To update existing event indicator, send a `PATCH` request to `https://api.ewea.io/v1/predefines/eventindicators/:id`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                           Description                            | Required |
+| :---------: | :----: | :--------------------------------------------------------------: | :------: |
+|    name     | Object |    Human-translatable-readable name for the event indicator.     |   true   |
+| description | Object | Human-translatable-readable description for the event indicator. |  false   |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/eventindicators/5dfa41e75b0afc0fd91ca92d \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "strings":{
+		"name":{ "en":"Damage and Lose"},
+		"description":{ "en":"Damage and Loses."}
+	}
+}'
+```
+
+The response will be a `JSON object` with the standard event indicator attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event indicator.                                |
+|    name     | Object |                             Human-translatable-readable name for the event indicator.                             |
+| description | Object |                         Human-translatable-readable description for the event indicator.                          |
+|  createdAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was created. |
+|  updatedAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Damage and Lose" },
+    "description": { "en": "Damage and Loses." },
+  },
+  "updatedAt": "2019-12-18T16:12:39.505Z",
+  "createdAt": "2019-12-18T16:12:39.505Z"
+}
+```
+
+### Delete EventIndicator
+
+To delete existing event indicator, send a `DELETE` request to `https://api.ewea.io/v1/predefines/eventindicator/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/eventindicators/5dfa41e75b0afc0fd91ca92d \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event indicator attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event indicator.                                |
+|    name     | Object |                             Human-translatable-readable name for the event indicator.                             |
+| description | Object |                         Human-translatable-readable description for the event indicator.                          |
+|  createdAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was created. |
+|  updatedAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was updated. |
+|  deletedAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was deleted. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Damage and Lose" },
+    "description": { "en": "Damage and Loses." },
+  },
+  "updatedAt": "2019-12-18T16:12:39.505Z",
+  "createdAt": "2019-12-18T16:12:39.505Z",
+  "deletedAt": "2019-12-18T17:12:39.505Z",
+}
+```
+
+### List All EventIndicator
+
+To list all event indicators, send a `GET` request to `https://api.ewea.io/v1/predefines/eventindicators`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventindicators \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of indicators with the standard event indicators attributes:
+
+<br/>
+
+|    Name     |  Type  |                                                    Description                                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------------------------------------------: |
+|    \_id     | String |                               Unique universal identifier of this event indicator.                                |
+|    name     | Object |                             Human-translatable-readable name for the event indicator.                             |
+| description | Object |                         Human-translatable-readable description for the event indicator.                          |
+|  createdAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was created. |
+|  updatedAt  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event indicator was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Damage and Lose" },
+    "description": { "en": "Damage and Loses." },
+  },
+  "updatedAt": "2019-12-18T16:12:39.505Z",
+  "createdAt": "2019-12-18T16:12:39.505Z"
+  }],
+  "total": 14,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 2,
+  "lastModified": "2019-12-18T15:43:22.874Z",
+  "hasMore": true
+}
+```
 
 ## EventQuestion
 
