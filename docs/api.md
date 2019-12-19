@@ -4898,7 +4898,7 @@ To create a new event indicator, send a `POST` request to `https://api.ewea.io/v
 
 |    Name     |  Type  |                           Description                            | Required |
 | :---------: | :----: | :--------------------------------------------------------------: | :------: |
-|    name     | Object |        Human-translatable-readable name for the feature.         |   true   |
+|    name     | Object |    Human-translatable-readable name for the event indicator.     |   true   |
 | description | Object | Human-translatable-readable description for the event indicator. |  false   |
 
 > Example Request
@@ -5136,7 +5136,260 @@ HTTP/1.1 200 Success
 
 ## Unit
 
-> TODO
+`Unit` Define unit of measure of an event need, effects, situation or characteristics.
+
+### Unit Schema
+
+`Unit` have the following attributes:
+
+<br />
+
+|     Name     |  Type  |                                              Description                                               |
+| :----------: | :----: | :----------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this unit.                                |
+|     name     | Object |                             Human-translatable-readable name for the unit.                             |
+| abbreviation | Object |                         Human-translatable-readable abbreviation for the unit.                         |
+|  createdAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was created. |
+|  updatedAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was updated. |
+
+### Create Unit
+
+To create a new unit, send a `POST` request to `https://api.ewea.io/v1/predefines/units`. The following attributes are supported:
+
+<br/>
+
+|     Name     |  Type  |                      Description                       | Required |
+| :----------: | :----: | :----------------------------------------------------: | :------: |
+|     name     | Object |     Human-translatable-readable name for the unit.     |   true   |
+| abbreviation | Object | Human-translatable-readable abbreviation for the unit. |  false   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/unit \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "strings":{
+		"name":{ "en":"Person"},
+	}
+}'
+```
+
+The response will be a `JSON object` with the standard unit attributes:
+
+<br/>
+
+|     Name     |  Type  |                                              Description                                               |
+| :----------: | :----: | :----------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this unit.                                |
+|     name     | Object |                             Human-translatable-readable name for the unit.                             |
+| abbreviation | Object |                         Human-translatable-readable abbreviation for the unit.                         |
+|  createdAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was created. |
+|  updatedAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Person" },
+    "abbreviation": { "en": "P" }
+  },
+  "updatedAt": "2019-12-18T15:12:39.505Z",
+  "createdAt": "2019-12-18T15:12:39.505Z"
+}
+```
+
+### Retrieve Unit
+
+To get a unit, send a `GET` request to `https://api.ewea.io/v1/predefines/units/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/units/5dfa41e75b0afc0fd91ca92d \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event indicator attributes:
+
+<br/>
+
+|     Name     |  Type  |                                              Description                                               |
+| :----------: | :----: | :----------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this unit.                                |
+|     name     | Object |                             Human-translatable-readable name for the unit.                             |
+| abbreviation | Object |                         Human-translatable-readable abbreviation for the unit.                         |
+|  createdAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was created. |
+|  updatedAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Person" },
+    "abbreviation": { "en": "P" }
+  },
+  "updatedAt": "2019-12-18T16:12:39.505Z",
+  "createdAt": "2019-12-18T16:12:39.505Z"
+}
+```
+
+### Update Unit
+
+To update existing unit, send a `PATCH` request to `https://api.ewea.io/v1/predefines/units/:id`. The following attributes are supported:
+
+<br/>
+
+|     Name     |  Type  |                      Description                       | Required |
+| :----------: | :----: | :----------------------------------------------------: | :------: |
+|     name     | Object |     Human-translatable-readable name for the unit.     |   true   |
+| abbreviation | Object | Human-translatable-readable abbreviation for the unit. |  false   |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/units/5dfa41e75b0afc0fd91ca92d \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "strings":{
+		"name":{ "en":"Person."},
+		"abbreviation":{ "en":"P"}
+	}
+}'
+```
+
+The response will be a `JSON object` with the standard unit attributes:
+
+<br/>
+
+|     Name     |  Type  |                                              Description                                               |
+| :----------: | :----: | :----------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this unit.                                |
+|     name     | Object |                             Human-translatable-readable name for the unit.                             |
+| abbreviation | Object |                         Human-translatable-readable abbreviation for the unit.                         |
+|  createdAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was created. |
+|  updatedAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Person." },
+    "abbreviation": { "en": "P" },
+  },
+  "updatedAt": "2019-12-18T16:12:39.505Z",
+  "createdAt": "2019-12-18T16:12:39.505Z"
+}
+```
+
+### Delete Unit
+
+To delete existing unit, send a `DELETE` request to `https://api.ewea.io/v1/predefines/units/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/units/5dfa41e75b0afc0fd91ca92d \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard unit attributes:
+
+<br/>
+
+|     Name     |  Type  |                                              Description                                               |
+| :----------: | :----: | :----------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this unit.                                |
+|     name     | Object |                             Human-translatable-readable name for the unit.                             |
+| abbreviation | Object |                         Human-translatable-readable abbreviation for the unit.                         |
+|  createdAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was created. |
+|  updatedAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was updated. |
+|  deletedAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was deleted. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Persons." },
+    "abbreviation": { "en": "P" },
+  },
+  "updatedAt": "2019-12-18T16:12:39.505Z",
+  "createdAt": "2019-12-18T16:12:39.505Z",
+  "deletedAt": "2019-12-18T17:12:39.505Z",
+}
+```
+
+### List All Unit
+
+To list all unit, send a `GET` request to `https://api.ewea.io/v1/predefines/units`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/units \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of units with the standard units attributes:
+
+<br/>
+
+|     Name     |  Type  |                                              Description                                               |
+| :----------: | :----: | :----------------------------------------------------------------------------------------------------: |
+|     \_id     | String |                               Unique universal identifier of this unit.                                |
+|     name     | Object |                             Human-translatable-readable name for the unit.                             |
+| abbreviation | Object |                         Human-translatable-readable abbreviation for the unit.                         |
+|  createdAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was created. |
+|  updatedAt   |  Date  | A time value given in ISO8601 combined date and time format that represents when the unit was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "person" },
+    "abbreviation": { "en": "P" },
+  },
+  "updatedAt": "2019-12-18T16:12:39.505Z",
+  "createdAt": "2019-12-18T16:12:39.505Z"
+  }],
+  "total": 6,
+  "size": 6,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 1,
+  "lastModified": "2019-12-20T15:43:22.874Z",
+  "hasMore": true
+}
+```
 
 # Acknowledgements
 
