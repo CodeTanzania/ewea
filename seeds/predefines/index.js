@@ -9,10 +9,11 @@ const eventUrgencies = require('./eventurgencies');
 const eventGroups = require('./eventgroups');
 const eventTypes = require('./eventtypes');
 const eventQuestions = require('./eventquestions');
-const eventFunctions = require('./eventfunctions');
-const eventActions = require('./eventactions');
 const partyGroups = require('./partygroups');
 const partyRoles = require('./partyroles');
+const eventFunctions = require('./eventfunctions');
+const eventActions = require('./eventactions');
+// const eventCatalogues = require('./eventcatalogues');
 const notificationTemplates = require('./notificationtemplates');
 
 const predefines = [
@@ -31,6 +32,7 @@ const predefines = [
   ...eventQuestions,
   ...eventFunctions,
   ...eventActions,
+  // ...eventCatalogues,
   ...notificationTemplates,
 ];
 
