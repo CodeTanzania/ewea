@@ -5132,7 +5132,286 @@ HTTP/1.1 200 Success
 
 ## EventQuestion
 
-> TODO
+`EventQuestion` A representation of question that is used to assess need, situation and characteristics of disaster(or emergency) event.
+
+### EventQuestion Schema
+
+`EventQuestion` have the following attributes:
+
+<br />
+
+|                    Name                     |  Type  |                                                   Description                                                    |
+| :-----------------------------------------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                               Unique universal identifier of this event question.                                |
+|                    name                     | Object |                             Human-translatable-readable name for the event question.                             |
+|                 description                 | Object |                         Human-translatable-readable description for the event question.                          |
+| [indicator](#core-resources-eventindicator) | Object |                                        Indicator which a question assess.                                        |
+|        [unit](#core-resources-unit)         | Object |                 Define unit of measure of an event need, effects, situation or characteristics.                  |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was updated. |
+
+### Create EventQuestion
+
+To create a new event question, send a `POST` request to `https://api.ewea.io/v1/predefines/eventquestions`. The following attributes are supported:
+
+<br/>
+
+|                    Name                     |  Type  |                                   Description                                   | Required |
+| :-----------------------------------------: | :----: | :-----------------------------------------------------------------------------: | :------: |
+|                    name                     | Object |            Human-translatable-readable name for the event question.             |   true   |
+|                 description                 | Object |         Human-translatable-readable description for the event question.         |  false   |
+| [indicator](#core-resources-eventindicator) | Object |                       Indicator which a question assess.                        |   true   |
+|        [unit](#core-resources-unit)         | Object | Define unit of measure of an event need, effects, situation or characteristics. |   true   |
+
+> Example Request
+
+```curl
+curl --request POST \
+--url https://api.ewea.io/v1/predefines/eventquestions \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "strings": { "name": { "en": "Deaths" }},
+  "relations": {
+    "indicator": "5e1c39082e249a6793589b10",
+    "unit": "5e1c392f2e249a6793589b11"
+  }
+}'
+```
+
+The response will be a `JSON object` with the standard event question attributes:
+
+<br/>
+
+|                    Name                     |  Type  |                                                   Description                                                    |
+| :-----------------------------------------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                               Unique universal identifier of this event question.                                |
+|                    name                     | Object |                             Human-translatable-readable name for the event question.                             |
+|                 description                 | Object |                         Human-translatable-readable description for the event question.                          |
+| [indicator](#core-resources-eventindicator) | Object |                                        Indicator which a question assess.                                        |
+|        [unit](#core-resources-unit)         | Object |                 Define unit of measure of an event need, effects, situation or characteristics.                  |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 201 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Deaths" },
+    "description": { "en": "Deaths" }
+  },
+  "indicator":{ "strings":{ "name":{ "en":"Damages and Losses"} }},
+  "unit":{ "strings":{ "name":{ "en":"Person"} }}
+  "updatedAt": "2019-12-18T15:12:39.505Z",
+  "createdAt": "2019-12-18T15:12:39.505Z"
+}
+```
+
+### Retrieve EventQuestion
+
+To get a event question, send a `GET` request to `https://api.ewea.io/v1/predefines/eventquestions/:id`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventquestions/5dfa41e75b0afc0fd91ca92d \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event question attributes:
+
+<br/>
+
+|                    Name                     |  Type  |                                                   Description                                                    |
+| :-----------------------------------------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                               Unique universal identifier of this event question.                                |
+|                    name                     | Object |                             Human-translatable-readable name for the event question.                             |
+|                 description                 | Object |                         Human-translatable-readable description for the event question.                          |
+| [indicator](#core-resources-eventindicator) | Object |                                        Indicator which a question assess.                                        |
+|        [unit](#core-resources-unit)         | Object |                 Define unit of measure of an event need, effects, situation or characteristics.                  |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Deaths" },
+    "description": { "en": "Deaths" }
+  },
+  "indicator":{ "strings":{ "name":{ "en":"Damages and Losses"} }},
+  "unit":{ "strings":{ "name":{ "en":"Person"} }}
+  "updatedAt": "2019-12-18T15:12:39.505Z",
+  "createdAt": "2019-12-18T15:12:39.505Z"
+}
+```
+
+### Update EventQuestion
+
+To update existing event question, send a `PATCH` request to `https://api.ewea.io/v1/predefines/eventquestions/:id`. The following attributes are supported:
+
+<br/>
+
+|    Name     |  Type  |                           Description                           | Required |
+| :---------: | :----: | :-------------------------------------------------------------: | :------: |
+|    name     | Object |    Human-translatable-readable name for the event question.     |   true   |
+| description | Object | Human-translatable-readable description for the event question. |  false   |
+
+> Example Request
+
+```curl
+curl --request PATCH \
+--url https://api.ewea.io/v1/predefines/eventquestions/5dfa41e75b0afc0fd91ca92d \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <apiKey>' \
+--data '{
+  "strings":{
+		"name":{ "en":"Affected"},
+		"description":{ "en":"Affected"}
+	}
+}'
+```
+
+The response will be a `JSON object` with the standard event question attributes:
+
+<br/>
+
+|                    Name                     |  Type  |                                                   Description                                                    |
+| :-----------------------------------------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                               Unique universal identifier of this event question.                                |
+|                    name                     | Object |                             Human-translatable-readable name for the event question.                             |
+|                 description                 | Object |                         Human-translatable-readable description for the event question.                          |
+| [indicator](#core-resources-eventindicator) | Object |                                        Indicator which a question assess.                                        |
+|        [unit](#core-resources-unit)         | Object |                 Define unit of measure of an event need, effects, situation or characteristics.                  |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was updated. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Affected" },
+    "description": { "en": "Affected" }
+  },
+  "indicator":{ "strings":{ "name":{ "en":"Damages and Losses"} }},
+  "unit":{ "strings":{ "name":{ "en":"Person"} }}
+  "updatedAt": "2019-12-18T15:12:39.505Z",
+  "createdAt": "2019-12-18T15:12:39.505Z"
+}
+```
+
+### Delete EventQuestion
+
+To delete existing event question, send a `DELETE` request to `https://api.ewea.io/v1/predefines/eventquestion/:id`.
+
+> Example Request
+
+```curl
+curl --request DELETE \
+--url https://api.ewea.io/v1/predefines/eventquestions/5dfa41e75b0afc0fd91ca92d \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with the standard event question attributes:
+
+<br/>
+
+|                    Name                     |  Type  |                                                   Description                                                    |
+| :-----------------------------------------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                               Unique universal identifier of this event question.                                |
+|                    name                     | Object |                             Human-translatable-readable name for the event question.                             |
+|                 description                 | Object |                         Human-translatable-readable description for the event question.                          |
+| [indicator](#core-resources-eventindicator) | Object |                                        Indicator which a question assess.                                        |
+|        [unit](#core-resources-unit)         | Object |                 Define unit of measure of an event need, effects, situation or characteristics.                  |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was updated. |
+|                  deletedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was deleted. |
+
+> Example Response
+
+```curl
+HTTP/1.1 200 Success
+{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Affected" },
+    "description": { "en": "Affected" }
+  },
+  "indicator":{ "strings":{ "name":{ "en":"Damages and Losses"} }},
+  "unit":{ "strings":{ "name":{ "en":"Person"} }}
+  "updatedAt": "2019-12-18T15:12:39.505Z",
+  "createdAt": "2019-12-18T15:12:39.505Z",
+  "deletedAt": "2019-12-18T18:12:39.505Z",
+}
+```
+
+### List All EventQuestion
+
+To list all event question, send a `GET` request to `https://api.ewea.io/v1/predefines/eventquetions`.
+
+> Example Request
+
+```curl
+curl --request GET \
+--url https://api.ewea.io/v1/predefines/eventquestions \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <apiKey>'
+```
+
+The response will be a `JSON object` with a `data key`. The values in the `data key` are set of question with the standard event question attributes:
+
+<br/>
+
+|                    Name                     |  Type  |                                                   Description                                                    |
+| :-----------------------------------------: | :----: | :--------------------------------------------------------------------------------------------------------------: |
+|                    \_id                     | String |                               Unique universal identifier of this event question.                                |
+|                    name                     | Object |                             Human-translatable-readable name for the event question.                             |
+|                 description                 | Object |                         Human-translatable-readable description for the event question.                          |
+| [indicator](#core-resources-eventindicator) | Object |                                        Indicator which a question assess.                                        |
+|        [unit](#core-resources-unit)         | Object |                 Define unit of measure of an event need, effects, situation or characteristics.                  |
+|                  createdAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was created. |
+|                  updatedAt                  |  Date  | A time value given in ISO8601 combined date and time format that represents when the event question was updated. |
+
+> Example Response:
+
+```curl
+HTTP/1.1 200 Success
+{
+  "data": [{
+  "_id": "5dfa41e75b0afc0fd91ca92d",
+  "strings": {
+    "name": { "en": "Affected" },
+    "description": { "en": "Affected" }
+  },
+  "indicator":{ "strings":{ "name":{ "en":"Damages and Losses"} }},
+  "unit":{ "strings":{ "name":{ "en":"Person"} }}
+  "updatedAt": "2019-12-18T15:12:39.505Z",
+  "createdAt": "2019-12-18T15:12:39.505Z"
+  }],
+  "total": 14,
+  "size": 10,
+  "limit": 10,
+  "skip": 0,
+  "page": 1,
+  "pages": 2,
+  "lastModified": "2019-12-19T15:43:22.874Z",
+  "hasMore": true
+}
+```
 
 ## Unit
 
