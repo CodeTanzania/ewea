@@ -1,6 +1,6 @@
 [
   {
-    "type": "Focal Person",
+    "type": "Focal",
     "name": "Lally Elias",
     "abbreviation": "LE",
     "locale": "en",
@@ -33,7 +33,7 @@
     }
   },
   {
-    "type": "Focal Person",
+    "type": "Focal",
     "name": "Benson Maruchu",
     "abbreviation": "BM",
     "locale": "en",
@@ -66,7 +66,7 @@
     }
   },
   {
-    "type": "Focal Person",
+    "type": "Focal",
     "name": "Nancy Victor",
     "abbreviation": "NV",
     "locale": "en",
@@ -99,7 +99,7 @@
     }
   },
   {
-    "type": "Focal Person",
+    "type": "Focal",
     "name": "Edgar Vitus Mlowe",
     "abbreviation": "EVM",
     "locale": "en",
@@ -132,7 +132,7 @@
     }
   },
   {
-    "type": "Focal Person",
+    "type": "Focal",
     "name": "Beatrice Charles",
     "abbreviation": "BC",
     "locale": "en",
