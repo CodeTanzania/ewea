@@ -9,6 +9,7 @@ const {
 } = require('@lykmapipo/express-common');
 const { apiVersion } = require('@lykmapipo/env');
 const { jsonSchema } = require('@lykmapipo/mongoose-common');
+const { fileRouter } = require('@lykmapipo/file');
 const { predefineRouter } = require('@lykmapipo/predefine');
 const { permissionRouter } = require('@lykmapipo/permission');
 const {
@@ -30,6 +31,7 @@ get(`/${apiVersion()}/schemas`, (request, response) => {
 });
 mount(
   authenticationRouter,
+  fileRouter,
   predefineRouter,
   permissionRouter,
   partyRouter,
