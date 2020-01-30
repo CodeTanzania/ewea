@@ -149,11 +149,17 @@
     }
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "lint-staged": {
-    "*.js": ["eslint --fix"],
-    "*.{md,html}": ["prettier --write"]
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.{md,html}": [
+      "prettier --write"
+    ]
   },
   "husky": {
     "hooks": {
