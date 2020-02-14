@@ -94,7 +94,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "generate-changelog": "^1.8.0",
     "handlebars": "^4.7.3",
-    "husky": "^4.2.1",
+    "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
     "live-server": "^1.2.1",
     "lodash.template": "^4.5.0",
@@ -102,8 +102,8 @@
     "npm-check-updates": "^4.0.1",
     "nyc": "^15.0.0",
     "prettier": "^1.19.1",
-    "rimraf": "^3.0.1",
-    "rollup": "^1.31.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.31.1",
     "shelljs": "^0.8.3"
   },
   "dependencies": {
@@ -132,12 +132,12 @@
     "lodash": ">=4.17.15",
     "moment": ">=2.24.0",
     "moment-timezone": ">=0.5.27",
-    "mongoose": ">=5.8.11",
+    "mongoose": ">=5.9.0",
     "mongoose-geojson-schemas": ">=0.11.7",
     "mongoose-kue": ">=0.9.11",
     "mongoose-rest-actions": ">=0.29.15",
     "pm2": ">=4.2.3",
-    "redis": ">=2.8.0"
+    "redis": ">=3.0.2"
   },
   "engines": {
     "node": ">=12.4.0",
