@@ -2415,6 +2415,180 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "EventQuestion",
+			"item": [
+				{
+					"name": "Create EventQuestion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"namespace\": \"EventQuestion\",\n    \"strings\": {\n        \"name\": {\n            \"en\": \"Deaths\"\n        }\n    },\n    \"populate\": {\n        \"relations.indicator\": {\n            \"match\": {\n                \"strings.name.en\": \"Damages and Losses\"\n            },\n            \"model\": \"Predefine\"\n        },\n        \"relations.unit\": {\n            \"match\": {\n                \"strings.name.en\": \"person\"\n            },\n            \"model\": \"Predefine\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventquestions/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventquestions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve EventQuestion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventquestions/5e2ed27fff94637905a4f724",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventquestions",
+								"5e2ed27fff94637905a4f724"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventQuestion",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strings\":{\n\t\t\"name\":{ \"en\":\"Damage and Losses.\"},\n\t\t\"description\":{\n\t\t\t\"en\":\"Damage and Losses.\"\n\t\t}\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventquestions/5e2ed27fff94637905a4f724",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventquestions",
+								"5e2ed27fff94637905a4f724"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update EventQuestion",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"strings\":{\n\t\t\"name\":{ \"en\":\"Damage and Losses.\"},\n\t\t\"description\":{\n\t\t\t\"en\":\"Damage and Losses.\"\n\t\t}\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventquestions/5e2ed27fff94637905a4f724",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventquestions",
+								"5e2ed27fff94637905a4f724"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete EventQuestion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventquestions/5e2ed27fff94637905a4f724",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventquestions",
+								"5e2ed27fff94637905a4f724"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All EventQuestion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/predefines/eventquestions/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"predefines",
+								"eventquestions",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Unit",
 			"item": [
 				{
