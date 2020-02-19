@@ -1,6 +1,6 @@
 const indicators = [
   {
-    namespace: 'EventIndicator',
+    namespace: 'EventTopic',
     strings: {
       name: { en: 'Water' },
       description: { en: 'Water' },
@@ -13,7 +13,7 @@ const indicators = [
     },
   },
   {
-    namespace: 'EventIndicator',
+    namespace: 'EventTopic',
     strings: {
       name: { en: 'Sanitation' },
       description: { en: 'Sanitation' },
@@ -26,7 +26,7 @@ const indicators = [
     },
   },
   {
-    namespace: 'EventIndicator',
+    namespace: 'EventTopic',
     strings: {
       name: { en: 'Food & Nutrition' },
       description: { en: 'Food & Nutrition' },
@@ -39,7 +39,7 @@ const indicators = [
     },
   },
   {
-    namespace: 'EventIndicator',
+    namespace: 'EventTopic',
     strings: {
       name: { en: 'Shelter' },
       description: { en: 'Shelter' },
