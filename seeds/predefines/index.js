@@ -3,6 +3,7 @@ const administrativeLevels = require('./administrativelevels');
 const featureTypes = require('./featuretypes');
 const eventIndicators = require('./eventindicators');
 const eventCertainties = require('./eventcertainties');
+const eventLevels = require('./eventlevels');
 const eventSeverities = require('./eventseverities');
 const eventStatuses = require('./eventstatuses');
 const eventUrgencies = require('./eventurgencies');
@@ -21,6 +22,7 @@ const predefines = [
   ...administrativeLevels,
   ...featureTypes,
   ...eventIndicators,
+  ...eventLevels,
   ...eventSeverities,
   ...eventCertainties,
   ...eventStatuses,
