@@ -1,0 +1,16 @@
+Name,Description,Color
+Geophysical,A hazard originating from solid earth. This term is used interchangeably with the term geological hazard,#6aa84f
+Meteorological,"A hazard caused by short-lived, micro- to meso-scale extreme weather and atmospheric conditions that last from minutes to days.",#cc4125
+Hydrological,"A hazard caused by the occurrence, movement, and distribution of surface and subsurface freshwater and saltwater",#3d85c6
+Climatological,"A hazard caused by long-lived, meso- to macro-scale atmospheric processes ranging from intra-seasonal to multi-decadal climate variability",#f1c232
+Biological,"A hazard caused by the exposure to living organisms and their toxic substances (e.g. venom, mold) or vector-borne diseases that they may carry. Examples are venomous wildlife and insects, poisonous plants, and mosquitoes carrying disease-causing agents such as parasites, bacteria, or viruses (e.g. malaria)",#e69138
+Extraterrestrial,"A hazard caused by asteroids, meteoroids, and comets as they pass near-earth, enter the Earth’s atmosphere, and/or strike the Earth, and by changes in interplanetary conditions that effect the Earth’s magnetosphere, ionosphere, and thermosphere",
+Industrial Accident,,
+Transport Accident,,
+Safety,,
+Security,,
+Rescue,,
+Health,,
+Environmental,,#783f04
+Infrastructure,,
+CBRNE,"A hazard caused by Chemical, Biological, Radiological, Nuclear, and Explosive materials",
