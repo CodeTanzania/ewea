@@ -13,6 +13,10 @@ const events = [
     startedAt: '2019-10-17T07:53:32.831Z',
     endedAt: '2019-10-19T07:53:32.831Z',
     populate: {
+      group: {
+        match: { 'strings.name.en': 'Hydrological' },
+        model: 'Predefine',
+      },
       type: {
         match: { namespace: 'EventType', 'strings.name.en': 'Flood' },
         model: 'Predefine',
