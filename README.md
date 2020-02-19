@@ -70,6 +70,8 @@ $ npm run start:dev
 $ npm test
 ```
 
+> To run heroku tasks ensure your have installed [heroku cli](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+
 ## Document
 
 It will be nice, to keep documentation under `docs` folder up to date when changes applied. We opted markdown for all documentations.

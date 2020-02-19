@@ -36,7 +36,8 @@
     "process:delete": "pm2 delete processes.json",
     "process:save": "pm2 save",
     "process:startup": "pm2 startup",
-    "process:remove": "sudo update-rc.d -f pm2-init.sh remove"
+    "process:remove": "sudo update-rc.d -f pm2-init.sh remove",
+    "heroku:push:env": "heroku-dotenv push -a ewea"
   },
   "repository": {
     "type": "git",
@@ -94,6 +95,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "generate-changelog": "^1.8.0",
     "handlebars": "^4.7.3",
+    "heroku-dotenv": "^0.4.1",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
     "live-server": "^1.2.1",
