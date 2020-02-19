@@ -30,34 +30,6 @@ const indicators = [
   {
     namespace: 'EventIndicator',
     strings: {
-      name: { en: 'Water' },
-      description: { en: 'Water' },
-    },
-  },
-  {
-    namespace: 'EventIndicator',
-    strings: {
-      name: { en: 'Sanitation' },
-      description: { en: 'Sanitation' },
-    },
-  },
-  {
-    namespace: 'EventIndicator',
-    strings: {
-      name: { en: 'Food & Nutrition' },
-      description: { en: 'Food & Nutrition' },
-    },
-  },
-  {
-    namespace: 'EventIndicator',
-    strings: {
-      name: { en: 'Shelter' },
-      description: { en: 'Shelter' },
-    },
-  },
-  {
-    namespace: 'EventIndicator',
-    strings: {
       name: { en: 'Livelihood' },
       description: { en: 'Livelihood' },
     },
