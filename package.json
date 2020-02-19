@@ -109,7 +109,7 @@
     "shelljs": "^0.8.3"
   },
   "dependencies": {
-    "@codetanzania/ewea-internals": ">=0.4.2",
+    "@codetanzania/ewea-internals": ">=0.5.0",
     "@codetanzania/emis-stakeholder": ">=2.1.0",
     "@codetanzania/ewea-common": ">=0.5.2",
     "@codetanzania/ewea-event": ">=0.4.2",
@@ -119,7 +119,7 @@
     "@lykmapipo/express-rest-actions": ">=0.8.8",
     "@lykmapipo/file": ">=0.1.18",
     "@lykmapipo/geo-tools": ">=0.6.4",
-    "@lykmapipo/i18n": ">=0.1.23",
+    "@lykmapipo/i18n": ">=0.1.24",
     "@lykmapipo/kue-common": ">=0.6.6",
     "@lykmapipo/logger": ">=0.5.6",
     "@lykmapipo/mongoose-common": ">=0.29.4",
