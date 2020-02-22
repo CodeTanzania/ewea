@@ -21,6 +21,26 @@ const events = [
         match: { namespace: 'EventType', 'strings.name.en': 'Flood' },
         model: 'Predefine',
       },
+      level: {
+        match: { namespace: 'EventLevel', 'strings.name.en': 'Orange' },
+        model: 'Predefine',
+      },
+      severity: {
+        match: { namespace: 'EventSeverity', 'strings.name.en': 'Extreme' },
+        model: 'Predefine',
+      },
+      certainty: {
+        match: { namespace: 'EventCertainty', 'strings.name.en': 'Possible' },
+        model: 'Predefine',
+      },
+      status: {
+        match: { namespace: 'EventStatus', 'strings.name.en': 'Actual' },
+        model: 'Predefine',
+      },
+      urgency: {
+        match: { namespace: 'EventUrgency', 'strings.name.en': 'Immediate' },
+        model: 'Predefine',
+      },
     },
   },
 ];
