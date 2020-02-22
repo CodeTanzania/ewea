@@ -46,6 +46,23 @@ const events = [
         model: 'Predefine',
         array: true,
       },
+      agencies: {
+        match: {
+          name: {
+            $in: [
+              'Dar es Salaam Multi-Agency Emergency Response Team',
+              'Tanzania Meteorological Agency',
+            ],
+          },
+        },
+        model: 'Party',
+        array: true,
+      },
+      focals: {
+        match: { name: { $in: ['Lally Elias', 'Benson Maruchu'] } },
+        model: 'Party',
+        array: true,
+      },
     },
   },
 ];
