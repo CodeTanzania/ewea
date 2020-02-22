@@ -41,6 +41,11 @@ const events = [
         match: { namespace: 'EventUrgency', 'strings.name.en': 'Immediate' },
         model: 'Predefine',
       },
+      areas: {
+        match: { namespace: 'AdministrativeArea', 'strings.name.en': 'Ilala' },
+        model: 'Predefine',
+        array: true,
+      },
     },
   },
 ];
