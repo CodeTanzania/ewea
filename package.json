@@ -109,9 +109,9 @@
     "shelljs": "^0.8.3"
   },
   "dependencies": {
-    "@codetanzania/ewea-internals": ">=0.5.0",
+    "@codetanzania/ewea-internals": ">=0.6.0",
     "@codetanzania/emis-stakeholder": ">=2.1.0",
-    "@codetanzania/ewea-common": ">=0.5.3",
+    "@codetanzania/ewea-common": ">=0.5.4",
     "@codetanzania/ewea-event": ">=0.4.2",
     "@lykmapipo/common": ">=0.30.5",
     "@lykmapipo/env": ">=0.16.7",
@@ -133,8 +133,8 @@
     "kue-scheduler": ">=0.9.16",
     "lodash": ">=4.17.15",
     "moment": ">=2.24.0",
-    "moment-timezone": ">=0.5.27",
-    "mongoose": ">=5.9.1",
+    "moment-timezone": ">=0.5.28",
+    "mongoose": ">=5.9.2",
     "mongoose-geojson-schemas": ">=0.11.8",
     "mongoose-kue": ">=0.9.12",
     "mongoose-rest-actions": ">=0.29.16",
