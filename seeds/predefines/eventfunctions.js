@@ -157,7 +157,7 @@ const functions = [
     namespace: 'EventFunction',
     strings: {
       code: 'DBM',
-      name: { en: 'Dead-Bodies Management' },
+      name: { en: 'Dead Bodies Management' },
       description: {
         en:
           'Managing of dead, including their identification, investigation on the reasons for the death and burialof bodies that could not be identified or pose a health risk. This also includes installation and management of mortuaries.',

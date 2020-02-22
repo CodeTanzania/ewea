@@ -15,7 +15,8 @@ const partyGroups = require('./partygroups');
 const partyRoles = require('./partyroles');
 const eventFunctions = require('./eventfunctions');
 const eventActions = require('./eventactions');
-// const eventCatalogues = require('./eventcatalogues');
+const administrativeAreas = require('./administrativeareas');
+const eventActionCatalogues = require('./eventactioncatalogues');
 const notificationTemplates = require('./notificationtemplates');
 
 const predefines = [
@@ -36,7 +37,8 @@ const predefines = [
   ...eventQuestions,
   ...eventFunctions,
   ...eventActions,
-  // ...eventCatalogues,
+  ...administrativeAreas,
+  ...eventActionCatalogues,
   ...notificationTemplates,
 ];
 
