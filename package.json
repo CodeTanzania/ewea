@@ -111,7 +111,7 @@
   "dependencies": {
     "@codetanzania/ewea-internals": ">=0.6.0",
     "@codetanzania/emis-stakeholder": ">=2.1.0",
-    "@codetanzania/ewea-common": ">=0.5.4",
+    "@codetanzania/ewea-common": ">=0.6.0",
     "@codetanzania/ewea-event": ">=0.5.1",
     "@lykmapipo/common": ">=0.30.5",
     "@lykmapipo/env": ">=0.16.7",
@@ -127,7 +127,7 @@
     "@lykmapipo/permission": ">=0.8.19",
     "@lykmapipo/postman": ">=0.16.7",
     "@lykmapipo/predefine": ">=1.7.0",
-    "async": ">=3.1.1",
+    "async": ">=3.2.0",
     "express": ">=4.17.1",
     "kue": ">=0.11.6",
     "kue-scheduler": ">=0.9.16",
