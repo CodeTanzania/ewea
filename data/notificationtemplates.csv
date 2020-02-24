@@ -1,0 +1,2 @@
+Type,Groups,Roles,Stage,Channel,Name,Description
+,,,,,{event} - Notification,A {event} alert has been issued for {areas}. For more information call {phone}.
