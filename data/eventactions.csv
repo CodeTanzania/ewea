@@ -1,0 +1,128 @@
+Function,Name,Description,Code
+Direction and Control,Issuing operational guidelines to respond to emergencies that are consistent with the applicable legal framework,,DC0001
+Direction and Control,Convening DarMAERT to assess the emergency,,DC0002
+Direction and Control,Providing overall direction and coordination of emergency response operations,,DC0003
+Direction and Control,Activating the Emergency Operations Center when required (fully or partially),,DC0004
+Direction and Control,Declaring a regional emergency when deemed necessary,,DC0005
+Direction and Control,Working with the Regional Disaster Management Committee to request national assistance from Prime Minister’s Office when required,,DC0006
+Direction and Control,Terminating the response operations when appropriate,,DC0007
+Communication and Warning,Receiving information on emergency situations from different sources,,CW0001
+Communication and Warning,Organizing the use of available communication systems during the emergency,,CW0002
+Communication and Warning,Activating backup or alternative communication systems,,CW0003
+Communication and Warning,Maintaining communications log of messages in and out of the Emergency Operations Centre,,CW0004
+Communication and Warning,Recording of the event and data keeping,,CW0005
+Communication and Warning,Alerting key regional officials and other non-governmental actors on potential emergency situations,,CW0006
+Communication and Warning,"Disseminating warning information to the public through available communication means, such as public announcements, sirens, radio and television",,CW0007
+Communication and Warning,Disseminating the official released warning instructions to the public through a network of volunteers.,,CW0008
+Communication and Warning,Disseminating the official released warning instructions to the public through available communication means.,,CW0009
+Communication and Warning,Issuing weather forecasts and warnings for weather related hazards rests,,CW0010
+Communication and Warning,Issuing warnings for health-related risks,,CW0011
+Communication and Warning,Receiving information on emergency situations from different sources.,,CW0012
+Communication and Warning,Recording of the event and data keeping.,,CW0013
+Communication and Warning,Disseminating the official released warning information and instructions to the public through a network of volunteers.,,CW0014
+Communication and Warning,Providing equipment and personnel for supporting the dissemination of warnings to the public.,,CW0015
+Communication and Warning,Broadcasting the official released warning and emergency information and instructions to the public.,,CW0016
+Communication and Warning,Relaying officially released information to their customers through bulk messages.,,CW0017
+Evacuation,"Releasing evacuation information to the public, emphasizing on the need to evacuate.",,CW0018
+Evacuation,Developing the evacuation plan with primary and alternative evacuation routes on map and activation of such a plan.,,EV0001
+Evacuation,Estimating the number of people to be evacuated and identifying means to transport them.,,EV0002
+Evacuation,Identifying potential challenges (e.g. narrow bridges) of using the selected routes.,,EV0003
+Evacuation,Estimating the time needed to accomplish the evacuation.,,EV0004
+Evacuation,Informing the public about the need to evacuate.,,EV0005
+Evacuation,Providing traffic control and keeping evacuation routes open and secure.,,EV0006
+Evacuation,Issuing evacuation order and instructions,,EV0007
+Evacuation,"Releasing evacuation information to the public, emphasizing on the need to evacuate",,EV0008
+Evacuation,Providing transport of evacuees to the reception sites,,EV0009
+Evacuation,"Evacuating patients from affected hospitals, health centers and dispensaries.",,EV0010
+Evacuation,Developing the evacuation plan with primary and alternative evacuation routes on map and activation of such a plan.,,EV0011
+Evacuation,"Releasing evacuation information to the public, emphasizing on the need to evacuate.",,EV0012
+Evacuation,Estimating the number of people to be evacuated and identifying means to transport them.,,EV0013
+Evacuation,"Assisting in evacuating the most vulnerable groups of the population, such as the elder, children, pregnant women and people with disabilities.",,EV0014
+Evacuation,Providing traffic control and keeping evacuation routes open and secure.,,EV0015
+Evacuation,Identifying potential challenges (e.g. narrow bridges) of using the selected routes.,,EV0016
+Firefighting,"Preventing, detecting and controlling fire in the disaster area.
+",,FF0001
+Firefighting,Providing personnel and equipment for firefighting.,,FF0002
+Firefighting,"Coordinating firefighting activities, including private firefighting companies responding to the disaster.",,FF0003
+Firefighting,Disconnecting power supply from the building on fire.,,FF0004
+Law Enforcement,"Establishing cordons to facilitate the work of other emergency services in saving lives, protection of the public and care of survivors.",,LE0001
+Law Enforcement,"Providing security to the affected population and its property, and critical facilities including the EOC and shelter facilities.",,LE0002
+Law Enforcement,Controlling the traffic and crowd.,,LE0003
+Law Enforcement,Protecting property in evacuated areas and limiting access to them.,,LE0004
+Health and Medical Services,"Directing government and partners’ (e.g. private hospitals) efforts to perform triage and provide treatment, stabilization and medical care to the affected population.",,HMS0001
+Health and Medical Services,Conducting triage.,,HMS0002
+Health and Medical Services,"Coordinating deployment of health/medical personnel, drugs, equipment, and supplies at the disaster site, and/or retaining them at the hospital for the incoming patients.",,HMS0003
+Health and Medical Services,"Coordinating with emergency responders to isolate and decontaminate incoming patients at health facilities, if needed, to prevent spread of chemical or bacteria/virus agents to other patients and staff.",,HMS0004
+Health and Medical Services,"Coordinating with emergency responders to isolate and decontaminate incoming patients in the field, if needed, to prevent spread of chemical or bacteria/virus agents to other patients and staff.",,HMS0005
+Health and Medical Services,Providing psychosocial support to the traumatized populating.,,HMS0006
+Health and Medical Services,Coordinating immunization and quarantine when required.,,HMS0007
+Health and Medical Services,Providing life support services.,,HMS0008
+Health and Medical Services,Providing first aid services to the affected people.,,HMS0009
+Health and Medical Services,"Directing government and partners’ (e.g. private hospitals) efforts to perform triage and provide treatment, stabilization and medical care to the affected population.",,HMS0010
+Search and Rescue,Coordinating search and rescue activities during a disaster.,,SR0001
+Search and Rescue,"Detecting and extracting people trapped, lost or at risk.",,SR0002
+Search and Rescue,Providing transport of the rescued persons to safer areas and health facilities.,,SR0003
+Search and Rescue,Quantifying and registering of people located and rescued.,,SR0004
+Shelter and Mass Care,Planning and opening of shelter facilities,,SMC0001
+Shelter and Mass Care,Constructing temporary shelters,,SMC0002
+Shelter and Mass Care,Managing and coordinating of shelter facilities,,SMC0003
+Shelter and Mass Care,"Maintaining key information about the disaster affected people (e.g. names, ages and sex)",,SMC0004
+Shelter and Mass Care,Performing family reunification,,SMC0005
+Shelter and Mass Care,Providing psychosocial support to the affected people,,SMC0006
+Shelter and Mass Care,Providing health and medical services to the disaster victims and injured ones,,SMC0007
+Shelter and Mass Care,Establishing preventive health services including control of communicable diseases in the shelters,,SMC0008
+Shelter and Mass Care,Supplying necessary equipment for running shelter facilities and mass care,,SMC0009
+Shelter and Mass Care,Handling logistics of relief items,,SMC0010
+Shelter and Mass Care,Terminating shelter operations and closing facilities,,SMC0011
+Shelter and Mass Care,Maintaining order and security.,,SMC0012
+Shelter and Mass Care,Supplying necessary equipment for running shelter facilities and mass care.,,SMC0013
+Shelter and Mass Care,"Providing water, sanitaion and hygiene services",,SMC0014
+Shelter and Mass Care,Establishing preventive health services including control of communicable diseases in the shelters,,SMC0015
+Shelter and Mass Care,Providing water services,,SMC0016
+Shelter and Mass Care,Providing electricity to the shelters.,,SMC0017
+Shelter and Mass Care,Ensuring the provision of water services to the shelters.,,SMC0018
+Shelter and Mass Care,Providing waste water management services to the shelters,,SMC0019
+Shelter and Mass Care,Providing needed relief items.,,SMC0020
+Shelter and Mass Care,Promoting water sanitation and hygiene practices to the evacuees in established shelters.,,SMC0021
+Emergency Public Information,Preparing and releasing disaster-related information to the public in regular media briefs.,,EPI0001
+Emergency Public Information,Controlling rumor,,EPI0002
+Emergency Public Information,Establishing Media Liaison Point and Media Liaison Officer to monitor information released by the media and ensuring flow of accurate information.,,EPI0003
+Emergency Public Information,Collaborating with disaster experts to develop public information related to risks and protective actions.,,EPI0004
+Emergency Public Information,Broadcasting official released information about the disaster to the public.,,EPI0005
+Emergency Public Information,Responding to public information inquiries.,,
+Damage Assessment,Coordinating damage assessment exercise,,DA0001
+Damage Assessment,"Assigning regional damage assessment teams and equipping them with the necessary resources (e.g. transport, tools, equipment and personnel)",,DA0002
+Damage Assessment,Conducting damage assessment,,DA0003
+Damage Assessment,Sharing damage assessment with the Regional Disaster Management Team,,DA0004
+Public Works and Engineering,Coordinating all public works activities during disaster response that relate to emergency repair to the infRegional Administrative Secretarytructure and restoration of utility services.,,PWE0001
+Public Works and Engineering,Coordinating debris removal.,,PWE0002
+Public Works and Engineering,"Inspecting, designating and demolishing public hazardous structures.",,PWE0003
+Public Works and Engineering,Supervising emergency road damage repair.,,PWE0004
+Public Works and Engineering,Restoring road communications.,,PWE0005
+Public Works and Engineering,Providing alternative route to the traffic while road is under repair.,,PWE0006
+Public Works and Engineering,Executing emergency repair to restore public infrastructure.,,PWE0007
+Public Works and Engineering,Lending out required working machinery and equipment during disaster response.,,PWE0008
+Utilities,Coordinating all emergency repair activities to restore utilities’ services.,,UT0001
+Utilities,Deploying technical emergency response teams,,UT0002
+Utilities,Restoring the damaged electricity public infrastructure.,,UT0003
+Utilities,Monitoring the repair work.,,UT0004
+Utilities,"Arranging the provision of emergency power from other sources to hospitals, emergency shelters, other critical facilities and people.",,UT0005
+Utilities,Coordinating all emergency repair activities to restore utilities’ services.,,UT0006
+Utilities,Restoring the damaged water public infrastructure.,,UT0007
+Utilities,"Arranging the provision of emergency water supply from other sources to hospitals, emergency shelters, other critical facilities and people.",,UT0008
+Resources Management and Supply,"Identifying specific goods, services and personnel and communicating for resource mobilization and allocation ",,RMS0001
+Resources Management and Supply,Soliciting required resources from within and outside the government,,RMS0002
+Resources Management and Supply,"Coordinating logistics for relief supplies (procurement, transportation, storage, distribution and inventory management of relief items), donations, medical staff and equipment",,RMS0003
+Transportation,Determining available transport networks and alternative means and modes to move people and goods within the disaster affected area,,TR0001
+Transportation,Identifying and coordinating allocation of transportation resources per requirements,,TR0002
+Transportation,"Transporting relief items, volunteers and affected population to the intended destination",,TR0003
+Transportation,Dispatching ambulance for transportation of the disaster affected victims to the health facilities.,,TR0004
+Transportation,Controlling the traffic.,,TR0005
+Dead Bodies Management,Establishing temporary mortuary at a designated site for caring of human remains.,,DBM0001
+Dead Bodies Management,Identifying and collecting dead bodies.,,DBM0002
+Dead Bodies Management,Transporting dead bodies to the mortuary.,,DBM0003
+Dead Bodies Management,Quantifying and registering dead bodies that have been handled or require handling.,,DBM0004
+Dead Bodies Management,Determining causes of deaths.,,DBM0005
+Dead Bodies Management,Consolidating information on deaths.,,DBM0006
+Dead Bodies Management,Locating and notifying relatives.,,DBM0007
+Dead Bodies Management,Conducting burial of unidentified bodies or of those who pose a health risk.,,DBM0008
