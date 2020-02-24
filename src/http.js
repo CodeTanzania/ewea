@@ -17,9 +17,11 @@ const {
   partyRouter,
   fetchContacts,
 } = require('@codetanzania/emis-stakeholder');
-const { campaignRouter, messageRouter } = require('@lykmapipo/postman')({
-  fetchContacts,
-});
+const {
+  campaignRouter,
+  messageRouter,
+  smssyncRouter,
+} = require('@lykmapipo/postman')({ fetchContacts }); // TODO: pass onReceive(sms, done);
 const {
   eventRouter,
   eventChangeLogRouter,
@@ -34,6 +36,7 @@ get(`/${apiVersion()}/schemas`, (request, response) => {
   response.json(schema);
 });
 mount(
+  smssyncRouter, // TODO: fix secret key mismatch
   authenticationRouter,
   fileRouter,
   predefineRouter,
