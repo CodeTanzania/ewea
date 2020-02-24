@@ -1,6 +1,9 @@
 require('@codetanzania/ewea-common');
 const { error, debug } = require('@lykmapipo/logger');
-const { start, listen } = require('@lykmapipo/postman');
+const { fetchContacts } = require('@codetanzania/emis-stakeholder');
+const { start, listen } = require('@lykmapipo/postman')({
+  fetchContacts,
+});
 const { connect } = require('./database');
 
 debug('Start Launching Worker');

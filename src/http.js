@@ -15,7 +15,11 @@ const { permissionRouter } = require('@lykmapipo/permission');
 const {
   authenticationRouter,
   partyRouter,
+  fetchContacts,
 } = require('@codetanzania/emis-stakeholder');
+const { campaignRouter, messageRouter } = require('@lykmapipo/postman')({
+  fetchContacts,
+});
 const {
   eventRouter,
   eventChangeLogRouter,
@@ -33,6 +37,8 @@ mount(
   authenticationRouter,
   fileRouter,
   predefineRouter,
+  campaignRouter,
+  messageRouter,
   permissionRouter,
   partyRouter,
   eventRouter,
