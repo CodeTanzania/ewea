@@ -6,7 +6,7 @@
     "args": [],
     "node_args": ["--optimize_for_size", "--max_old_space_size=460"],
     "exec_mode": "cluster",
-    "instances": 1,
+    "instances": "max",
     "instance_var": "INSTANCE_ID",
     "watch": false,
     "env": { "NODE_ENV": "production" }
@@ -18,7 +18,7 @@
     "args": [],
     "node_args": [],
     "exec_mode": "cluster",
-    "instances": 1,
+    "instances": 2,
     "instance_var": "INSTANCE_ID",
     "watch": false,
     "env": { "NODE_ENV": "production" }
