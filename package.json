@@ -112,9 +112,9 @@
     "shelljs": "^0.8.3"
   },
   "dependencies": {
-    "@codetanzania/ewea-internals": ">=0.6.1",
+    "@codetanzania/ewea-internals": ">=0.6.2",
     "@codetanzania/emis-stakeholder": ">=2.1.0",
-    "@codetanzania/ewea-common": ">=0.6.1",
+    "@codetanzania/ewea-common": ">=0.6.2",
     "@codetanzania/ewea-event": ">=0.5.2",
     "@lykmapipo/common": ">=0.30.5",
     "@lykmapipo/env": ">=0.16.7",
