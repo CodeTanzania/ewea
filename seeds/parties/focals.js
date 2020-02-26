@@ -164,6 +164,39 @@ const focals = [
       },
     },
   },
+  {
+    type: 'Focal',
+    name: 'Richard Aggrey',
+    abbreviation: 'RA',
+    locale: 'en',
+    email: 'richardaggrey7@gmail.com',
+    mobile: '255658040597',
+    password: '$2a$10$rwpL/BhU8xY4fkf8SG7fHugF4PCioTJqy8BLU7BZ8N0YV.8Y1dXem',
+    confirmedAt: '2018-12-01T11:22:37.185+00:00',
+    populate: {
+      group: {
+        match: {
+          namespace: 'PartyGroup',
+          'strings.name.en': 'Unknown',
+        },
+        model: 'Predefine',
+      },
+      area: {
+        match: {
+          namespace: 'AdministrativeArea',
+          'strings.name.en': 'Ilala',
+        },
+        model: 'Predefine',
+      },
+      role: {
+        match: {
+          namespace: 'PartyRole',
+          'strings.name.en': 'Administrator',
+        },
+        model: 'Predefine',
+      },
+    },
+  },
 ];
 
 module.exports = focals;
