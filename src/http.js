@@ -5,6 +5,7 @@ const {
   app,
   get,
   mount,
+  use,
   start: startHttp,
 } = require('@lykmapipo/express-common');
 const { apiVersion } = require('@lykmapipo/env');
@@ -16,6 +17,7 @@ const {
   authenticationRouter,
   partyRouter,
   fetchContacts,
+  jwtAuth,
 } = require('@codetanzania/emis-stakeholder');
 const {
   campaignRouter,
@@ -35,9 +37,13 @@ get(`/${apiVersion()}/schemas`, (request, response) => {
   response.status(200);
   response.json(schema);
 });
+
+// mount no-auth routers
+mount(authenticationRouter, smssyncRouter);
+
+// mount auth routers
+use(jwtAuth);
 mount(
-  smssyncRouter, // TODO: fix secret key mismatch
-  authenticationRouter,
   fileRouter,
   predefineRouter,
   campaignRouter,
