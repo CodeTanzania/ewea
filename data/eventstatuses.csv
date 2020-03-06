@@ -1,0 +1,6 @@
+Name,Description,Color
+Actual,Actionable by all targeted recipients,
+Exercise,Actionable only by designated exercise participants,
+System,For messages that support alert network internal functions,
+Test,"Technical testing only, all recipients disregard",
+Draft,"A preliminary template or draft, not actionable in its current form",
