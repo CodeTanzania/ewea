@@ -1,0 +1,6 @@
+Name,Description,Color
+Unknown,Urgency not known,
+Past, Responsive action is no longer required,
+Future,Responsive action SHOULD be taken in the near future,
+Expected,Responsive action SHOULD be taken soon (within next hour),
+Immediate,Responsive action SHOULD be taken immediately,
