@@ -18,7 +18,7 @@ const events = [
         model: 'Predefine',
       },
       type: {
-        match: { namespace: 'EventType', 'strings.name.en': 'Flood' },
+        match: { namespace: 'EventType', 'strings.name.en': 'Floods' },
         model: 'Predefine',
       },
       level: {
