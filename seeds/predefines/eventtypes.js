@@ -1,7 +1,7 @@
 const types = [
   {
     namespace: 'EventType',
-    strings: { name: { en: 'Flood' } },
+    strings: { name: { en: 'Floods' } },
     populate: {
       'relations.group': {
         match: { 'strings.name.en': 'Hydrological' },
@@ -21,7 +21,7 @@ const types = [
   },
   {
     namespace: 'EventType',
-    strings: { name: { en: 'Tropical Cyclones' } },
+    strings: { name: { en: 'Tropical Cyclone' } },
     populate: {
       'relations.group': {
         match: { 'strings.name.en': 'Meteorological' },
@@ -51,7 +51,7 @@ const types = [
   },
   {
     namespace: 'EventType',
-    strings: { name: { en: 'Landslides' } },
+    strings: { name: { en: 'Landslide' } },
     populate: {
       'relations.group': {
         match: { 'strings.name.en': 'Hydrological' },
@@ -92,7 +92,7 @@ const types = [
   {
     namespace: 'EventType',
     strings: {
-      name: { en: 'Epidemics' },
+      name: { en: 'Epidemic' },
       description: {
         en:
           'Cholera, Rift Valley Fever, Bird Flu, Food Poisoning, Swine Flu, etc',
