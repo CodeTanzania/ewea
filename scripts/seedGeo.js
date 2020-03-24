@@ -6,7 +6,7 @@ const {
 } = require('@lykmapipo/geo-tools');
 const { Predefine } = require('../src/database');
 
-exports.seedRegions = done => {
+exports.seedRegions = (done) => {
   const path = `${__dirname}/../data/administrativeareas/Dar_Region.shp`;
   readShapefile({ path }, (error, { finished, feature, next }) => {
     // handle read errors
@@ -38,7 +38,7 @@ exports.seedRegions = done => {
   });
 };
 
-exports.seedDistricts = done => {
+exports.seedDistricts = (done) => {
   const path = `${__dirname}/../data/administrativeareas/Dar_District_Polygon.shp`;
   readShapefile({ path }, (error, { finished, feature, next }) => {
     // handle read errors
@@ -70,7 +70,7 @@ exports.seedDistricts = done => {
   });
 };
 
-exports.seedWards = done => {
+exports.seedWards = (done) => {
   const path = `${__dirname}/../data/administrativeareas/Dar_Wards_Polygon.shp`;
   readShapefile({ path }, (error, { finished, feature, next }) => {
     // handle read errors
@@ -102,7 +102,7 @@ exports.seedWards = done => {
   });
 };
 
-exports.seedSubWards = done => {
+exports.seedSubWards = (done) => {
   const path = `${__dirname}/../data/administrativeareas/Dar_Subwards_Polygon.shp`;
   readShapefile({ path }, (error, { finished, feature, next }) => {
     // handle read errors
@@ -134,7 +134,7 @@ exports.seedSubWards = done => {
   });
 };
 
-exports.seedHospitals = done => {
+exports.seedHospitals = (done) => {
   const path = `${__dirname}/../data/criticalfacilities/Dar_es_Salaam_Hospital_Points.geojson`;
   readGeoJSON({ path }, (error, { finished, feature, next }) => {
     // handle read errors

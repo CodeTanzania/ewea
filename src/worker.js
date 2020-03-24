@@ -9,7 +9,7 @@ const { connect } = require('./database');
 debug('Start Launching Worker');
 
 // connect to database
-connect(err => {
+connect((err) => {
   // throw if error
   if (err) {
     error('Fail Launching Worker', err);

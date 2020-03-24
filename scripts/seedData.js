@@ -7,7 +7,7 @@ debug('Start Seeding Data');
 
 const tasks = [seed];
 
-waterfall(tasks, error => {
+waterfall(tasks, (error) => {
   if (error) {
     warn('Fail Seeding Data', error);
   } else {

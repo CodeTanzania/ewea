@@ -55,8 +55,8 @@ mount(
 );
 debug('Finish Mounting Http Routers');
 
-const start = done => {
-  return waterfall([next => connect(next), next => startHttp(next)], done);
+const start = (done) => {
+  return waterfall([(next) => connect(next), (next) => startHttp(next)], done);
 };
 
 module.exports = { app, start, connect };
