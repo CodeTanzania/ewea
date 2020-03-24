@@ -115,7 +115,7 @@
     "@codetanzania/ewea-internals": ">=0.7.0",
     "@codetanzania/emis-stakeholder": ">=2.2.1",
     "@codetanzania/ewea-common": ">=0.7.0",
-    "@codetanzania/ewea-event": ">=0.7.0",
+    "@codetanzania/ewea-event": ">=0.7.1",
     "@lykmapipo/common": ">=0.30.7",
     "@lykmapipo/env": ">=0.16.9",
     "@lykmapipo/express-common": ">=0.17.23",
