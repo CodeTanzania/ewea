@@ -6,7 +6,7 @@ const areas = [
     },
     populate: {
       'relations.level': {
-        match: { 'strings.name.en': 'City' },
+        match: { 'strings.name.en': 'Region' },
         model: 'Predefine',
       },
     },
@@ -22,7 +22,7 @@ const areas = [
         model: 'Predefine',
       },
       'relations.level': {
-        match: { 'strings.name.en': 'Municipality' },
+        match: { 'strings.name.en': 'District' },
         model: 'Predefine',
       },
     },
