@@ -108,12 +108,12 @@
     "nyc": "^15.0.1",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
-    "rollup": "^2.7.2",
+    "rollup": "^2.7.3",
     "shelljs": "^0.8.4"
   },
   "dependencies": {
     "@codetanzania/ewea-internals": ">=0.11.0",
-    "@codetanzania/emis-stakeholder": ">=2.4.0",
+    "@codetanzania/emis-stakeholder": ">=2.5.0",
     "@codetanzania/ewea-common": ">=0.8.1",
     "@codetanzania/ewea-event": ">=0.9.1",
     "@lykmapipo/common": ">=0.33.0",
