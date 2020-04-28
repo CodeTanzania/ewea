@@ -1,5 +1,6 @@
-Level,Name,Point ,Geometry,Parent
-Region,Dar es Salaam,,,
+Level,Name,Point,Geometry,Parent
+Nation,Tanzania,,,
+Region,Dar es Salaam,,,Tanzania
 District,Kinondoni,,,Dar es Salaam
 District,Ilala,,,Dar es Salaam
 District,Temeke,,,Dar es Salaam
@@ -82,7 +83,7 @@ Ward,Kurasini,,,Temeke
 Ward,Azimio,,,Temeke
 Ward,Tandika,,,Temeke
 Ward,Sandali,,,Temeke
-Ward,Chang'ombe,,,Temeke
+Ward,"""Chang'ombe""",,,Temeke
 Ward,Mbagala Kuu,,,Temeke
 Ward,Makangarawe,,,Temeke
 Ward,Pemba Mnazi,,,Temeke

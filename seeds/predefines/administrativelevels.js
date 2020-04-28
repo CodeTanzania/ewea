@@ -2,9 +2,9 @@ const levels = [
   {
     namespace: 'AdministrativeLevel',
     strings: {
-      name: { en: 'City' },
+      name: { en: 'Nation' },
     },
-    numbers: { level: 1 },
+    numbers: { level: 0 },
   },
   {
     namespace: 'AdministrativeLevel',
@@ -23,13 +23,6 @@ const levels = [
   {
     namespace: 'AdministrativeLevel',
     strings: {
-      name: { en: 'Municipality' },
-    },
-    numbers: { level: 2 },
-  },
-  {
-    namespace: 'AdministrativeLevel',
-    strings: {
       name: { en: 'Ward' },
     },
     numbers: { level: 3 },
@@ -37,23 +30,10 @@ const levels = [
   {
     namespace: 'AdministrativeLevel',
     strings: {
-      name: { en: 'Sub-ward' },
+      name: { en: 'Subward' },
+      description: { en: 'Street/Village' },
     },
     numbers: { level: 4 },
-  },
-  {
-    namespace: 'AdministrativeLevel',
-    strings: {
-      name: { en: 'Shina' },
-    },
-    numbers: { level: 5 },
-  },
-  {
-    namespace: 'AdministrativeLevel',
-    strings: {
-      name: { en: 'Street' },
-    },
-    numbers: { level: 6 },
   },
 ];
 module.exports = levels;
