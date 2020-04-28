@@ -1,6 +1,6 @@
-Name,Description,Level
-Country,,0
-Region,,1
-District,,2
-Ward,,3
-Subward,,4
+Name,Description,Level,Parent
+Country,,0,
+Region,,1,Country
+District,,2,Region
+Ward,,3,District
+Subward,Street/Village,4,Ward
