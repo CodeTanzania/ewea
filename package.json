@@ -126,6 +126,7 @@
     "@lykmapipo/i18n": ">=0.1.29",
     "@lykmapipo/kue-common": ">=0.6.10",
     "@lykmapipo/logger": ">=0.5.11",
+    "@lykmapipo/mongoose-aggregatable": ">=0.3.0",
     "@lykmapipo/mongoose-common": ">=0.33.0",
     "@lykmapipo/mongoose-exportable": ">=0.3.27",
     "@lykmapipo/permission": ">=0.8.25",
