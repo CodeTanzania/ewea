@@ -16,7 +16,7 @@ Emergency Early Warning, Early Action Toolkit.
 
 ## Requirements
 
-- [NodeJS v12+](https://nodejs.org)
+- [NodeJS v14.1+](https://nodejs.org)
 - [MongoDB v4+](https://www.mongodb.com/)
 - [Redis v5+](https://redis.io/)
 

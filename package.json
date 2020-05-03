@@ -135,7 +135,7 @@
     "async": ">=3.2.0",
     "express": ">=4.17.1",
     "kue": ">=0.11.6",
-    "kue-scheduler": ">=0.9.21",
+    "kue-scheduler": ">=0.10.0",
     "lodash": ">=4.17.15",
     "moment": ">=2.25.1",
     "moment-timezone": ">=0.5.28",
@@ -147,8 +147,8 @@
     "redis": ">=3.0.2"
   },
   "engines": {
-    "node": ">=12.4.0",
-    "npm": ">=6.9.0"
+    "node": ">=14.1.0",
+    "npm": ">=6.14.4"
   },
   "config": {
     "commitizen": {
