@@ -3,6 +3,7 @@ const { Predefine } = require('@lykmapipo/predefine');
 const { Permission } = require('@lykmapipo/permission');
 const { Party } = require('@codetanzania/emis-stakeholder');
 const { Event, EventChangeLog } = require('@codetanzania/ewea-event');
+const { VehicleDispatch } = require('@codetanzania/ewea-dispatch');
 
 module.exports = {
   connect,
@@ -12,4 +13,5 @@ module.exports = {
   Party,
   Event,
   EventChangeLog,
+  VehicleDispatch,
 };
