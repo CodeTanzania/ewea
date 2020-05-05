@@ -1,2 +1,2 @@
-Name,Type,Model,Make,Owner,Ownership,Area,Level,Facility,Description
-T 123 ABC,Ambulance,Toyota,Land Cruiser,Dar es Salaam Multi-Agency Emergency Response Team,Government,Ilala,District,Amana Hospital,T 123 ABC
+Name,Type,Model,Make,Owner,Ownership,Status,Area,Level,Facility,Description
+T 123 ABC,Ambulance,Toyota,Land Cruiser,Multi-Agency Emergency Response Team,Government,Operational,Ilala,District,Amana Hospital,T 123 ABC
