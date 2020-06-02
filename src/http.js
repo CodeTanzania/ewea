@@ -29,6 +29,7 @@ const {
   eventChangeLogRouter,
 } = require('@codetanzania/ewea-event');
 const { vehicleDispatchRouter } = require('@codetanzania/ewea-dispatch');
+const { caseRouter } = require('@codetanzania/ewea-case');
 const { reportRouter } = require('@codetanzania/ewea-reports');
 
 const { connect } = require('./database');
@@ -55,6 +56,7 @@ mount(
   eventRouter,
   eventChangeLogRouter,
   vehicleDispatchRouter,
+  caseRouter,
   reportRouter
 );
 debug('Finish Mounting Http Routers');

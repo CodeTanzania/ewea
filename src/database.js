@@ -4,6 +4,7 @@ const { Permission } = require('@lykmapipo/permission');
 const { Party } = require('@codetanzania/emis-stakeholder');
 const { Event, EventChangeLog } = require('@codetanzania/ewea-event');
 const { VehicleDispatch } = require('@codetanzania/ewea-dispatch');
+const { Case } = require('@codetanzania/ewea-case');
 
 module.exports = {
   connect,
@@ -14,4 +15,5 @@ module.exports = {
   Event,
   EventChangeLog,
   VehicleDispatch,
+  Case,
 };
