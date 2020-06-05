@@ -118,7 +118,7 @@
     "@codetanzania/ewea-dispatch": ">=0.6.0",
     "@codetanzania/ewea-event": ">=0.11.0",
     "@codetanzania/ewea-internals": ">=0.20.0",
-    "@codetanzania/ewea-reports": ">=0.7.0",
+    "@codetanzania/ewea-reports": ">=0.8.0",
     "@lykmapipo/common": ">=0.34.2",
     "@lykmapipo/env": ">=0.17.7",
     "@lykmapipo/express-common": ">=0.18.5",
