@@ -105,7 +105,7 @@
     "live-server": "^1.2.1",
     "lodash.template": "^4.5.0",
     "mocha": "^8.4.0",
-    "npm-check-updates": "^11.6.0",
+    "npm-check-updates": "^19.3.2",
     "nyc": "^15.1.0",
     "prettier": "^2.3.1",
     "rimraf": "^3.0.2",
